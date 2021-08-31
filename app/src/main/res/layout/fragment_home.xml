@@ -90,50 +90,336 @@
         app:progressMode="true"
         app:selectedDotColor="#32D74B" />
 
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dots_indicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:columnCount="3"
+        android:rowCount="3">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/send_money_tex"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/receive_money_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/transactions_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/exchange_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/all_transactions_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/gifts_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/refund_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/offers_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab9"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="PARA GONDER"
+                android:src="@drawable/send_money"
+                app:backgroundTint="#00FFFFFF"
+                app:fabCustomSize="80dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/menu_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Para Gönder"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fab9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </GridLayout>
+    <!--
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/send_money_btn_container"
-        android:layout_width="107dp"
-        android:layout_height="74dp"
+        android:id="@+id/cons1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="24dp"
-        android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dots_indicator">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/send_money_btn"
-            android:layout_width="107dp"
-            android:layout_height="54dp"
-            android:background="@drawable/btn_style"
-            app:layout_constraintBottom_toTopOf="@+id/send_money_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="PARA GONDER"
+            android:src="@drawable/send_money"
+            app:backgroundTint="#00FFFFFF"
+            app:fabCustomSize="80dp"
 
-            <ImageView
-                android:id="@+id/send_money_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/send_money"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/send_money_text"
+            android:id="@+id/send_money_tex"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:fontFamily="@font/manrope_regular"
             android:text="Para Gönder"
             android:textAlignment="center"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/send_money_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/fab1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -143,7 +429,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/send_money_btn_container"
+        app:layout_constraintStart_toEndOf="@+id/cons1"
         app:layout_constraintTop_toBottomOf="@+id/dots_indicator">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -173,7 +459,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Para İste"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -219,7 +505,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Transferler"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -233,7 +519,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/send_money_btn_container">
+        app:layout_constraintTop_toBottomOf="@+id/cons1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/payments_btn"
@@ -262,7 +548,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Ödemeler"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -306,7 +592,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Döviz Kurları"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -351,7 +637,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Kampanyalar"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -394,7 +680,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Hediyeler"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -438,7 +724,7 @@
             android:fontFamily="@font/manrope_regular"
             android:text="Button"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -482,12 +768,12 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_regular"
             android:text="More"
-            android:textSize="16dp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/more_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

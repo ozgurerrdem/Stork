@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewPager);
-
+/*
         send_money_btn = (ConstraintLayout) view.findViewById(R.id.send_money_btn);
 
         send_money_btn.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity() , SendMoneyActivity.class));
             }
-        });
+        });*/
 
 
 
