@@ -20,6 +20,7 @@ import com.example.stork.Activity.SendMoneyActivity;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class HomeFragment extends Fragment {
 
     private ViewPager2 viewPager2;
     private ImageView cardView;
-    private ConstraintLayout send_money_btn;
+    private FloatingActionButton send_money_btn;
 
 
     public HomeFragment() {
@@ -44,15 +45,15 @@ public class HomeFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewPager);
-/*
-        send_money_btn = (ConstraintLayout) view.findViewById(R.id.send_money_btn);
+
+        send_money_btn = view.findViewById(R.id.fab1);
 
         send_money_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity() , SendMoneyActivity.class));
             }
-        });*/
+        });
 
 
 
