@@ -1,8 +1,8 @@
 package com.example.stork.API.RequestWireToName;
 
 import com.example.stork.API.RequestWireToName.Request.Request;
+import com.example.stork.API.RequestWireToName.Response.Response;
 
-import okhttp3.Response;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;

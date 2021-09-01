@@ -48,4 +48,11 @@ public class Header {
     public void setChannelRequestId(String channelRequestId) {
         this.channelRequestId = channelRequestId;
     }
+
+    public Header(String appKey, String channel, String channelSessionId, String channelRequestId) {
+        this.appKey = appKey;
+        this.channel = channel;
+        this.channelSessionId = channelSessionId;
+        this.channelRequestId = channelRequestId;
+    }
 }
