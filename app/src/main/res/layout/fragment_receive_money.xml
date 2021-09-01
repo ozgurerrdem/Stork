@@ -50,7 +50,7 @@
             android:layout_height="46dp"
             android:layout_marginStart="17dp"
             android:background="@drawable/edit_text_style"
-            android:fontFamily="@font/manrope_regular"
+            android:fontFamily="@font/poppins_regular"
             android:gravity="center"
             android:hint="İsim veya mail giriniz"
             android:textColorHint="#30000000"
