@@ -1,5 +1,9 @@
 package com.example.stork.Database;
 
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+
 import com.example.stork.Database.Models.SavedTransaction;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,34 +20,64 @@ public class DatabaseUtil {
     private FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
     private ArrayList<SavedTransaction> result = new ArrayList<>();
 
-    public ArrayList<SavedTransaction> returnTheList(){
-        return result;
+    public void readData(MyCallback myCallback) {
+        DatabaseReference reference = rootNode.getReference("SavedTransactions");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            String to_send = "";
+            List<SavedTransaction> transactions = new ArrayList<>();
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot transaction : dataSnapshot.getChildren()){
+                    SavedTransaction to_push = new SavedTransaction(transaction.child("receiverName").getValue(String.class),
+                            transaction.child("receiverIBAN").getValue(String.class),
+                            transaction.child("amount").getValue(String.class),
+                            transaction.child("explanation").getValue(String.class));
+                    transactions.add(to_push);
+
+                    //to_send += transactions.child("amount").getValue(String.class);
+                    //to_send += " ";
+                }
+
+                myCallback.onCallback(transactions);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
     }
 
     /**
      * @return List of the all transactions on the database.
      */
     public ArrayList<SavedTransaction> getSavedTransactions(){
-        /* Set the reference to saved transactions database.
+        //Set the reference to saved transactions database.
         DatabaseReference reference = rootNode.getReference("SavedTransactions");
-        @Override
-        public void onChange(DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot ds: dataSnapshot.getChildren()) {
-                    SavedTransaction to_push = new SavedTransaction(ds.child("receiverName").getValue(String.class),
-                            ds.child("receiverIBAN").getValue(String.class),
-                            ds.child("amount").getValue(String.class),
-                            ds.child("explanation").getValue(String.class));
-                    result.add(to_push);
-                }
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // this method is call to get the realtime
+                // updates in the data.
+                // this method is called when the data is
+                // changed in our Firebase console.
+                // below line is for getting the data from
+                // snapshot of our database.
+                String value = snapshot.getValue(String.class);
 
+                // after getting the value we are setting
+                // our value to our text view in below line.
+                System.out.println(value);
+            }
 
-        }
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // calling on cancelled method when we receive
+                // any error or we are not able to get the data.
+                //Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        }*/
-        return result;
+        return new ArrayList<>();
     }
 
     /**
