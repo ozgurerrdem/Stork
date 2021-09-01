@@ -1,11 +1,9 @@
 package com.example.stork;
 
 
-import com.example.stork.ProcessEftRequestToIban.Request.SourceAccount;
-import com.google.gson.annotations.SerializedName;
+import com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class MockAccount implements Serializable {
 

@@ -14,11 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.stork.AccList.Response.Data;
 import com.example.stork.Adapter.CardAdapter;
-import com.example.stork.Database.DatabaseUtil;
-import com.example.stork.Database.Models.SavedTransaction;
-import com.example.stork.Database.MyCallback;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
