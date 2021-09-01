@@ -42,7 +42,6 @@ public class MockAccount implements Serializable {
         return password;
     }
 
-
     public SourceAccount getSourceAccount() {
         return sourceAccount;
     }
