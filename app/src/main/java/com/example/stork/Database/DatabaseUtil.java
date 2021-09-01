@@ -24,9 +24,11 @@ public class DatabaseUtil {
      * @return List of the all transactions on the database.
      */
     public ArrayList<SavedTransaction> getSavedTransactions(){
-        /* Set the reference to saved transactions database. */
+        /* Set the reference to saved transactions database.
         DatabaseReference reference = rootNode.getReference("SavedTransactions");
-/*
+        @Override
+        public void onChange(DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
                     SavedTransaction to_push = new SavedTransaction(ds.child("receiverName").getValue(String.class),
                             ds.child("receiverIBAN").getValue(String.class),
@@ -35,12 +37,12 @@ public class DatabaseUtil {
                     result.add(to_push);
                 }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });*/
+        }
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
 
+        }*/
         return result;
     }
 
