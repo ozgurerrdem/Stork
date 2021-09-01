@@ -29,9 +29,8 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private ViewPager2 viewPager2;
     private ImageView cardView;
-    private FloatingActionButton send_money_btn;
+    private final FloatingActionButton[] buttons = new FloatingActionButton[9];
 
 
     public HomeFragment() {
@@ -44,18 +43,89 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
-        viewPager2 = (ViewPager2) view.findViewById(R.id.viewPager);
+        ViewPager2 viewPager2 = (ViewPager2) view.findViewById(R.id.viewPager);
 
-        send_money_btn = view.findViewById(R.id.fab1);
+        buttons[0] = view.findViewById(R.id.fab1);
 
-        send_money_btn.setOnClickListener(new View.OnClickListener() {
+        buttons[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity() , SendMoneyActivity.class));
             }
         });
 
+        buttons[1] = view.findViewById(R.id.fab2);
 
+        buttons[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO ReceiveMoney Fragment
+            }
+        });
+
+        buttons[2] = view.findViewById(R.id.fab3);
+
+        buttons[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Odmeler Fragment
+            }
+        });
+
+
+        buttons[3] = view.findViewById(R.id.fab4);
+
+        buttons[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Doviz Fragment
+            }
+        });
+
+        buttons[4] = view.findViewById(R.id.fab5);
+
+        buttons[4].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Transactions Fragment
+            }
+        });
+
+        buttons[5] = view.findViewById(R.id.fab6);
+
+        buttons[5].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Gifts Fragment
+            }
+        });
+
+        buttons[6] = view.findViewById(R.id.fab7);
+
+        buttons[6].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Refund Fragment
+            }
+        });
+
+        buttons[7] = view.findViewById(R.id.fab8);
+
+        buttons[7].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Offer Fragment
+            }
+        });
+
+        buttons[8] = view.findViewById(R.id.fab9);
+
+        buttons[8].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Menu Fragment
+            }
+        });
 
         List<CardModel> cardModels = new ArrayList<>();
 

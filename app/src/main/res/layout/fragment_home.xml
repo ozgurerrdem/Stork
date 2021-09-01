@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_screen"
+    android:background="@color/main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.HomeFragment">
@@ -20,11 +21,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:background="#F5F5F5"
+            android:background="@color/main_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:backgroundTint="#F5F5F5"
+            android:backgroundTint="@color/main_background"
             app:srcCompat="@drawable/setting_icon_36" />
 
         <ImageButton
@@ -33,7 +34,7 @@
             android:layout_height="54dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="#F5F5F5"
+            android:background="@color/main_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/avatar" />
@@ -43,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
-            android:background="#F5F5F5"
+            android:background="@color/main_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -111,9 +112,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/send_money"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -143,9 +143,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/receive_money_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -175,9 +174,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/payments_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -206,9 +204,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/currencies_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -238,9 +235,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/transactions_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -270,9 +266,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/gifts_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -301,9 +296,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/bank_building"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -333,9 +327,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/campaign_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -365,9 +358,8 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/menu_24"
-                app:backgroundTint="#00FFFFFF"
                 app:fabCustomSize="80dp"
-
+                app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
