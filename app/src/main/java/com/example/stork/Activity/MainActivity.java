@@ -41,15 +41,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /* Test
-        DatabaseUtil db = new DatabaseUtil();
-        db.readData(new MyCallback() {
-            @Override
-            public void onCallback(List<SavedTransaction> transactions) {
-                System.out.println(transactions.get(0).getAmount() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getReceiverName() + " ");
-            }
-        });
-         */
+
+        //Test
+        BackendTest test = new BackendTest();
+        test.run();
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -85,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager2.setPageTransformer(compositePageTransformer);
-
-
 
 
     }

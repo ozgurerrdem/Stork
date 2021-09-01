@@ -1,7 +1,5 @@
 package com.example.stork.Database;
 
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 
 import com.example.stork.Database.Models.SavedTransaction;
@@ -20,7 +18,7 @@ public class DatabaseUtil {
     private FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
     private ArrayList<SavedTransaction> result = new ArrayList<>();
 
-    public void readData(MyCallback myCallback) {
+    public void readData(CallWrapper myCallback) {
         DatabaseReference reference = rootNode.getReference("SavedTransactions");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             String to_send = "";
@@ -38,7 +36,7 @@ public class DatabaseUtil {
                     //to_send += " ";
                 }
 
-                myCallback.onCallback(transactions);
+                myCallback.readDataCallback(transactions);
             }
 
             @Override
