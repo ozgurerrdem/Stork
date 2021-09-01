@@ -14,7 +14,11 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.stork.AccList.Response.Data;
 import com.example.stork.Adapter.CardAdapter;
+import com.example.stork.Database.DatabaseUtil;
+import com.example.stork.Database.Models.SavedTransaction;
+import com.example.stork.Database.MyCallback;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /* Test
+        DatabaseUtil db = new DatabaseUtil();
+        db.readData(new MyCallback() {
+            @Override
+            public void onCallback(List<SavedTransaction> transactions) {
+                System.out.println(transactions.get(0).getAmount() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getReceiverName() + " ");
+            }
+        });
+         */
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
