@@ -143,13 +143,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <ImageButton
+    <Button
         android:id="@+id/registered_adress_text"
         android:layout_width="139dp"
         android:layout_height="38dp"
         android:layout_marginStart="55dp"
-        android:background="@drawable/kayitli"
-        android:text=""
+        android:layout_marginTop="25dp"
+        android:background="@drawable/gradient_orange"
+        android:gravity="center"
+        android:text="Kayıtlı Alıcılar"
+        android:textColor="@color/white"
         android:textSize="12dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
@@ -157,18 +160,18 @@
         app:layout_constraintTop_toBottomOf="@+id/send_money_toolbar"
         app:layout_constraintVertical_bias="0.695" />
 
-    <ImageButton
+    <Button
         android:id="@+id/new_adress"
         android:layout_width="139dp"
         android:layout_height="38dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/yenialici"
+        android:background="@drawable/btn_round_white"
         android:clickable="true"
         android:gravity="center"
         android:minHeight="48dp"
         android:text="Yeni Alıcı"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="12dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"

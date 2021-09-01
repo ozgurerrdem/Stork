@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
@@ -16,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.stork.Activity.ReceiveMoneyActivity;
 import com.example.stork.Activity.SendMoneyActivity;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Model.CardModel;
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO ReceiveMoney Fragment
+               startActivity(new Intent(getActivity(), ReceiveMoneyActivity.class));
             }
         });
 
