@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          */
-        /* ProcessScheduledTransactionForIbanEft*/
-        Header header = new Header();
-
-        Request request = new Request();
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
