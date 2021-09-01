@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/edit_text_style.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/edit_white.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/gradient_orange.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/login_gradient.xml" value="0.2552083333333333" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/selected_background.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/activity_login.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/activity_main.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/activity_receive_money.xml" value="0.22" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/activity_send_bank.xml" value="0.13680555555555557" />
