@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/drawable/edit_text_style.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/activity_receive_money.xml" value="0.22" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/fragment_receive_money.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/rece.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/recycler_item.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
