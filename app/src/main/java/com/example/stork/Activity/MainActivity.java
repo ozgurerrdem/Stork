@@ -14,6 +14,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.stork.API.ProcessScheduledTransactionForIbanEft.Request.Header;
+import com.example.stork.API.ProcessScheduledTransactionForIbanEft.Request.Request;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
@@ -40,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          */
+        /* ProcessScheduledTransactionForIbanEft*/
+        Header header = new Header();
+
+        Request request = new Request();
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
