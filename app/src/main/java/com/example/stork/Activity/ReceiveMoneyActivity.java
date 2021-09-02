@@ -7,14 +7,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.stork.Adapter.RecyclerAdapter;
-import com.example.stork.FriendData;
+import com.example.stork.Database.CallWrapperCustomer;
+import com.example.stork.Database.DatabaseUtil;
+import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReceiveMoneyActivity extends AppCompatActivity {
 
-    private ArrayList<FriendData> friendDataArrayList;
+    private ArrayList<SavedCustomer> savedList;
     private RecyclerView rview;
     private RecyclerAdapter adapter;
 
@@ -23,23 +26,23 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_money);
 
-        friendDataArrayList = new ArrayList<>();
+        savedList = new ArrayList<>();
         rview = findViewById(R.id.recycler);
-        adapter = new RecyclerAdapter(friendDataArrayList, this);
+        adapter = new RecyclerAdapter(savedList, this);
 
         rview.setHasFixedSize(true);
         rview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rview.setAdapter(adapter);
-        friendDataArrayList.add(new FriendData("Emre"));
-        friendDataArrayList.add(new FriendData("Yigit"));
-        friendDataArrayList.add(new FriendData("Duygu"));
-        friendDataArrayList.add(new FriendData("Kutay"));
-        friendDataArrayList.add(new FriendData("Vahid"));
-        friendDataArrayList.add(new FriendData("Yilan"));
-        friendDataArrayList.add(new FriendData("Burak"));
-        friendDataArrayList.add(new FriendData("Busra"));
-        friendDataArrayList.add(new FriendData("Ozgur"));
-        friendDataArrayList.add(new FriendData("Vahid"));
+
+        DatabaseUtil db = new DatabaseUtil();
+        db.readCustomerData(new CallWrapperCustomer() {
+            @Override
+            public void readCustomerDataCallback(List<SavedCustomer> customers) {
+                for(SavedCustomer sc : customers){
+                    savedList.add(new SavedCustomer(sc.getName(),sc.getIBAN()));
+                }
+            }
+        });
         adapter.notifyDataSetChanged();
     }
 }
