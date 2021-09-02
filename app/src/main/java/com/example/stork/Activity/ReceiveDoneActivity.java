@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.stork.R;
 
-public class ReceiveDone extends AppCompatActivity {
+public class ReceiveDoneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
