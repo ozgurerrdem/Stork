@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
-            android:name=".Activity.ReceiveDone"
+            android:name=".Activity.SendDoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.PaymentsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ReceiveDoneActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.LoginActivity"

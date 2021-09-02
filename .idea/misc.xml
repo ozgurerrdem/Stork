@@ -18,6 +18,15 @@
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/rece.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/recycler_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/menu/bottom_menu.xml" value="0.24444444444444444" />
+        <entry key="app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.19930555555555557" />
+        <entry key="app/src/main/res/drawable/ic_baseline_description_24.xml" value="0.19930555555555557" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_payments.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_receive_done.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_send_done.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.23333333333333334" />
       </map>
     </option>
   </component>
