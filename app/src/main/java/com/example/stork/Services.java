@@ -11,6 +11,12 @@ public class Services {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
+    public Retrofit createExchangeRetrofit(){
+        return new Retrofit.Builder()
+                .baseUrl("http://api.exchangeratesapi.io/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
     public String getBankCode(String iban){
         return iban.substring(5,9);
     }
