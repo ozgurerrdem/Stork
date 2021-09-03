@@ -1,13 +1,22 @@
 package com.example.stork.Activity;
 
+import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
+import com.example.stork.API.GetRate.Request.Parameters;
+import com.example.stork.API.GetRate.Request.Request;
+import com.example.stork.API.GetRate.Response.Response;
+import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
 import com.example.stork.Database.CallWrapperTransaction;
+import com.example.stork.Services;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class BackendTest {
 
@@ -15,7 +24,9 @@ public class BackendTest {
 
     public void run() {
 
-        //First test.
+        GetDailyCurrencyRate();
+
+     /*   //First test.
         readCustomersFromDatabaseTest();
         int i= 0;
         System.out.println("SİZEAAA:" + customersa.size());
@@ -24,7 +35,30 @@ public class BackendTest {
             System.out.println(customersa.get(i).getName() + " " + customersa.get(i).getIBAN());
             i++;
         }
+*/
+    }
 
+    private void GetDailyCurrencyRate() {
+        Services services = new Services();
+        Header header = new Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
+        Parameters params = new Parameters();
+        Request request = new Request(header,params);
+        GetCurrencyRatesForSpecificDay RetrofitClient =services.createRetrofit().create(GetCurrencyRatesForSpecificDay.class);
+        Call<Response> res = RetrofitClient.GetPostValue(request);
+        res.enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+
+                System.out.println("HTTP KODU --> "+response.code());
+
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+
+            }
+
+        });
     }
 
     public void addCustomerToDatabaseTest(){
