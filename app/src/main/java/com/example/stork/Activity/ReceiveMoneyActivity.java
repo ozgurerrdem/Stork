@@ -22,6 +22,7 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
     private RecyclerView rview;
     private RecyclerAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +37,12 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
             }
         });
 
-        rview.setHasFixedSize(true);
         rview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rview.setAdapter(adapter);
-
-
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
         DatabaseUtil db = new DatabaseUtil();
         db.readCustomerData(new CallWrapperCustomer() {
             @Override
@@ -52,4 +54,5 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
             }
         });
     }
+
 }
