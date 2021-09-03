@@ -1,10 +1,12 @@
 package com.example.stork.Activity;
 
-import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
+/*import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
 import com.example.stork.API.GetRate.Request.Parameters;
 import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
+import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
+import com.example.stork.API.ExchangeRateApi.*;
+import com.example.stork.API.ExchangeRateApi.Response.Response;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
@@ -24,7 +26,22 @@ public class BackendTest {
 
     public void run() {
 
-        GetDailyCurrencyRate();
+        Services services = new Services();
+        ExchangeRateApi RetrofitClient =services.createExchangeRetrofit().create(ExchangeRateApi.class);
+        Call<Response> res = RetrofitClient.GetCurrencyValues();
+        res.enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+
+                System.out.println("HTTP KODU --> "+response.code());
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+
+            }
+
+        });
 
      /*   //First test.
         readCustomersFromDatabaseTest();
@@ -39,7 +56,7 @@ public class BackendTest {
     }
 
     private void GetDailyCurrencyRate() {
-        Services services = new Services();
+        /*Services services = new Services();
         Header header = new Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
         Parameters params = new Parameters();
         Request request = new Request(header,params);
@@ -58,7 +75,7 @@ public class BackendTest {
 
             }
 
-        });
+        });*/
     }
 
     public void addCustomerToDatabaseTest(){
@@ -111,6 +128,9 @@ public class BackendTest {
                 }
             }
         });*/
+    }
+    public void controlExchangeRate(){
+
     }
 
     /**
