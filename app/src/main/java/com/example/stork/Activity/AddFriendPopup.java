@@ -32,9 +32,11 @@ public class AddFriendPopup extends AppCompatActivity {
                 if (!nameStr.equals("") && !ibanStr.equals("")){
                     DatabaseUtil db = new DatabaseUtil();
                     db.addSavedCustomer(new SavedCustomer(nameStr,ibanStr,"https://i2.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1"));
+                    finish();
                 } else {
                     Toast.makeText(AddFriendPopup.this, "Gerekli Alanlari Doldurunuz", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
