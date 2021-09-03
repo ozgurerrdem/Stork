@@ -40,15 +40,16 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
         rview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rview.setAdapter(adapter);
 
+
         DatabaseUtil db = new DatabaseUtil();
         db.readCustomerData(new CallWrapperCustomer() {
             @Override
             public void readCustomerDataCallback(List<SavedCustomer> customers) {
                 for(SavedCustomer sc : customers){
                     savedList.add(new SavedCustomer(sc.getName(),sc.getIBAN(),sc.getPhotoLink()));
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
-        adapter.notifyDataSetChanged();
     }
 }
