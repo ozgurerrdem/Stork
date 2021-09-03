@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Stork">
         <activity
             android:name=".Activity.AddFriendPopup"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"
             android:exported="true" />
         <activity
             android:name=".Activity.SendDoneActivity"

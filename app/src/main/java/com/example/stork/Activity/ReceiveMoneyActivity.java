@@ -4,7 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stork.Adapter.RecyclerAdapter;
@@ -21,6 +30,7 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
     private ArrayList<SavedCustomer> savedList;
     private RecyclerView rview;
     private RecyclerAdapter adapter;
+    private TextView textView;
 
 
     @Override
@@ -29,6 +39,7 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receive_money);
 
         savedList = new ArrayList<>();
+        textView = findViewById(R.id.textView10);
         rview = findViewById(R.id.recycler);
         adapter = new RecyclerAdapter(savedList, this, new RecyclerAdapter.OnItemClickListener() {
             @Override
@@ -39,11 +50,21 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
 
         rview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rview.setAdapter(adapter);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReceiveMoneyActivity.this, AddFriendPopup.class));
+            }
+        });
+
+
     }
     @Override
     protected void onResume() {
         super.onResume();
         DatabaseUtil db = new DatabaseUtil();
+        savedList.clear();
         db.readCustomerData(new CallWrapperCustomer() {
             @Override
             public void readCustomerDataCallback(List<SavedCustomer> customers) {
