@@ -45,7 +45,7 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
             @Override
             public void readCustomerDataCallback(List<SavedCustomer> customers) {
                 for(SavedCustomer sc : customers){
-                    savedList.add(new SavedCustomer(sc.getName(),sc.getIBAN()));
+                    savedList.add(new SavedCustomer(sc.getName(),sc.getIBAN(),sc.getPhotoLink()));
                 }
             }
         });

@@ -88,13 +88,6 @@ public class DatabaseUtil {
     }
 
 
-
-
-
-
-
-
-
     public void readCustomerData(CallWrapperCustomer myCallback) {
         DatabaseReference reference = rootNode.getReference("SavedCustomers");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -104,7 +97,8 @@ public class DatabaseUtil {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot customer : dataSnapshot.getChildren()){
                     SavedCustomer to_push = new SavedCustomer(customer.child("name").getValue(String.class),
-                                                                customer.child("iban").getValue(String.class));
+                                                                customer.child("iban").getValue(String.class),
+                            customer.child("photoLink").getValue(String.class));
                     customers.add(to_push);
                 }
 
