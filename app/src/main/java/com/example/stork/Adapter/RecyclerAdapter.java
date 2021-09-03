@@ -15,12 +15,18 @@ import com.example.stork.R;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+    public interface OnItemClickListener {
+        void onItemClick(SavedCustomer item);
+    }
+
     private final ArrayList<SavedCustomer> SavedCustomerArrayList;
+    OnItemClickListener listener;
     private final Context context;
 
-    public RecyclerAdapter(ArrayList<SavedCustomer> list, Context context) {
+    public RecyclerAdapter(ArrayList<SavedCustomer> list, Context context, OnItemClickListener listener) {
         this.SavedCustomerArrayList = list;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -32,8 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
         SavedCustomer data = SavedCustomerArrayList.get(position);
-        holder.name.setText(data.getName());
-        holder.iban.setText(data.getIBAN());
+        holder.bind(SavedCustomerArrayList.get(position),listener);
     }
 
     @Override
@@ -49,6 +54,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             super(itemView);
             name = itemView.findViewById(R.id.textView);
             iban = itemView.findViewById(R.id.textView2);
+        }
+        public void bind(final SavedCustomer item, final OnItemClickListener listener) {
+            name.setText(item.getName());
+            iban.setText(item.getIBAN());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    listener.onItemClick(item);
+                }
+            });
         }
     }
 }
