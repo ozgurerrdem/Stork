@@ -65,6 +65,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public void bind(final SavedCustomer item, final OnItemClickListener listener) {
             name.setText(item.getName());
             iban.setText(item.getIBAN());
+            // TODO change to item.getLink()
             new DownloadImageTask(avatar)
                     .execute("https://i2.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1");
             itemView.setOnClickListener(new View.OnClickListener() {
