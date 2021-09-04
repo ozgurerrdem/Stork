@@ -1,14 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.tab2">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.tab2"
+    android:background="#F5F5F5"
+    >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/hesabim_textt"
+                android:layout_width="70dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="sans-serif"
+                android:text="HESABIM"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/hesabim_spinnerr"
+                android:layout_width="316dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginEnd="57dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hesabim_textt" />
+
+            <TextView
+                android:id="@+id/iban_textt"
+                android:layout_width="122dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="ALICI BANKA"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hesabim_spinnerr" />
+
+            <Spinner
+                android:id="@+id/iban_editt"
+                android:layout_width="316dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="8dp"
+                android:paddingTop="3dp"
+                android:text="TR"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iban_textt">
+
+            </Spinner>
+
+            <TextView
+                android:id="@+id/aliciad_textt"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="ŞUBE"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iban_editt"></TextView>
+
+            <Spinner
+                android:id="@+id/aliciad_editt"
+                android:layout_width="317dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aliciad_textt"></Spinner>
+
+            <TextView
+                android:id="@+id/hesap_numara"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="HESAP NUMARASI"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aliciad_editt"></TextView>
+
+            <EditText
+                android:id="@+id/hesapno_editt"
+                android:layout_width="317dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hesap_numara"></EditText>
+
+            <TextView
+                android:id="@+id/aciklama_textt"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="ALICI AD SOYAD"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hesapno_editt"></TextView>
+
+            <EditText
+                android:id="@+id/aciklama_editt"
+                android:layout_width="317dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_textt"></EditText>
+
+            <TextView
+                android:id="@+id/gonderilecek_textt"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="GÖNDERİLECEK MİKTAR"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_editt"></TextView>
+
+            <EditText
+                android:id="@+id/gonderilecek_editt"
+                android:layout_width="241dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gonderilecek_textt"></EditText>
+
+            <TextView
+                android:id="@+id/gonderilecek"
+                android:layout_width="70dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/gonderilecek_editt"
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_editt"></TextView>
+
+            <TextView
+                android:id="@+id/aciklama_text"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="18dp"
+                android:text="AÇIKLAMA"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gonderilecek"></TextView>
+
+            <EditText
+                android:id="@+id/aciklama_edit"
+                android:layout_width="241dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="49dp"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_text"></EditText>
+
+            <CheckBox
+                android:id="@+id/chechBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="214dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="44dp"
+                android:text="Kayıtlı Alıcılara Ekle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_edit"></CheckBox>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="193dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/gradient_orange"
+                android:paddingLeft="70dp"
+                android:paddingTop="15dp"
+                android:text="GÖNDER"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chechBox">
+
+            </Button>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
