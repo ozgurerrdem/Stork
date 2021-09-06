@@ -46,4 +46,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.2.1'
     implementation 'com.tbuonomo:dotsindicator:4.2'
     implementation 'com.airbnb.android:lottie:4.1.0'
+
 }
