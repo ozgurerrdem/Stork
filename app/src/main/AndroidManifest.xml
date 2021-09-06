@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
+            android:name=".Activity.IntroActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="true" />
         <activity
@@ -49,7 +52,7 @@
             android:name=".Activity.MyCardsActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.IntroActivity"
+            android:name=".Activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
