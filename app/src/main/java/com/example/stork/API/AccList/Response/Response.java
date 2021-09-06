@@ -11,6 +11,9 @@ public class Response {
     @Expose
     public Data data;
 
+    @SerializedName("Error")
+    public Error error;
+
     public String get$type() {
         return $type;
     }

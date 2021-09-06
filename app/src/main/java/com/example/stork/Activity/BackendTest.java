@@ -5,10 +5,13 @@ import com.example.stork.API.GetRate.Request.Parameters;
 import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
-import com.example.stork.API.ExchangeRateApi.*;
 
+import com.example.stork.API.AccList.GetAccList;
+import com.example.stork.API.AccList.Request.Parameters;
+import com.example.stork.API.AccList.Request.Request;
+import com.example.stork.API.AccList.Response.Response;
 import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
-import com.example.stork.API.GetRate.Response.Response;
+import com.example.stork.API.GetReceiptData.Request.Header;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
@@ -28,37 +31,37 @@ public class BackendTest {
 
     public void run() {
 
-
-
         Services services = new Services();
-        GetCurrencyRatesForSpecificDay RetrofitClient = services.createExchangeRetrofit().create(GetCurrencyRatesForSpecificDay.class);
-        Call<Response> res = RetrofitClient.GetPostValue();
-        res.enqueue(new Callback<Response>() {
+        com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
+        Parameters params = new Parameters();
+        params.customerNo = "18";
+        Request request = new Request(header, params);
+
+        GetAccList retrofit = services.createRetrofit().create(GetAccList.class);
+        Call<com.example.stork.API.AccList.Response.Response> result = retrofit.GetPostValue(request);
+        result.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-
-                System.out.println("Currency --> "+ response.body().result.data.get(0).name + "kUR: "+response.body().result.data.get(0).rate.toString()  );
-
+                for(int i=0; i<response.body().getData().accountList.size(); i++){
+                    System.out.println(response.body().getData().accountList.get(i).accountName);
+                    System.out.println(response.body().getData().accountList.get(i).currencyCode);
+                    System.out.println(response.body().getData().accountList.get(i).accountSuffix);
+                    System.out.println(response.body().getData().accountList.get(i).branchCode);
+                    System.out.println(response.body().getData().accountList.get(i).amountOfBalance);
+                    System.out.println("***************************");
+                }
+                //System.out.println("Response:" + response.body().getData().accountList.toString());
             }
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-                System.out.println("HATAAAAAAAAAAAAAA");
-
+                System.out.println("Hatalı.");
             }
-
         });
 
-     /*   //First test.
-        readCustomersFromDatabaseTest();
-        int i= 0;
-        System.out.println("SİZEAAA:" + customersa.size());
-        for(SavedCustomer sc : customersa){
-            System.out.print(i + ":");
-            System.out.println(customersa.get(i).getName() + " " + customersa.get(i).getIBAN());
-            i++;
-        }
-*/
+
+
+
     }
 
     private void GetDailyCurrencyRate() {

@@ -1,6 +1,5 @@
 package com.example.stork.API.GetRate;
 
-import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 
 import retrofit2.Call;
