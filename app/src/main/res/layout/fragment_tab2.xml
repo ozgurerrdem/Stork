@@ -10,7 +10,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
-        android:id="@+id/scrollView3"
+        android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -87,7 +87,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iban_editt"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/iban_editt" />
 
             <Spinner
                 android:id="@+id/aliciad_editt"
@@ -101,7 +101,7 @@
                 android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aliciad_textt"></Spinner>
+                app:layout_constraintTop_toBottomOf="@+id/aliciad_textt" />
 
             <TextView
                 android:id="@+id/hesap_numara"
@@ -113,7 +113,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aliciad_editt"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/aliciad_editt" />
 
             <EditText
                 android:id="@+id/hesapno_editt"

@@ -57,8 +57,6 @@ public class ReceiveMoneyActivity extends AppCompatActivity {
                 startActivity(new Intent(ReceiveMoneyActivity.this, AddFriendPopup.class));
             }
         });
-
-
     }
     @Override
     protected void onResume() {
