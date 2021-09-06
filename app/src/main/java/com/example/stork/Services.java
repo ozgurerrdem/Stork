@@ -13,7 +13,7 @@ public class Services {
     }
     public Retrofit createExchangeRetrofit(){
         return new Retrofit.Builder()
-                .baseUrl("http://api.exchangeratesapi.io/v1/")
+                .baseUrl("https://api.collectapi.com/economy/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

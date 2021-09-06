@@ -5,8 +5,9 @@ import com.example.stork.API.GetRate.Request.Parameters;
 import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
-import com.example.stork.API.ExchangeRateApi.*;
-import com.example.stork.API.ExchangeRateApi.Response.Response;
+
+import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
+import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
@@ -26,18 +27,20 @@ public class BackendTest {
 
     public void run() {
 
+
+
         Services services = new Services();
-        ExchangeRateApi RetrofitClient =services.createExchangeRetrofit().create(ExchangeRateApi.class);
-        Call<Response> res = RetrofitClient.GetCurrencyValues();
+        GetCurrencyRatesForSpecificDay RetrofitClient = services.createExchangeRetrofit().create(GetCurrencyRatesForSpecificDay.class);
+        Call<Response> res = RetrofitClient.GetPostValue();
         res.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-
-                System.out.println("HTTP KODU --> "+response.code());
+                System.out.println("Currency --> "+ response.body().result.data.get(0).name + "kUR: "+response.body().result.data.get(0).rate.toString()  );
             }
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
+                System.out.println("HATAAAAAAAAAAAAAA"  );
 
             }
 
