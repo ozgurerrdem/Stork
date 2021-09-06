@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.stork.Fragment.tab1;
-import com.example.stork.Fragment.tab2;
+import com.example.stork.Fragment.IBANTransferFragment;
+import com.example.stork.Fragment.CardTransferFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
     private int numoftabs;
@@ -21,9 +21,9 @@ public class PageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new tab1();
+                return new IBANTransferFragment();
             case 1:
-                return new tab2();
+                return new CardTransferFragment();
             default:
                 return null;
         }
