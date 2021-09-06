@@ -1,15 +1,13 @@
 package com.example.stork.API.GetRate.Response;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Response {
-    @SerializedName("Data")
+    @SerializedName("success")
     @Expose
-    public Data data;
-
-    public Data getData() {
-        return data;
-    }
+    public Boolean success;
+    @SerializedName("result")
+    @Expose
+    public Result result;
 }
