@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_constraintBottom_toTopOf="parent"
     android:orientation="vertical"
+    android:background="#f5f5f5"
     tools:context=".Activity.MoneyTransferActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,7 +50,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Tab1"
+            android:id="@+id/group_payments_tab1"
             android:text="Gruplarım"
 
             >
@@ -58,14 +59,14 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Tab2"
+            android:id="@+id/group_payments_tab2"
             android:text="Yeni Grup Yarat"
             >
 
         </com.google.android.material.tabs.TabItem>
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/ViewPager"
+        android:id="@+id/group_payments_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

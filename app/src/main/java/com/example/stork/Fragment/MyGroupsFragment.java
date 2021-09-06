@@ -1,13 +1,16 @@
 package com.example.stork.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.stork.Activity.GroupDetailsActivity;
 import com.example.stork.R;
 
 /**
@@ -16,6 +19,8 @@ import com.example.stork.R;
  * create an instance of this fragment.
  */
 public class MyGroupsFragment extends Fragment {
+
+    private CardView group_payments1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +66,17 @@ public class MyGroupsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_groups, container, false);
+       View view = inflater.inflate(R.layout.fragment_my_groups, container, false);
+       group_payments1 = (CardView) view.findViewById(R.id.group_payments_1);
+
+       group_payments1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               startActivity(new Intent(getActivity(), GroupDetailsActivity.class));
+           }
+       });
+
+       return view;
+
     }
 }

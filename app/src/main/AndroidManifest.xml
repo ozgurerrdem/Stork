@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
+            android:name=".Activity.GroupPayDoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.SendAnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.GroupDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.GroupPaymentsActivity"
             android:exported="true" />
         <activity
