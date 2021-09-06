@@ -8,14 +8,41 @@
     android:orientation="vertical"
     tools:context=".Activity.MoneyTransferActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="411dp"
+        android:layout_height="72dp">
 
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_36" />
+
+        <TextView
+            android:id="@+id/group_payments_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grup Ödemeleri"
+            android:textSize="24dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="72dp"
         android:id="@+id/group_payments_tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabBackground="@drawable/bank_transfer_tab"
+        app:tabBackground="@drawable/group_payments_tab"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/black"
         >
@@ -23,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Tab1"
-            android:text="Iban ile"
+            android:text="Gruplarım"
 
             >
 
@@ -32,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Tab2"
-            android:text="Hesap No ile"
+            android:text="Yeni Grup Yarat"
             >
 
         </com.google.android.material.tabs.TabItem>
@@ -43,4 +70,8 @@
         android:layout_height="match_parent">
 
     </androidx.viewpager.widget.ViewPager>
+
+
+
+
 </LinearLayout>

@@ -22,20 +22,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:background="#F5F5F5"
+            android:backgroundTint="#F5F5F5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:backgroundTint="#F5F5F5"
             app:srcCompat="@drawable/back_36" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kartlarım"
-            android:textSize="24dp"
             android:fontFamily="@font/manrope_bold"
             android:letterSpacing="0.04"
+            android:text="Kartlarım"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

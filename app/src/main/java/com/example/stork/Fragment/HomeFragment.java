@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.stork.Activity.PaymentsActivity;
 import com.example.stork.Activity.ReceiveMoneyActivity;
 import com.example.stork.Activity.SendMoneyActivity;
 import com.example.stork.Adapter.CardAdapter;
@@ -68,7 +69,7 @@ public class HomeFragment extends Fragment {
         buttons[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Odmeler Fragment
+                startActivity(new Intent(getActivity(), PaymentsActivity.class));
             }
         });
 

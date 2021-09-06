@@ -22,7 +22,7 @@ public class MoneyTransferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_money_transfer);
 
 
-        tablayout=(TabLayout) findViewById(R.id.tablayout);
+        tablayout=(TabLayout) findViewById(R.id.group_payments_tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);
         tab2=(TabItem) findViewById(R.id.Tab2);
         viewpager=(ViewPager) findViewById(R.id.ViewPager);
