@@ -28,7 +28,7 @@
         <entry key="app/src/main/res/layout/activity_payments.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_receive_done.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_receive_money.xml" value="0.23333333333333334" />
-        <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_send_done.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.23333333333333334" />
