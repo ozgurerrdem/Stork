@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
+            android:name=".Activity.SendMoneyToFriendsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.IntroActivity"
             android:exported="true" />
         <activity

@@ -1,12 +1,11 @@
 package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.stork.PageAdapter;
+import com.example.stork.Adapter.PageAdapter;
 import com.example.stork.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
