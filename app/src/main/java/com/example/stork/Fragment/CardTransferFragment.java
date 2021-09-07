@@ -1,5 +1,7 @@
 package com.example.stork.Fragment;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.stork.Account;
+import com.example.stork.MockAccount;
 import com.example.stork.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +27,7 @@ import com.example.stork.R;
  * create an instance of this fragment.
  */
 public class CardTransferFragment extends Fragment {
+    private Spinner account;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +73,42 @@ public class CardTransferFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card_transfer, container, false);
+        View view = inflater.inflate(R.layout.fragment_card_transfer, container, false);
+        account = view.findViewById(R.id.hesabim_spinnerr);
+
+        List<String> categories = new ArrayList<String>();
+        categories.add("Automobile");
+        categories.add("Business Services");
+        categories.add("Computers");
+        categories.add("Education");
+        categories.add("Personal");
+        categories.add("Travel");
+
+
+
+        // Toast.makeText(getContext(), aclist.get(0).getIBANNo(), Toast.LENGTH_LONG).show();
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        account.setAdapter(dataAdapter);
+
+        account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // On selecting a spinner item
+                String item = adapterView.getItemAtPosition(i).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        return view;
     }
+
 }
