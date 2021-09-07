@@ -1,183 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.IBANTransferFragment"
-    android:background="#F5F5F5">
+    android:background="@color/main_background"
+    android:layout_marginBottom="28dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/hesabim_text"
-        android:layout_width="70dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="sans-serif"
-        android:text="HESABIM"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        tools:context=".Fragment.IBANTransferFragment">
 
-    <Spinner
-        android:id="@+id/hesabim_spinner"
-        android:layout_width="316dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginEnd="57dp"
-        android:background="@drawable/btn_round_white"
-        android:paddingStart="10dp"
-        android:paddingTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hesabim_text">
+        <TextView
+            android:id="@+id/hesabim_text"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="sans-serif"
+            android:text="HESABIM"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </Spinner>
+        <Spinner
+            android:id="@+id/hesabim_spinner"
+            android:layout_width="316dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="57dp"
+            android:background="@drawable/btn_round_white"
+            android:paddingStart="10dp"
+            android:paddingTop="8dp"
+            android:textAlignment="center"
+            android:theme="@style/SpinnerTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hesabim_text">
 
-    <TextView
-        android:id="@+id/iban_text"
-        android:layout_width="122dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="18dp"
-        android:text="IBAN NUMARASI"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hesabim_spinner">
+        </Spinner>
 
-    </TextView>
-    <EditText
-        android:id="@+id/iban_edit"
-        android:layout_width="316dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="49dp"
-        android:background="@drawable/btn_round_white"
-        android:paddingLeft="8dp"
-        android:paddingTop="3dp"
-        android:hint="TRXXXXXXXXXXXXXXXXXXXXXXXX"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iban_text">
+        <TextView
+            android:id="@+id/iban_text"
+            android:layout_width="122dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="18dp"
+            android:text="IBAN NUMARASI"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hesabim_spinner">
 
-    </EditText>
-    <TextView
-        android:id="@+id/aliciad_text"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="18dp"
-        android:text="ALICI AD SOYAD"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iban_edit">
+        </TextView>
 
-    </TextView>
-    <EditText
-        android:id="@+id/aliciad_edit"
-        android:layout_width="317dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginEnd="45dp"
-        android:background="@drawable/btn_round_white"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aliciad_text">
+        <EditText
+            android:id="@+id/iban_edit"
+            android:layout_width="316dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="49dp"
+            android:background="@drawable/btn_round_white"
+            android:hint="TRXXXXXXXXXXXXXXXXXXXXXXXX"
+            android:paddingLeft="8dp"
+            android:paddingTop="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iban_text">
 
-    </EditText>
-    <TextView
-        android:id="@+id/gonderilecek_text"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="18dp"
-        android:text="GÖNDERİLECEK MİKTAR"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aliciad_edit">
+        </EditText>
 
-    </TextView>
-    <EditText
-        android:id="@+id/gonderilecek_edit"
-        android:inputType="number"
-        android:layout_width="317dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="49dp"
-        android:background="@drawable/btn_round_white"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gonderilecek_text">
+        <TextView
+            android:id="@+id/aliciad_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="18dp"
+            android:text="ALICI AD SOYAD"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iban_edit">
 
-    </EditText>
+        </TextView>
 
-    <TextView
-        android:id="@+id/aciklama_text"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="18dp"
-        android:text="AÇIKLAMA"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gonderilecek_edit">
+        <EditText
+            android:id="@+id/aliciad_edit"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/btn_round_white"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aliciad_text">
 
-    </TextView>
-    <EditText
-        android:id="@+id/aciklama_edit"
-        android:layout_width="241dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="49dp"
-        android:background="@drawable/btn_round_white"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aciklama_text">
+        </EditText>
 
-    </EditText>
+        <TextView
+            android:id="@+id/gonderilecek_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="18dp"
+            android:text="GÖNDERİLECEK MİKTAR"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aliciad_edit">
 
-    <CheckBox
-        android:id="@+id/chechBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="214dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="44dp"
-        android:text="Kayıtlı Alıcılara Ekle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aciklama_edit">
+        </TextView>
 
-    </CheckBox>
+        <EditText
+            android:id="@+id/gonderilecek_edit"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="49dp"
+            android:background="@drawable/btn_round_white"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderilecek_text">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="193dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/gradient_orange"
-        android:text="GÖNDER"
-        android:paddingLeft="70dp"
-        android:paddingTop="15dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chechBox">
+        </EditText>
 
-    </Button>
+        <TextView
+            android:id="@+id/aciklama_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="18dp"
+            android:text="AÇIKLAMA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderilecek_edit">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </TextView>
+
+        <EditText
+            android:id="@+id/aciklama_edit"
+            android:layout_width="241dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="49dp"
+            android:background="@drawable/btn_round_white"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aciklama_text">
+
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/chechBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="214dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="44dp"
+            android:text="Kayıtlı Alıcılara Ekle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aciklama_edit">
+
+        </CheckBox>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="193dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/gradient_orange"
+            android:paddingLeft="70dp"
+            android:paddingTop="15dp"
+            android:text="GÖNDER"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chechBox">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

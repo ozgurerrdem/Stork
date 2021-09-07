@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stork.API.AccList.GetAccList;
@@ -24,6 +28,9 @@ import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.R;
 import com.example.stork.Services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -33,6 +40,7 @@ import retrofit2.Callback;
  * create an instance of this fragment.
  */
 public class IBANTransferFragment extends Fragment {
+    private Spinner account;
     private EditText iban;
     private EditText name;
     private EditText amount;
@@ -85,12 +93,41 @@ public class IBANTransferFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_iban_transfer, container, false);
+        account = view.findViewById(R.id.hesabim_spinner);
         iban = view.findViewById(R.id.iban_edit);
         name = view.findViewById(R.id.aliciad_edit);
         amount = view.findViewById(R.id.gonderilecek_edit);
         exp = view.findViewById(R.id.aciklama_edit);
         checkBox = view.findViewById(R.id.chechBox);
         button = view.findViewById(R.id.button);
+
+        List<String> categories = new ArrayList<String>();
+        categories.add("Automobile");
+        categories.add("Business Services");
+        categories.add("Computers");
+        categories.add("Education");
+        categories.add("Personal");
+        categories.add("Travel");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        account.setAdapter(dataAdapter);
+
+        account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // On selecting a spinner item
+                String item = adapterView.getItemAtPosition(i).toString();
+
+                // Showing selected spinner item
+                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,42 +139,7 @@ public class IBANTransferFragment extends Fragment {
                         DatabaseUtil db = new DatabaseUtil();
                         db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
                     }
-                    /* TODO Fonksiyonla bunu   */
-                    Services services = new Services();
-                    Parameters params = new Parameters();
-                    params.amount = Integer.valueOf(amount.getText().toString());
-                    params.explanation = exp.getText().toString();
-                    params.customerNo = 12695508;
-                    params.taxNumber = 0;
-                    params.iBANNumber = iban.getText().toString();
-                    SourceAccount source = new SourceAccount();
-                    source.accountSuffix = 352;
-                    source.branchCode = 4420;
-                    source.currencyCode = "TRY";
-                    source.customerNo = 12695508;
-                    params.sourceAccount = source;
-
-                    params.receiverName = name.getText().toString();
-                    params.forceDuplicate = true;
-                    Header header = new Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
-
-                    Request request = new Request(header, params);
-
-                    RequestWireToIban retrofit = services.createRetrofit().create(RequestWireToIban.class);
-                    Call<com.example.stork.API.RequestWireToIban.Response.Response> result = retrofit.GetPostValue(request);
-                    result.enqueue(new Callback<Response>() {
-                        @Override
-                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                            Toast.makeText(getContext(),"Tamam abi oldu"+ response.code(),Toast.LENGTH_LONG).show();
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<Response> call, Throwable t) {
-                            Toast.makeText(getContext(),"Hayir abi olmadi"+t.getMessage(),Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    /* END */
+                    /* TODO Transferi Tamamla */
                 }
             }
         });

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import com.example.stork.Activity.PaymentsActivity;
 import com.example.stork.Activity.ReceiveMoneyActivity;
 import com.example.stork.Activity.SendMoneyActivity;
+import com.example.stork.Activity.TransactionsActivity;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
@@ -88,7 +89,7 @@ public class HomeFragment extends Fragment {
         buttons[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Transactions Fragment
+                startActivity(new Intent(getActivity(), TransactionsActivity.class));
             }
         });
 

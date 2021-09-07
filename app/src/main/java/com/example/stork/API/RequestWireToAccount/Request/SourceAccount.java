@@ -18,4 +18,10 @@ public class SourceAccount {
     @Expose
     public String currencyCode;
 
+    public SourceAccount(Integer accountSuffix, Integer branchCode, Integer customerNo, String currencyCode) {
+        this.accountSuffix = accountSuffix;
+        this.branchCode = branchCode;
+        this.customerNo = customerNo;
+        this.currencyCode = currencyCode;
+    }
 }
