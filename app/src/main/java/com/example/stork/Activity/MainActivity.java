@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
-        BackendTest test = new BackendTest();
+        /*BackendTest test = new BackendTest();
         //test.run();
         MockAccount ma = new MockAccount();
         ma.readAccountsData(new CallWrapperAccounts() {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
