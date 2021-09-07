@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragment.MyGroupsFragment"
+    android:layout_marginTop="100dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/group_payments_1"
+        android:layout_marginTop="36dp"
+        android:layout_width="371dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp" />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="Pazar Kahvaltısı" />
+
+        <TextView
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oluşturan: Kemal Kükrer" />
+
+        <TextView
+            android:layout_marginTop="88dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toplam Ödeme: 1000₺" />
+
+        <TextView
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView14"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 katılımcı" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5dk önce" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="36dp"
+        android:layout_width="371dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp" />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1233"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="Pazar Kahvaltısı" />
+
+        <TextView
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1211"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oluşturan: Kemal Kükrer" />
+
+        <TextView
+            android:layout_marginTop="88dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1342"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toplam Ödeme: 1000₺" />
+
+        <TextView
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1412"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 katılımcı" />
+
+        <TextView
+            android:id="@+id/textView1532"
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5dk önce" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="36dp"
+        android:layout_width="371dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView5112"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp" />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1124"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="Pazar Kahvaltısı" />
+
+        <TextView
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView12232"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oluşturan: Kemal Kükrer" />
+
+        <TextView
+            android:layout_marginTop="88dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1311123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toplam Ödeme: 1000₺" />
+
+        <TextView
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1411"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 katılımcı" />
+
+        <TextView
+            android:id="@+id/textView15242"
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5dk önce" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="36dp"
+        android:layout_width="371dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView522"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp" />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1133"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="Pazar Kahvaltısı" />
+
+        <TextView
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1244"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oluşturan: Kemal Kükrer" />
+
+        <TextView
+            android:layout_marginTop="88dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView1355"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toplam Ödeme: 1000₺" />
+
+        <TextView
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView14425"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 katılımcı" />
+
+        <TextView
+            android:id="@+id/textView152152"
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5dk önce" />
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

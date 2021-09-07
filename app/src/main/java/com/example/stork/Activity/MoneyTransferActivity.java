@@ -1,12 +1,11 @@
 package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.stork.PageAdapter;
+import com.example.stork.Adapter.PageAdapter;
 import com.example.stork.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -23,7 +22,7 @@ public class MoneyTransferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_money_transfer);
 
 
-        tablayout=(TabLayout) findViewById(R.id.tablayout);
+        tablayout=(TabLayout) findViewById(R.id.group_payments_tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);
         tab2=(TabItem) findViewById(R.id.Tab2);
         viewpager=(ViewPager) findViewById(R.id.ViewPager);

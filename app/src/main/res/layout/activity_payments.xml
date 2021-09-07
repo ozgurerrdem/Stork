@@ -18,111 +18,127 @@
         app:layout_constraintVertical_bias="1.0">
 
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton8"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:fabCustomSize="60dp"
-            android:clickable="true"
+            android:id="@+id/groups_fb"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="25dp"
             android:backgroundTint="@color/white"
+            android:clickable="true"
+            app:fabCustomSize="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton9"
-            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toEndOf="@+id/floatingActionButton10"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_description_24" />
+            app:layout_constraintVertical_bias="0.256"
+            app:srcCompat="@drawable/ic_baseline_group_24" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton9"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:fabCustomSize="60dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginEnd="25dp"
             android:backgroundTint="@color/white"
             android:clickable="true"
+            app:fabCustomSize="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.650"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.256"
             app:srcCompat="@drawable/add_36"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton10"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:fabCustomSize="60dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="25dp"
             android:backgroundTint="@color/white"
             android:clickable="true"
+            app:fabCustomSize="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503"
+            app:layout_constraintVertical_bias="0.256"
             app:srcCompat="@drawable/ic_baseline_credit_card_24" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton11"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:fabCustomSize="60dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="25dp"
             android:backgroundTint="@color/white"
             android:clickable="true"
+            app:fabCustomSize="72dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.900"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/groups_fb"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503"
+            app:layout_constraintVertical_bias="0.256"
             app:srcCompat="@drawable/ic_baseline_credit_card_24" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
             android:text="Hepsini Öde"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView19"
-            app:layout_constraintHorizontal_bias="0.600"
+            app:layout_constraintHorizontal_bias="0.34"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/floatingActionButton10"
-            app:layout_constraintVertical_bias="0.27" />
+            app:layout_constraintVertical_bias="0.235" />
 
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
             android:text="Ödeme Ekle"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.680"
+            app:layout_constraintHorizontal_bias="0.631"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton9"
-            app:layout_constraintVertical_bias="0.294" />
+            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton11"
+            app:layout_constraintVertical_bias="0.235" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grup Ödemeleri"
-            app:layout_constraintHorizontal_bias="0.400"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Gruplar"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.365"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton8"
-            app:layout_constraintVertical_bias="0.285" />
+            app:layout_constraintTop_toBottomOf="@+id/groups_fb"
+            app:layout_constraintVertical_bias="0.235" />
+
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
             android:text="Talimat Ver"
-            app:layout_constraintHorizontal_bias="0.950"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.921"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton8"
-            app:layout_constraintVertical_bias="0.285" />
+            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton9"
+            app:layout_constraintVertical_bias="0.267" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -189,13 +205,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+
         <TextView
             android:id="@+id/top_bar_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_bold"
             android:letterSpacing="0.04"
-            android:text="ÖDEMELER"
+            android:text="Ödemeler ve Talimatlar"
             android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -457,6 +474,7 @@
             android:id="@+id/imageView12"
             android:layout_width="55dp"
             android:layout_height="55dp"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.044"
@@ -468,6 +486,7 @@
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="55dp"
+            android:background="@color/white"
             android:layout_height="55dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

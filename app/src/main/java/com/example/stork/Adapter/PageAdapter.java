@@ -1,4 +1,4 @@
-package com.example.stork;
+package com.example.stork.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
