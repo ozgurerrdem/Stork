@@ -74,7 +74,8 @@ public class MockAccount implements Serializable {
                                 18,
                                 response.body().getData().accountList.get(i).iBANNo,
                                 response.body().getData().accountList.get(i).amountOfBalance,
-                                response.body().getData().accountList.get(i).currencyCode
+                                response.body().getData().accountList.get(i).currencyCode,
+                                response.body().getData().accountList.get(i).accountName
                         );
                         accs.add(sa);
                     }

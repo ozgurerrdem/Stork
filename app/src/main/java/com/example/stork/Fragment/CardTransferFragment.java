@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.stork.Account;
+import com.example.stork.CallWrapperAccounts;
 import com.example.stork.MockAccount;
 import com.example.stork.R;
 
@@ -28,6 +29,7 @@ import java.util.List;
  */
 public class CardTransferFragment extends Fragment {
     private Spinner account;
+    ArrayList<String> acNameList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,37 +78,39 @@ public class CardTransferFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card_transfer, container, false);
         account = view.findViewById(R.id.hesabim_spinnerr);
 
-        List<String> categories = new ArrayList<String>();
-        categories.add("Automobile");
-        categories.add("Business Services");
-        categories.add("Computers");
-        categories.add("Education");
-        categories.add("Personal");
-        categories.add("Travel");
-
-
-
-        // Toast.makeText(getContext(), aclist.get(0).getIBANNo(), Toast.LENGTH_LONG).show();
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        account.setAdapter(dataAdapter);
-
-        account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        MockAccount mc = new MockAccount();
+        mc.readAccountsData(new CallWrapperAccounts() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // On selecting a spinner item
-                String item = adapterView.getItemAtPosition(i).toString();
+            public void readAccountsDataCallback(List<Account> accounts) {
+                for (Account ac : accounts) {
+                    acNameList.add(ac.getAccountName());
+                }
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                account.setAdapter(dataAdapter);
+                account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        // On selecting a spinner item
+                        String item = adapterView.getItemAtPosition(i).toString();
 
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-            }
+                        // Showing selected spinner item
+                        Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+                    }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
 
+                    }
+                });
             }
         });
+
+
+
+
+
+
 
         return view;
     }
