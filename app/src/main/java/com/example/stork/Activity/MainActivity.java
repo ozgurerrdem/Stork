@@ -48,14 +48,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Test
         BackendTest test = new BackendTest();
-        test.run();
+        //test.run();
         MockAccount ma = new MockAccount();
         ma.readAccountsData(new CallWrapperAccounts() {
             @Override
             public void readAccountsDataCallback(List<Account> accounts) {
+                if(!accounts.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "IBANZİ" + accounts.get(0).getIBANNo(), Toast.LENGTH_SHORT).show();
 
-                //accounts set.
-
+                }
             }
         });
 
