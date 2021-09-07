@@ -17,16 +17,16 @@ import com.example.stork.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SendMoneyToFriendsActivity extends AppCompatActivity {
+public class TransactionsActivity extends AppCompatActivity {
     private ViewPager2 small_cards_viewpager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_send_money_to_friends);
+        setContentView(R.layout.activity_transactions);
+
         small_cards_viewpager = findViewById(R.id.small_cards_viewpager2);
 
-        List<CardModel>cardModels = new ArrayList<>();
+        List<CardModel> cardModels = new ArrayList<>();
 
         cardModels.add(new CardModel(R.drawable.main_small));
         cardModels.add(new CardModel(R.drawable.tokyo_small));
@@ -56,6 +56,4 @@ public class SendMoneyToFriendsActivity extends AppCompatActivity {
 
         small_cards_viewpager.setPageTransformer(compositePageTransformer);
     }
-
-
 }

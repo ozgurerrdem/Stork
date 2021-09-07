@@ -29,7 +29,7 @@
             android:id="@+id/topbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arkadaşa Gönder"
+            android:text="Tüm İşlemler"
             android:textSize="24dp"
             android:fontFamily="@font/manrope_bold"
             android:letterSpacing="0.04"
