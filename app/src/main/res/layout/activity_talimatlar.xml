@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/send_money_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#F5F5F5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_36"
+        >
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/send_money_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.05"
+        android:text="Talimatlar"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/send_money_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/send_money_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/send_money_toolbar" />
+
+    <Button
+        android:layout_width="166dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/gradient_orange"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:text="Transfer Talimatı"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="166dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_round_white"
+        android:paddingTop="10dp"
+        android:text="Ödeme Talimatı"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="411dp"
+        android:layout_height="613dp"
+        android:layout_marginTop="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/btn_round_white"
+        >
+
+        <TextView
+            android:id="@+id/gonderici_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:text="Gönderici Hesap"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <Spinner
+            android:id="@+id/gonderici_spinner"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_text"
+            >
+        </Spinner>
+
+        <TextView
+            android:id="@+id/alici_iban_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="18dp"
+            android:text="Alıcı IBAN"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_spinner">
+        </TextView>
+
+        <EditText
+            android:id="@+id/alici_iban_edit"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_text">
+        </EditText>
+
+        <TextView
+            android:id="@+id/gonderim_miktar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="18dp"
+            android:text="Gönderim Miktarı"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_edit">
+        </TextView>
+        <EditText
+            android:id="@+id/gonderim_edit"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:background="@drawable/gradient_cream"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/tarih_text"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:text="Tarih"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"
+            >
+        </TextView>
+        <EditText
+            android:id="@+id/tarih_edit"
+            android:layout_width="230dp"
+            android:layout_height="48dp"
+            android:background="@drawable/gradient_cream"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tarih_text"
+            >
+        </EditText>
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:background="@drawable/gradient_cream"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"
+            >
+        </EditText>
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/gradient_orange"
+            android:paddingLeft="80dp"
+            android:paddingTop="10dp"
+            android:text="Talimat Ver"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tarih_edit">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
