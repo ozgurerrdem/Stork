@@ -29,7 +29,11 @@ public class BackendTest {
 
     List<SavedCustomer> customersa = new ArrayList<SavedCustomer>();
 
-    public void run() {
+    public void run(){
+        initMockAccount();
+    }
+
+    public void initMockAccount() {
 
         Services services = new Services();
         com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
@@ -43,12 +47,21 @@ public class BackendTest {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 for(int i=0; i<response.body().getData().accountList.size(); i++){
-                    System.out.println(response.body().getData().accountList.get(i).accountName);
-                    System.out.println(response.body().getData().accountList.get(i).currencyCode);
-                    System.out.println(response.body().getData().accountList.get(i).accountSuffix);
-                    System.out.println(response.body().getData().accountList.get(i).branchCode);
-                    System.out.println(response.body().getData().accountList.get(i).amountOfBalance);
-                    System.out.println("***************************");
+                    if((response.body().getData().accountList.get(i).accountSuffix == 10 && response.body().getData().accountList.get(i).branchCode == 1000) ||
+                            (response.body().getData().accountList.get(i).accountSuffix == 32 && response.body().getData().accountList.get(i).branchCode == 1000) ||
+                            (response.body().getData().accountList.get(i).accountSuffix == 352 && response.body().getData().accountList.get(i).branchCode == 9142) ||
+                            (response.body().getData().accountList.get(i).accountSuffix == 35215 && response.body().getData().accountList.get(i).branchCode == 9142) ||
+                            (response.body().getData().accountList.get(i).accountSuffix == 357 && response.body().getData().accountList.get(i).branchCode == 9142 && response.body().getData().accountList.get(i).currencyCode.equals("EUR"))
+                    ) {
+                        System.out.println(response.body().getData().accountList.get(i).accountName);
+                        System.out.println(response.body().getData().accountList.get(i).currencyCode);
+                        System.out.println(response.body().getData().accountList.get(i).accountSuffix);
+                        System.out.println(response.body().getData().accountList.get(i).branchCode);
+                        System.out.println(response.body().getData().accountList.get(i).iBANNo);
+                        System.out.println(response.body().getData().accountList.get(i).amountOfBalance);
+                        System.out.println("***************************");
+                    }
+
                 }
                 //System.out.println("Response:" + response.body().getData().accountList.toString());
             }
@@ -58,9 +71,6 @@ public class BackendTest {
                 System.out.println("Hatalı.");
             }
         });
-
-
-
 
     }
 
