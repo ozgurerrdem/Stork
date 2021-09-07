@@ -19,7 +19,7 @@ public class MockAccount implements Serializable {
     private final String citizenshipNumber = "11111"; //80722431894
     private final String customerNo ="18";
     private final String password = "12345";
-    private List<Account> accounts;
+    private ArrayList<Account> accounts;
 
     public String getName() {
         return name;
@@ -37,7 +37,7 @@ public class MockAccount implements Serializable {
         return password;
     }
 
-    public List<Account> getSourceAccount() {
+    public ArrayList<Account> getAccounts() {
         return accounts;
     }
 
