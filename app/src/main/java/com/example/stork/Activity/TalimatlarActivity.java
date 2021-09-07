@@ -19,7 +19,7 @@ public class TalimatlarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_talimatlar2);
+        setContentView(R.layout.activity_talimatlar);
         tablayout=(TabLayout) findViewById(R.id.TabLayout);
         transfer=(TabItem) findViewById(R.id.Transfer);
         odeme=(TabItem) findViewById(R.id.Odeme);
