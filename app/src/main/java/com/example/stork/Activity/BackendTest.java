@@ -7,16 +7,20 @@ import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
 
 import com.example.stork.API.AccList.GetAccList;
-import com.example.stork.API.AccList.Request.Parameters;
-import com.example.stork.API.AccList.Request.Request;
-import com.example.stork.API.AccList.Response.Response;
 import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
-import com.example.stork.API.GetReceiptData.Request.Header;
+/*
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
-import com.example.stork.Database.CallWrapperTransaction;
+import com.example.stork.Database.CallWrapperTransaction;*/
+import com.example.stork.API.ProcessEftRequestToIban.EftToIban;
+import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
+import com.example.stork.API.ProcessEftRequestToIban.Request.Parameters;
+import com.example.stork.API.ProcessEftRequestToIban.Request.Request;
+import com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount;
+import com.example.stork.API.ProcessEftRequestToIban.Response.Response;
+import com.example.stork.R;
 import com.example.stork.Services;
 
 import java.util.ArrayList;
@@ -27,11 +31,11 @@ import retrofit2.Callback;
 
 public class BackendTest {
 
-    List<SavedCustomer> customersa = new ArrayList<SavedCustomer>();
+    //List<SavedCustomer> customersa = new ArrayList<SavedCustomer>();
 
     public void run() {
 
-        Services services = new Services();
+        /*Services services = new Services();
         com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
         Parameters params = new Parameters();
         params.customerNo = "18";
@@ -57,10 +61,31 @@ public class BackendTest {
             public void onFailure(Call<Response> call, Throwable t) {
                 System.out.println("Hatalı.");
             }
+        });*/
+
+        EftToIban eftToIban = new EftToIban();
+        SourceAccount sourceAccount = new SourceAccount(351,9142,"TRY",13188998,"-","-");
+        Parameters param = new Parameters();
+        param.explanation = "test";
+        param.iBANNo = "TR900001002533034585185045";
+        param.destinationBankCode = 0001;
+        param.amount = 1;
+        param.customerNo = 13188998;
+        param.sourceAccount = sourceAccount;
+        param.receiverName = "HASAN GÜVEN";
+        param.forceDuplicate = true;
+        eftToIban.getResponse(param, new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                System.out.println(response.code());
+                System.out.println(response.body().getData().transactionDate);
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+                System.out.println("başaramadık ab");
+            }
         });
-
-
-
 
     }
 
@@ -89,7 +114,7 @@ public class BackendTest {
 
     public void addCustomerToDatabaseTest(){
 
-        DatabaseUtil db = new DatabaseUtil();
+        /*DatabaseUtil db = new DatabaseUtil();
         SavedCustomer nc1 = new SavedCustomer("Doruk ERGÜN", "67888888","link");
         SavedCustomer nc2 = new SavedCustomer("sadsadsad", "1","link");
         SavedCustomer nc3 = new SavedCustomer("LMAOOO", "673333","link");
@@ -97,24 +122,24 @@ public class BackendTest {
         db.addSavedCustomer(nc1);
         db.addSavedCustomer(nc2);
         db.addSavedCustomer(nc3);
-        db.addSavedCustomer(nc4);
+        db.addSavedCustomer(nc4);*/
 
     }
 
     public void readTransactionsFromDatabaseTest(){
-        DatabaseUtil db = new DatabaseUtil();
+        /*DatabaseUtil db = new DatabaseUtil();
         db.readTransactionData(new CallWrapperTransaction() {
             @Override
             public void readTransactionDataCallback(List<SavedTransaction> transactions) {
                 System.out.println(transactions.get(0).getAmount() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getExplanation() + " " + transactions.get(0).getReceiverName() + " ");
             }
-        });
+        });*/
     }
 
 
     public void readCustomersFromDatabaseTest(){
 
-        DatabaseUtil db = new DatabaseUtil();
+       /* DatabaseUtil db = new DatabaseUtil();
         db.readCustomerData(new CallWrapperCustomer() {
             @Override
             public void readCustomerDataCallback(List<SavedCustomer> customers) {
