@@ -24,7 +24,7 @@ public class SendMoneyToFriendsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money_to_friends);
-        small_cards_viewpager = findViewById(R.id.small_cards_viewpager2);
+        small_cards_viewpager = findViewById(R.id.small_cards_viewpager);
 
         List<CardModel>cardModels = new ArrayList<>();
 
