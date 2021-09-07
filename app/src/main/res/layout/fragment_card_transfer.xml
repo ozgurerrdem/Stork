@@ -48,6 +48,7 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hesabim_textt" />
 
