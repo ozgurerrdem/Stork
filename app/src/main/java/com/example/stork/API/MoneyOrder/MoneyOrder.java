@@ -1,7 +1,7 @@
 package com.example.stork.API.MoneyOrder;
 
 import com.example.stork.API.MoneyOrder.Request.Request;
-import com.example.stork.API.SendFastMoneyOrder.Response.Response;
+import com.example.stork.API.MoneyOrder.Response.Response;
 
 
 import retrofit2.Call;

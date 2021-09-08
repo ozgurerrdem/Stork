@@ -1,7 +1,8 @@
 package com.example.stork.API.ProcessScheduledTransactionForToAccountEft;
 
-import com.example.stork.API.AccList.Request.Request;
-import com.example.stork.API.AccList.Response.Response;
+
+import com.example.stork.API.ProcessScheduledTransactionForToAccountEft.Request.Request;
+import com.example.stork.API.ProcessScheduledTransactionForToAccountEft.Response.Response;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
