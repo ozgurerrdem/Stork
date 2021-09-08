@@ -52,6 +52,7 @@ public class MockAccount implements Serializable {
 
         GetAccList retrofit = services.createRetrofit().create(GetAccList.class);
         Call<Response> result = retrofit.GetPostValue(request);
+
         result.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
@@ -90,7 +91,6 @@ public class MockAccount implements Serializable {
                 System.out.println("Hatalı.");
             }
         });
-
     }
 
 }

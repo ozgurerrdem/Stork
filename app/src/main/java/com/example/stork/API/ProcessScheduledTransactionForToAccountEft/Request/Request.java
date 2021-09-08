@@ -1,6 +1,5 @@
 package com.example.stork.API.ProcessScheduledTransactionForToAccountEft.Request;
 
-import com.example.stork.API.RequestWireToAccount.Request.Header;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

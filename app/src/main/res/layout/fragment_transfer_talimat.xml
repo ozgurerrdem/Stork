@@ -12,11 +12,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="411dp"
         android:layout_height="613dp"
-        android:layout_marginTop="210dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="64dp"
         android:background="@drawable/btn_round_white"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/gonderici_text"
@@ -28,8 +27,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <Spinner
             android:id="@+id/gonderici_spinner"
@@ -38,9 +36,7 @@
             android:layout_marginStart="40dp"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderici_text"
-            >
-        </Spinner>
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_text"></Spinner>
 
         <TextView
             android:id="@+id/alici_iban_text"
@@ -52,8 +48,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderici_spinner">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_spinner"></TextView>
 
         <EditText
             android:id="@+id/alici_iban_edit"
@@ -62,8 +57,7 @@
             android:layout_marginStart="40dp"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alici_iban_text">
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_text"></EditText>
 
         <TextView
             android:id="@+id/gonderim_miktar_text"
@@ -75,55 +69,50 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alici_iban_edit">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_edit"></TextView>
+
         <EditText
             android:id="@+id/gonderim_edit"
             android:layout_width="317dp"
             android:layout_height="48dp"
-            android:background="@drawable/gradient_cream"
             android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text"
-            >
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text"></EditText>
+
         <TextView
             android:id="@+id/tarih_text"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="18dp"
             android:text="Tarih"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="18dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"
-            >
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"></TextView>
+
         <EditText
             android:id="@+id/tarih_edit"
             android:layout_width="230dp"
             android:layout_height="48dp"
-            android:background="@drawable/gradient_cream"
             android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tarih_text"
-            >
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/tarih_text"></EditText>
+
         <EditText
             android:layout_width="80dp"
             android:layout_height="48dp"
-            android:background="@drawable/gradient_cream"
             android:layout_marginStart="280dp"
             android:layout_marginTop="40dp"
+            android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"
-            >
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"></EditText>
+
         <Button
             android:layout_width="250dp"
             android:layout_height="51dp"
-            android:layout_marginStart="60dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/gradient_orange"
             android:paddingLeft="80dp"
@@ -132,9 +121,9 @@
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tarih_edit">
-        </Button>
+            app:layout_constraintTop_toBottomOf="@+id/tarih_edit"></Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

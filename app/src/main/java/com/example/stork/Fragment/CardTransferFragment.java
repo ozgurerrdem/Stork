@@ -78,14 +78,20 @@ public class CardTransferFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card_transfer, container, false);
         account = view.findViewById(R.id.hesabim_spinnerr);
 
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         MockAccount mc = new MockAccount();
         mc.readAccountsData(new CallWrapperAccounts() {
             @Override
             public void readAccountsDataCallback(List<Account> accounts) {
-
-                int i=0;
+                acNameList.clear();
+                System.out.println("Size: "+accounts.size());
                 for (Account ac : accounts) {
-                    System.out.println(i++);
                     acNameList.add(ac.getAccountName());
                 }
                 ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
@@ -108,14 +114,5 @@ public class CardTransferFragment extends Fragment {
                 });
             }
         });
-
-
-
-
-
-
-
-        return view;
     }
-
 }

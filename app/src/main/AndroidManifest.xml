@@ -73,6 +73,9 @@
             android:name=".Activity.TalimatlarActivity"
             android:exported="true" />
         <activity
+            android:name=".Activity.GiftsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>

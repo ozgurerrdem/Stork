@@ -8,13 +8,15 @@ public class Header {
     public String appKey;
     @SerializedName("Channel")
     public String channel;
-    @SerializedName("TellerName")
-    public String tellerName;
-    @SerializedName("CallerId")
-    public String callerId;
     @SerializedName("ChannelSessionId")
     public String channelSessionId;
     @SerializedName("ChannelRequestId")
     public String channelRequestId;
 
+    public Header(String appKey, String channel, String channelSessionId, String channelRequestId) {
+        this.appKey = appKey;
+        this.channel = channel;
+        this.channelSessionId = channelSessionId;
+        this.channelRequestId = channelRequestId;
+    }
 }
