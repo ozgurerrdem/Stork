@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //Test
         BackendTest test = new BackendTest();
         test.run();
+        //test.testMoneyOrder();
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
