@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/layout/activity_add_transaction_popup.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_market.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_money_transfer.xml" value="0.16215277777777778" />
         <entry key="app/src/main/res/layout/activity_my_cards.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_payments.xml" value="0.25" />
@@ -44,6 +45,7 @@
         <entry key="app/src/main/res/layout/fragment_iban_transfer.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/piyasa_hisse.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/recycler_item.xml" value="0.25" />
       </map>
     </option>

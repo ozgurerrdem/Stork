@@ -1,5 +1,6 @@
 package com.example.stork.Fragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -127,35 +128,30 @@ public class IBANTransferFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        MockAccount mc = new MockAccount();
-        mc.readAccountsData(new CallWrapperAccounts() {
+        acNameList.clear();
+        for (Account a : MockAccount.accounts) {
+            acNameList.add(a.getAccountName());
+        }
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        account.setAdapter(dataAdapter);
+        account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void readAccountsDataCallback(List<Account> accounts) {
-                acNameList.clear();
-                System.out.println("Size: "+accounts.size());
-                for (Account ac : accounts) {
-                    acNameList.add(ac.getAccountName());
-                }
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                account.setAdapter(dataAdapter);
-                account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        // On selecting a spinner item
-                        String item = adapterView.getItemAtPosition(i).toString();
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // On selecting a spinner item
+                String item = adapterView.getItemAtPosition(i).toString();
 
-                        // Showing selected spinner item
-                        Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-                    }
+                // Showing selected spinner item
+                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+            }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-                    }
-                });
             }
         });
 
     }
+
 }
