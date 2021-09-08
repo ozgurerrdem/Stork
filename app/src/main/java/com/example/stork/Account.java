@@ -48,4 +48,32 @@ public class Account {
     public String getAccountName() {
         return accountName;
     }
+
+    public void setAccountSuffix(Integer accountSuffix) {
+        this.accountSuffix = accountSuffix;
+    }
+
+    public void setBranchCode(Integer branchCode) {
+        this.branchCode = branchCode;
+    }
+
+    public void setCustomerNo(Integer customerNo) {
+        this.customerNo = customerNo;
+    }
+
+    public void setIBANNo(String IBANNo) {
+        this.IBANNo = IBANNo;
+    }
+
+    public void setAmountOfBalance(Float amountOfBalance) {
+        this.amountOfBalance = amountOfBalance;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
 }

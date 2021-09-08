@@ -110,7 +110,8 @@ public class IBANTransferFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
-                    Toast.makeText(getContext(),"Alanlari Doldurunuz",Toast.LENGTH_LONG).show();
+                    MockAccount.accounts.get(0).setAccountName("dorugueeeee");
+                    Toast.makeText(getContext(),MockAccount.accounts.get(0).getAccountName(),Toast.LENGTH_LONG).show();
                 } else {
                     if (checkBox.isChecked()){
                         DatabaseUtil db = new DatabaseUtil();
