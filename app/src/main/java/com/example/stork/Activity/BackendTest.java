@@ -6,6 +6,8 @@ import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
 
+import android.os.AsyncTask;
+
 import com.example.stork.API.AccList.GetAccList;
 import com.example.stork.API.AccList.Request.Parameters;
 import com.example.stork.API.AccList.Request.Request;
@@ -17,6 +19,7 @@ import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
 import com.example.stork.Database.CallWrapperTransaction;
+import com.example.stork.MockAccount;
 import com.example.stork.Services;
 
 import java.util.ArrayList;
@@ -29,8 +32,24 @@ public class BackendTest {
 
     List<SavedCustomer> customersa = new ArrayList<SavedCustomer>();
 
+
+
+    private class MyAsyncTask extends AsyncTask<Void, Void, Void>
+    {
+        @Override
+        protected Void doInBackground(Void... params) {
+            MockAccount ma = new MockAccount();
+            System.out.println("Run finished..");
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result) {
+            System.out.println("After:" + MockAccount.accounts.get(0).getAccountName());
+        }
+    }
+
     public void run(){
-        initMockAccount();
+        new MyAsyncTask().execute();
     }
 
     public void initMockAccount() {
