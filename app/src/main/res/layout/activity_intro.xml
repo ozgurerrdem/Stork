@@ -60,12 +60,23 @@
         android:id="@+id/imageView8"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toTopOf="@+id/onboardingViewpager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stork" />
+
+    <TextView
+        android:id="@+id/intro_brand_name"
+        android:layout_width="57dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/billabong"
+        android:text="Stork"
+        android:textColor="#FF375F"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/onboardingViewpager"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

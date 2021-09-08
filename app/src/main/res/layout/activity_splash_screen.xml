@@ -10,13 +10,31 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animatonView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="554dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/stork" />
+
+    <TextView
+        android:id="@+id/onboarding_brand_name"
+        android:layout_width="217dp"
+        android:layout_height="98dp"
+        android:fontFamily="@font/billabong"
+        android:gravity="center"
+        android:text="Stork"
+        android:textAlignment="center"
+        android:textColor="#FE340A"
+        android:textSize="104dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/stork"
-        app:lottie_autoPlay="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/animatonView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
