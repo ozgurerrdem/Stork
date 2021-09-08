@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -24,12 +25,14 @@ import com.example.stork.API.SendFastMoneyOrder.SendFastMoneyOrder;
 import com.example.stork.Account;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.CallWrapperAccounts;
+import com.example.stork.Fragment.CardTransferFragment;
 import com.example.stork.MockAccount;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
 import com.example.stork.Services;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
+        System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
 
 
 

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +15,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.stork.Account;
 import com.example.stork.Adapter.OnboardingAdapter;
+import com.example.stork.MockAccount;
 import com.example.stork.Model.OnboardingItems;
 import com.example.stork.R;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
@@ -22,6 +26,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
+
+    private class MyAsyncTask extends AsyncTask<Void, Void, Void>
+    {
+        @Override
+        protected Void doInBackground(Void... params) {
+            MockAccount ma = new MockAccount();
+            System.out.println("Run finished..");
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result) {
+            onboarding_skip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    finish();
+                }
+            });
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        //TODO Progress bar
+        }
+    }
+
     OnboardingAdapter onboardingAdapter;
     Button onboardingActionButton;
     LinearLayout layoutOnboardingIndicator;
@@ -30,6 +61,11 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+
+        new MyAsyncTask().execute();
+
+
+
         setUpOnboardingItem();
         layoutOnboardingIndicator = findViewById(R.id.onboardingIndicator);
         final ViewPager2 viewPager2 = findViewById(R.id.onboardingViewpager);
@@ -60,13 +96,8 @@ public class IntroActivity extends AppCompatActivity {
                 }
             }
         });
-        onboarding_skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
-            }
-        });
+
+
 
 
     }
