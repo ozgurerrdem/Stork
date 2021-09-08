@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
-        BackendTest test = new BackendTest();
-        test.run();
+
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
