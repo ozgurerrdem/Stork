@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.stork.Activity.GiftsActivity;
+import com.example.stork.Activity.MarketActivity;
 import com.example.stork.Activity.PaymentsActivity;
 import com.example.stork.Activity.ReceiveMoneyActivity;
 import com.example.stork.Activity.SendMoneyActivity;
@@ -81,7 +82,7 @@ public class HomeFragment extends Fragment {
         buttons[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Doviz Fragment
+                startActivity(new Intent(getActivity(), MarketActivity.class));
             }
         });
 
