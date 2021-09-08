@@ -47,19 +47,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
-        /*BackendTest test = new BackendTest();
-        //test.run();
-        MockAccount ma = new MockAccount();
-        ma.readAccountsData(new CallWrapperAccounts() {
-            @Override
-            public void readAccountsDataCallback(List<Account> accounts) {
-                if(!accounts.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "IBANZİ" + accounts.get(0).getIBANNo(), Toast.LENGTH_SHORT).show();
+        BackendTest test = new BackendTest();
+        test.run();
 
-                }
-            }
-        });
-*/
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
@@ -93,8 +84,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager2.setPageTransformer(compositePageTransformer);
-
-
     }
 
 
