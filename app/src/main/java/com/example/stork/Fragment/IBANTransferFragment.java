@@ -23,8 +23,11 @@ import com.example.stork.API.RequestWireToIban.Request.Request;
 import com.example.stork.API.RequestWireToIban.Request.SourceAccount;
 import com.example.stork.API.RequestWireToIban.RequestWireToIban;
 import com.example.stork.API.RequestWireToIban.Response.Response;
+import com.example.stork.Account;
+import com.example.stork.CallWrapperAccounts;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
+import com.example.stork.MockAccount;
 import com.example.stork.R;
 import com.example.stork.Services;
 
@@ -47,6 +50,7 @@ public class IBANTransferFragment extends Fragment {
     private EditText exp;
     private CheckBox checkBox;
     private Button button;
+    private ArrayList<String> acNameList = new ArrayList<String>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -101,33 +105,6 @@ public class IBANTransferFragment extends Fragment {
         checkBox = view.findViewById(R.id.chechBox);
         button = view.findViewById(R.id.button);
 
-        List<String> categories = new ArrayList<String>();
-        categories.add("Automobile");
-        categories.add("Business Services");
-        categories.add("Computers");
-        categories.add("Education");
-        categories.add("Personal");
-        categories.add("Travel");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        account.setAdapter(dataAdapter);
-
-        account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // On selecting a spinner item
-                String item = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,5 +127,35 @@ public class IBANTransferFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        MockAccount mc = new MockAccount();
+        mc.readAccountsData(new CallWrapperAccounts() {
+            @Override
+            public void readAccountsDataCallback(List<Account> accounts) {
+                acNameList.clear();
+                System.out.println("Size: "+accounts.size());
+                for (Account ac : accounts) {
+                    acNameList.add(ac.getAccountName());
+                }
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                account.setAdapter(dataAdapter);
+                account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        // On selecting a spinner item
+                        String item = adapterView.getItemAtPosition(i).toString();
+
+                        // Showing selected spinner item
+                        Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+            }
+        });
+
     }
 }

@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MoneyTransferActivity extends AppCompatActivity {
     private TabLayout tablayout;
     private ViewPager viewpager;
-    private TabItem tab1,tab2;
+    private TabItem ibanFragment, cardFragment;
     public PageAdapter pagerAdapter;
 
     @Override
@@ -23,8 +23,8 @@ public class MoneyTransferActivity extends AppCompatActivity {
 
 
         tablayout=(TabLayout) findViewById(R.id.group_payments_tablayout);
-        tab1=(TabItem) findViewById(R.id.Tab1);
-        tab2=(TabItem) findViewById(R.id.Tab2);
+        ibanFragment =(TabItem) findViewById(R.id.Tab1);
+        cardFragment =(TabItem) findViewById(R.id.Tab2);
         viewpager=(ViewPager) findViewById(R.id.ViewPager);
         pagerAdapter=new PageAdapter(getSupportFragmentManager(),tablayout.getTabCount());
         viewpager.setAdapter(pagerAdapter);
