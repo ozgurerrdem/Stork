@@ -17,6 +17,7 @@ import android.widget.ImageView;
 
 import com.example.stork.Activity.CashbackActivity;
 import com.example.stork.Activity.GiftsActivity;
+import com.example.stork.Activity.KampanyaActivity;
 import com.example.stork.Activity.MarketActivity;
 import com.example.stork.Activity.PaymentsActivity;
 import com.example.stork.Activity.ReceiveMoneyActivity;
@@ -119,7 +120,7 @@ public class HomeFragment extends Fragment {
         buttons[7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Offer Fragment
+                startActivity(new Intent(getActivity(), KampanyaActivity.class));
             }
         });
 

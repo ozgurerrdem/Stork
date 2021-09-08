@@ -82,6 +82,9 @@
             android:name=".Activity.GiftsActivity"
             android:exported="true" />
         <activity
+            android:name=".Activity.KampanyaActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
