@@ -8,6 +8,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -150,12 +151,15 @@ public class DatabaseUtil {
      */
     public void addSavedCustomer(SavedCustomer newCustomer){
         DatabaseReference reference = rootNode.getReference("SavedCustomers");
-        DatabaseReference setRef = reference.child(newCustomer.getName());
+        Query setRef = reference.orderByChild("name").equalTo(newCustomer.getName());
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists()){
+                    System.out.println("Yok..");
                     reference.push().setValue(newCustomer);
+                }else{
+                    System.out.println("zaten var.");
                 }
             }
 
