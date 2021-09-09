@@ -1,6 +1,5 @@
 package com.example.stork.Fragment;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,27 +13,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.stork.API.AccList.GetAccList;
-import com.example.stork.API.RequestWireToIban.Request.Header;
 import com.example.stork.API.RequestWireToIban.Request.Parameters;
-import com.example.stork.API.RequestWireToIban.Request.Request;
 import com.example.stork.API.RequestWireToIban.Request.SourceAccount;
-import com.example.stork.API.RequestWireToIban.RequestWireToIban;
 import com.example.stork.API.RequestWireToIban.Response.Response;
 import com.example.stork.API.RequestWireToIban.WireToIban;
 import com.example.stork.Account;
-import com.example.stork.CallWrapperAccounts;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
 import com.example.stork.R;
-import com.example.stork.Services;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

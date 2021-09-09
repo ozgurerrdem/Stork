@@ -150,7 +150,21 @@ public class DatabaseUtil {
      */
     public void addSavedCustomer(SavedCustomer newCustomer){
         DatabaseReference reference = rootNode.getReference("SavedCustomers");
-        reference.push().setValue(newCustomer);
+        DatabaseReference setRef = reference.child(newCustomer.getName());
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!dataSnapshot.exists()){
+                    reference.push().setValue(newCustomer);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("error.");
+            }
+        };
+        setRef.addListenerForSingleValueEvent(eventListener);
     }
 
 
