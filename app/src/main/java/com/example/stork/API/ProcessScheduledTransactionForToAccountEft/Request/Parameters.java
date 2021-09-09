@@ -1,5 +1,6 @@
 package com.example.stork.API.ProcessScheduledTransactionForToAccountEft.Request;
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +8,7 @@ public class Parameters {
 
     @SerializedName("Message")
     @Expose
-    public String message;
+    public Message message;
     @SerializedName("TransactionPeriod")
     @Expose
     public Integer transactionPeriod;
@@ -27,4 +28,13 @@ public class Parameters {
     @Expose
     public String cellPhoneNo;
 
+    public Parameters(Message message, Integer transactionPeriod, String name, String email, String transactionDate) {
+        this.message = message;
+        this.transactionPeriod = transactionPeriod; //0 1 2 3 4
+        this.name = name;
+        this.email = email;
+        this.transactionDate = transactionDate;
+        this.customerNo =Integer.valueOf( MockAccount.customerNo);
+        this.cellPhoneNo = "";
+    }
 }

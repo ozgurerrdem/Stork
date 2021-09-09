@@ -30,4 +30,15 @@ public class Parameters {
         @SerializedName("ForceDuplicate")
         @Expose
         public Boolean forceDuplicate;
-    }
+
+        public Parameters(String explanation, String iBANNo, Integer destinationBankCode, Integer amount, Integer customerNo, SourceAccount sourceAccount, String receiverName, Boolean forceDuplicate) {
+                this.explanation = explanation;
+                this.iBANNo = iBANNo;
+                this.destinationBankCode = destinationBankCode;
+                this.amount = amount;
+                this.customerNo = customerNo;
+                this.sourceAccount = sourceAccount;
+                this.receiverName = receiverName;
+                this.forceDuplicate = true;
+        }
+}

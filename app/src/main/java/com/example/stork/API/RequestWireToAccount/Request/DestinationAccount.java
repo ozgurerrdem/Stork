@@ -13,7 +13,11 @@ public class DestinationAccount {
     @SerializedName("CustomerNo")
     @Expose
     public Integer customerNo;
-    @SerializedName("CurrencyCode")
-    @Expose
-    public String currencyCode;
+
+    public DestinationAccount(Integer accountSuffix, Integer branchCode, Integer customerNo) {
+        this.accountSuffix = accountSuffix;
+        this.branchCode = branchCode;
+        this.customerNo = customerNo;
+
+    }
 }

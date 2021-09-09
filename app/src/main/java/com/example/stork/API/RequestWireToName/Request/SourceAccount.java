@@ -1,5 +1,6 @@
 package com.example.stork.API.RequestWireToName.Request;
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,28 +15,9 @@ public class SourceAccount {
     @Expose
     private Integer customerNo;
 
-    public Integer getAccountSuffix() {
-        return accountSuffix;
+    public SourceAccount(int index) {
+        this.accountSuffix = MockAccount.accounts.get(index).getAccountSuffix();
+        this.branchCode = MockAccount.accounts.get(index).getBranchCode();
+        this.customerNo = MockAccount.accounts.get(index).getCustomerNo();
     }
-
-    public void setAccountSuffix(Integer accountSuffix) {
-        this.accountSuffix = accountSuffix;
-    }
-
-    public Integer getBranchCode() {
-        return branchCode;
-    }
-
-    public void setBranchCode(Integer branchCode) {
-        this.branchCode = branchCode;
-    }
-
-    public Integer getCustomerNo() {
-        return customerNo;
-    }
-
-    public void setCustomerNo(Integer customerNo) {
-        this.customerNo = customerNo;
-    }
-
 }

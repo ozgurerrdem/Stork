@@ -1,6 +1,7 @@
 package com.example.stork.API.ProcessEftRequestToIban.Request;
 
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -27,13 +28,13 @@ public class SourceAccount implements Serializable {
     public String shortName;
 
 
-    public SourceAccount(Integer accountSuffix, Integer branchCode, String currencyCode, Integer customerNo, String iBANNo, String shortName) {
-        this.accountSuffix = accountSuffix;
-        this.branchCode = branchCode;
-        this.currencyCode = currencyCode;
-        this.customerNo = customerNo;
-        this.iBANNo = iBANNo;
-        this.shortName = shortName;
+    public SourceAccount(int index) {
+        this.accountSuffix = MockAccount.accounts.get(index).getAccountSuffix();
+        this.branchCode = MockAccount.accounts.get(index).getBranchCode();
+        this.customerNo = MockAccount.accounts.get(index).getCustomerNo();
+        this.currencyCode = MockAccount.accounts.get(index).getCurrencyCode();
+        this.iBANNo = MockAccount.accounts.get(index).getIBANNo();
+        this.shortName ="";
     }
 }
 

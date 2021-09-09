@@ -1,42 +1,59 @@
 package com.example.stork.API.ProcessEftRequestToAccount.Request;
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Parameters {
-    @SerializedName("Explanation")
-    @Expose
-    private String explanation;
-    @SerializedName("SenderName")
-    @Expose
-    private String senderName;
-    @SerializedName("IBANNo")
-    @Expose
-    private String iBANNo;
-    @SerializedName("DestinationBankCode")
-    @Expose
-    private Integer destinationBankCode;
-    @SerializedName("EFTDestinationAccount")
-    @Expose
-    private String eFTDestinationAccount;
-    @SerializedName("DestinationBranchCode")
-    @Expose
-    private Integer destinationBranchCode;
-    @SerializedName("Amount")
-    @Expose
-    private Integer amount;
     @SerializedName("CustomerNo")
     @Expose
-    private Integer customerNo;
+    public Integer customerNo;
+    @SerializedName("Explanation")
+    @Expose
+    public String explanation;
+    @SerializedName("SenderName")
+    @Expose
+    public String senderName;
+    @SerializedName("TransferReason")
+    @Expose
+    public String transferReason;
+    @SerializedName("DestinationBankCode")
+    @Expose
+    public Integer destinationBankCode;
+    @SerializedName("EFTDestinationAccount")
+    @Expose
+    public String eFTDestinationAccount;
+    @SerializedName("DestinationBranchCode")
+    @Expose
+    public Integer destinationBranchCode;
+    @SerializedName("EFTDestinationType")
+    @Expose
+    public String eFTDestinationType;
+    @SerializedName("Amount")
+    @Expose
+    public String amount;
     @SerializedName("SourceAccount")
     @Expose
-    private SourceAccount sourceAccount;
+    public SourceAccount sourceAccount;
     @SerializedName("ReceiverName")
     @Expose
-    private String receiverName;
+    public String receiverName;
     @SerializedName("ForceDuplicate")
     @Expose
-    private Boolean forceDuplicate=true;
+    public Boolean forceDuplicate;
 
-
+    public Parameters(Integer customerNo, String explanation, String senderName, String transferReason, Integer destinationBankCode, String eFTDestinationAccount, Integer destinationBranchCode, String eFTDestinationType, String amount, SourceAccount sourceAccount, String receiverName, Boolean forceDuplicate) {
+        this.customerNo =Integer.valueOf( MockAccount.customerNo);
+        this.explanation = explanation;
+        this.senderName = senderName;
+        this.transferReason = "I";
+        this.destinationBankCode = destinationBankCode;
+        this.eFTDestinationAccount = eFTDestinationAccount;
+        this.destinationBranchCode = destinationBranchCode;
+        this.eFTDestinationType = "EFT_TYPE_TO_BRANCH";
+        this.amount = amount;
+        this.sourceAccount = sourceAccount;
+        this.receiverName = receiverName;
+        this.forceDuplicate = true;
+    }
 }

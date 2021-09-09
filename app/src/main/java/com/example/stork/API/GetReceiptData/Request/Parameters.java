@@ -20,4 +20,11 @@ public class Parameters {
     @Expose
     public Boolean isPdf;
 
+    public Parameters(Integer branchCode, String transactionDate, Integer referenceNo, Integer customerNo, Boolean isPdf) {
+        this.branchCode = branchCode;
+        this.transactionDate = transactionDate;
+        this.referenceNo = referenceNo;
+        this.customerNo = customerNo;
+        this.isPdf = isPdf;
+    }
 }

@@ -64,4 +64,27 @@ public class Parameters {
     @SerializedName("CustomerNo")
     @Expose
     public Integer customerNo;
+
+    public Parameters(String paymentReason, String paymentSource, String senderAccountNumber, String senderIdentityNumber, String receiverCode, String receiverAccountNumber, String receiverIdentityNumber, String senderAddress, String senderName, String senderPassportNo, String senderBirthPlace, String senderBirthDate, String explanation, String kolasAddressType, String kolasAddressValue, Integer amount, SourceAccount sourceAccount, String receiverName, Integer customerIdentity, Integer customerNo) {
+        this.paymentReason = paymentReason;
+        this.paymentSource = paymentSource;
+        this.senderAccountNumber = senderAccountNumber;
+        this.senderIdentityNumber = senderIdentityNumber;
+        this.receiverCode = receiverCode;
+        this.receiverAccountNumber = receiverAccountNumber;
+        this.receiverIdentityNumber = receiverIdentityNumber;
+        this.senderAddress = senderAddress;
+        this.senderName = senderName;
+        this.senderPassportNo = senderPassportNo;
+        this.senderBirthPlace = senderBirthPlace;
+        this.senderBirthDate = senderBirthDate;
+        this.explanation = explanation;
+        this.kolasAddressType = kolasAddressType;
+        this.kolasAddressValue = kolasAddressValue;
+        this.amount = amount;
+        this.sourceAccount = sourceAccount;
+        this.receiverName = receiverName;
+        this.customerIdentity = customerIdentity;
+        this.customerNo = customerNo;
+    }
 }
