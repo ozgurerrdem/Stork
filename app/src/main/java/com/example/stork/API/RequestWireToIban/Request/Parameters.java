@@ -36,11 +36,26 @@ public class Parameters {
         this.explanation = explanation;
         this.amount = amount;
         this.customerNo = Integer.valueOf(MockAccount.customerNo);
-        this.citizenshipNumber =Integer.valueOf( MockAccount.citizenshipNumber);
+        this.citizenshipNumber =Integer.valueOf(MockAccount.citizenshipNumber);
         this.taxNumber =0;
         this.iBANNumber = iBANNumber;
         this.sourceAccount = sourceAccount;
         this.receiverName = receiverName;
         this.forceDuplicate = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Parameters{" +
+                "explanation='" + explanation + '\'' +
+                ", amount=" + amount +
+                ", customerNo=" + customerNo +
+                ", citizenshipNumber=" + citizenshipNumber +
+                ", taxNumber=" + taxNumber +
+                ", iBANNumber='" + iBANNumber + '\'' +
+                ", sourceAccount=" + sourceAccount +
+                ", receiverName='" + receiverName + '\'' +
+                ", forceDuplicate=" + forceDuplicate +
+                '}';
     }
 }

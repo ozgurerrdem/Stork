@@ -5,6 +5,7 @@ import com.example.stork.API.AccList.GetAccList;
 import com.example.stork.API.AccList.Request.Parameters;
 import com.example.stork.API.AccList.Request.Request;
 import com.example.stork.API.AccList.Response.Response;
+import com.example.stork.API.Header;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import retrofit2.Callback;
 public class MockAccount implements Serializable {
 
     public static final String name =  "ATANALCAR ENOPHRYS";
-    public static final String citizenshipNumber = "11111"; //80722431894
+    public static final String citizenshipNumber = "0"; //80722431894
     public static final String customerNo ="18";
     public static final String password = "12345";
     public static ArrayList<Account> accounts;
@@ -55,10 +56,9 @@ public class MockAccount implements Serializable {
         List<Account> accs = new ArrayList<>();
 
         Services services = new Services();
-        com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
         Parameters params = new Parameters();
         params.customerNo = "18";
-        Request request = new Request(header, params);
+        Request request = new Request(new Header(), params);
 
         GetAccList retrofit = services.createRetrofit().create(GetAccList.class);
         Call<Response> result = retrofit.GetPostValue(request);

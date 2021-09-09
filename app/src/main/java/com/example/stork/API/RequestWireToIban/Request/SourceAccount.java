@@ -24,4 +24,14 @@ public class SourceAccount {
         this.customerNo = MockAccount.accounts.get(index).getCustomerNo();
         this.currencyCode = MockAccount.accounts.get(index).getCurrencyCode();
     }
+
+    @Override
+    public String toString() {
+        return "SourceAccount{" +
+                "accountSuffix=" + accountSuffix +
+                ", branchCode=" + branchCode +
+                ", customerNo=" + customerNo +
+                ", currencyCode='" + currencyCode + '\'' +
+                '}';
+    }
 }

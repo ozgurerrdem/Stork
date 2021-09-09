@@ -155,10 +155,7 @@ public class DatabaseUtil {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists()){
-                    System.out.println("DOES NOT EXIST...");
                     reference.push().setValue(newCustomer);
-                }else{
-                    System.out.println("EXISTS.....");
                 }
             }
 

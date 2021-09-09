@@ -13,7 +13,7 @@ public class Header {
         ChannelRequestId = channelRequestId;
     }
     public Header (){
-        AppKey = "API7909c7de460b462aa1d";
+        AppKey = "c1c2a508fdf64c14a7b44edc9241c9cd";
         Channel = "API";
         ChannelSessionId = "test";
         ChannelRequestId = "a9058690-a286-40b7-b610-dbf477201501";
