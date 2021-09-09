@@ -1,6 +1,6 @@
 package com.example.stork.API.AccList.Request;
 
-import com.example.stork.API.RequestWireToAccount.Request.Header;
+import com.example.stork.API.Header;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
