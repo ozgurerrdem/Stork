@@ -150,7 +150,24 @@ public class DatabaseUtil {
      */
     public void addSavedCustomer(SavedCustomer newCustomer){
         DatabaseReference reference = rootNode.getReference("SavedCustomers");
-        reference.push().setValue(newCustomer);
+        DatabaseReference setRef = reference.child(newCustomer.getName());
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!dataSnapshot.exists()){
+                    System.out.println("DOES NOT EXIST...");
+                    reference.push().setValue(newCustomer);
+                }else{
+                    System.out.println("EXISTS.....");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("error.");
+            }
+        };
+        setRef.addListenerForSingleValueEvent(eventListener);
     }
 
 
