@@ -6,28 +6,16 @@ import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
 
-import android.os.AsyncTask;
-
 import com.example.stork.API.AccList.GetAccList;
 import com.example.stork.API.AccList.Request.Parameters;
 import com.example.stork.API.AccList.Request.Request;
 import com.example.stork.API.AccList.Response.Response;
-import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
-import com.example.stork.API.GetReceiptData.Request.Header;
-import com.example.stork.API.MoneyOrder.Request.DestinationAccount;
-import com.example.stork.API.MoneyOrder.moneyOrd;
-import com.example.stork.API.ProcessEftRequestToIban.ProcessEftRequestToIban;
-import com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount;
-import com.example.stork.API.ProcessEftRequestToIban.eftToIban;
-import com.example.stork.Account;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
 import com.example.stork.Database.CallWrapperTransaction;
-import com.example.stork.MockAccount;
 import com.example.stork.Services;
-import com.google.android.gms.common.internal.BaseGmsClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,93 +29,15 @@ public class BackendTest {
 
 
 
-    private class MyAsyncTask extends AsyncTask<Void, Void, Void>
-    {
-        @Override
-        protected Void doInBackground(Void... params) {
-            MockAccount ma = new MockAccount();
-            System.out.println("Run finished..");
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            System.out.println("After:" + MockAccount.accounts.get(0).getAccountName());
-            testProcessEftRequestToIBAN();
-        }
-    }
+
 
     public void run(){
-        new MyAsyncTask().execute();
-    }
-
-    public void testProcessEftRequestToIBAN(){
-        eftToIban eft = new eftToIban();
-        int index = 0;
-        int set = 0;
-        for(Account ac : MockAccount.accounts){
-            if(ac.getAccountSuffix() == 351 && ac.getBranchCode() == 9142){
-                set = index;
-            }
-            index++;
-        }
-        SourceAccount sa = new SourceAccount(MockAccount.accounts.get(set).getAccountSuffix(),MockAccount.accounts.get(set).getBranchCode(),MockAccount.accounts.get(set).getCurrencyCode(),MockAccount.accounts.get(set).getCustomerNo(),MockAccount.accounts.get(set).getIBANNo(), "-");
-
-        com.example.stork.API.ProcessEftRequestToIban.Request.Parameters parms = new com.example.stork.API.ProcessEftRequestToIban.Request.Parameters(
-                "test",
-                "TR900001002533034585185045",
-                1,
-                1,
-                18,
-                sa,
-                "HASAN GÜVEN",
-                true
-        );
-
-        eft.getResponse(parms, new Callback<com.example.stork.API.ProcessEftRequestToIban.Response.Response>() {
-            @Override
-            public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
-                System.out.println(" Htpp KOdu =" + response.code());
-                System.out.println(response.body().getData().expenseAmount);
-                System.out.println(response.body().getData().transactionDate);
-            }
-
-            @Override
-            public void onFailure(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, Throwable t) {
-
-            }
-        });
 
     }
-
-    public void testMoneyOrder(){
-        moneyOrd mord = new moneyOrd();
-        DestinationAccount dest = new DestinationAccount();
-        dest.accountSuffix="1000";
-        dest.branchCode="10";
-        com.example.stork.API.MoneyOrder.Request.Parameters parms = new com.example.stork.API.MoneyOrder.Request.Parameters(4,"10","deneme",dest);
-        System.out.println("DATA.");
-        System.out.println(parms.sourceAccount.accountSuffix);
-        System.out.println(parms.sourceAccount.branchCode);
-        System.out.println(parms.sourceAccount.currencyCode);
-        System.out.println(parms.sourceAccount.customerNo);
-        mord.getResponse(parms, new Callback<com.example.stork.API.MoneyOrder.Response.Response>() {
-            @Override
-            public void onResponse(Call<com.example.stork.API.MoneyOrder.Response.Response> call, retrofit2.Response<com.example.stork.API.MoneyOrder.Response.Response> response) {
-                System.out.println(" Htpp KOdu =" + response.code());
-                System.out.println(response.body().getData().state);
-            }
-
-            @Override
-            public void onFailure(Call<com.example.stork.API.MoneyOrder.Response.Response> call, Throwable t) {
-
-            }
-        });
-    }
-
 
     public void initMockAccount() {
 
-        Services services = new Services();
+        /*Services services = new Services();
         com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
         Parameters params = new Parameters();
         params.customerNo = "18";
@@ -162,7 +72,7 @@ public class BackendTest {
             public void onFailure(Call<Response> call, Throwable t) {
                 System.out.println("Hatalı.");
             }
-        });
+        });*/
 
     }
 

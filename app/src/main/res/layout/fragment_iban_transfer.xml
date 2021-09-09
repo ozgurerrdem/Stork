@@ -74,6 +74,7 @@
             android:hint="TRXXXXXXXXXXXXXXXXXXXXXXXX"
             android:paddingLeft="8dp"
             android:paddingTop="3dp"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iban_text">
 

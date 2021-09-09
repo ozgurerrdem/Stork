@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,6 +30,12 @@ import java.util.List;
  */
 public class CardTransferFragment extends Fragment {
     private Spinner account;
+    private Spinner bank;
+    private Spinner branch;
+    private EditText accountNum;
+    private EditText name;
+    private EditText amount;
+    private EditText exp;
     ArrayList<String> acNameList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
@@ -77,7 +84,13 @@ public class CardTransferFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_card_transfer, container, false);
         account = view.findViewById(R.id.hesabim_spinnerr);
-
+        bank = view.findViewById(R.id.bank_spin);
+        branch = view.findViewById(R.id.branch_spin);
+        bank = view.findViewById(R.id.bank_spin);
+        accountNum = view.findViewById(R.id.hesapno_editt);
+        name = view.findViewById(R.id.name_edit);
+        amount = view.findViewById(R.id.gonderilecek_editt);
+        exp = view.findViewById(R.id.aciklama_edit);
 
         return view;
     }

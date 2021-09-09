@@ -8,28 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
-import com.example.stork.API.SendFastMoneyOrder.Request.Parameters;
-import com.example.stork.API.SendFastMoneyOrder.Request.Request;
-import com.example.stork.API.SendFastMoneyOrder.Request.SourceAccount;
-import com.example.stork.API.SendFastMoneyOrder.Response.Response;
-import com.example.stork.API.SendFastMoneyOrder.SendFastMoneyOrder;
 import com.example.stork.Adapter.RecyclerAdapter;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.R;
-import com.example.stork.Services;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
 
 public class SendBankActivity extends AppCompatActivity {
     private ArrayList<SavedCustomer> savedList;

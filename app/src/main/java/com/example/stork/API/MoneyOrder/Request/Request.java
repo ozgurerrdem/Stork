@@ -1,6 +1,6 @@
 package com.example.stork.API.MoneyOrder.Request;
 
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
+import com.example.stork.API.Header;
 
 public class Request {
     private Header header;

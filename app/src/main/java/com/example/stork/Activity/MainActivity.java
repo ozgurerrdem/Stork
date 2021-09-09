@@ -13,28 +13,15 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
-import com.example.stork.API.SendFastMoneyOrder.Request.Parameters;
-import com.example.stork.API.SendFastMoneyOrder.Request.Request;
-import com.example.stork.API.SendFastMoneyOrder.Request.SourceAccount;
-import com.example.stork.API.SendFastMoneyOrder.Response.Response;
-import com.example.stork.API.SendFastMoneyOrder.SendFastMoneyOrder;
-import com.example.stork.Account;
 import com.example.stork.Adapter.CardAdapter;
-import com.example.stork.CallWrapperAccounts;
 import com.example.stork.MockAccount;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
-import com.example.stork.Services;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
-        BackendTest test = new BackendTest();
-        test.run();
-        //test.testMoneyOrder();
+        System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
+
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
