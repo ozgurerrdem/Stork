@@ -17,7 +17,7 @@ import retrofit2.Callback;
 public class MockAccount implements Serializable {
 
     public static final String name =  "ATANALCAR ENOPHRYS";
-    public static final String citizenshipNumber = "11111"; //80722431894
+    public static final String citizenshipNumber = "0"; //80722431894
     public static final String customerNo ="18";
     public static final String password = "12345";
     public static ArrayList<Account> accounts;

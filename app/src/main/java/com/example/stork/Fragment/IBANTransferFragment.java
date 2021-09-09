@@ -137,10 +137,17 @@ public class IBANTransferFragment extends Fragment {
                         db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
                     }
                     WireToIban wire = new WireToIban();
-                    wire.getResponse(new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString()), new Callback<Response>() {
+                    Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString());
+                    wire.getResponse(par, new Callback<Response>() {
                         @Override
                         public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                            System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                            System.out.println(par.toString());
+                            System.out.println(response.code());
+                            if (response.body().getData() != null) {
+                                System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                            } else {
+                                System.out.println("NULLLLLLLLLL" );
+                            }
                         }
                         @Override
                         public void onFailure(Call<Response> call, Throwable t) {
