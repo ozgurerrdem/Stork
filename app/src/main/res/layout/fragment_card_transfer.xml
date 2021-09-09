@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.CardTransferFragment"
-    android:background="#F5F5F5"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
+    android:background="#F5F5F5">
     <ScrollView
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
@@ -67,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/hesabim_spinnerr" />
 
             <Spinner
-                android:id="@+id/iban_editt"
+                android:id="@+id/bank_spin"
                 android:layout_width="316dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="49dp"
@@ -90,10 +87,10 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iban_editt" />
+                app:layout_constraintTop_toBottomOf="@+id/bank_spin" />
 
             <Spinner
-                android:id="@+id/aliciad_editt"
+                android:id="@+id/branch_spin"
                 android:layout_width="317dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="49dp"
@@ -116,7 +113,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aliciad_editt" />
+                app:layout_constraintTop_toBottomOf="@+id/branch_spin" />
 
             <EditText
                 android:id="@+id/hesapno_editt"
@@ -128,7 +125,7 @@
                 android:paddingTop="5dp"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hesap_numara"></EditText>
+                app:layout_constraintTop_toBottomOf="@+id/hesap_numara" />
 
             <TextView
                 android:id="@+id/aciklama_textt"
@@ -140,10 +137,10 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hesapno_editt"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/hesapno_editt" />
 
             <EditText
-                android:id="@+id/aciklama_editt"
+                android:id="@+id/name_edit"
                 android:layout_width="317dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="49dp"
@@ -152,7 +149,7 @@
                 android:paddingTop="8dp"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aciklama_textt"></EditText>
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_textt" />
 
             <TextView
                 android:id="@+id/gonderilecek_textt"
@@ -164,7 +161,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aciklama_editt"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
             <EditText
                 android:id="@+id/gonderilecek_editt"
@@ -176,35 +173,19 @@
                 android:paddingTop="5dp"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gonderilecek_textt"></EditText>
-
-            <TextView
-                android:id="@+id/gonderilecek"
-                android:layout_width="70dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="45dp"
-                android:background="@drawable/btn_round_white"
-                android:paddingLeft="8dp"
-                android:paddingTop="8dp"
-                android:text=""
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/gonderilecek_editt"
-                app:layout_constraintTop_toBottomOf="@+id/aciklama_editt"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/gonderilecek_textt" />
 
             <TextView
                 android:id="@+id/aciklama_text"
-                android:layout_width="wrap_content"
                 android:layout_height="22dp"
-                android:layout_marginStart="49dp"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="48dp"
                 android:layout_marginTop="18dp"
                 android:text="AÇIKLAMA"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gonderilecek"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/gonderilecek_editt" />
 
             <EditText
                 android:id="@+id/aciklama_edit"
@@ -216,7 +197,7 @@
                 android:paddingTop="8dp"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aciklama_text"></EditText>
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_text" />
 
             <CheckBox
                 android:id="@+id/chechBox"
@@ -228,7 +209,7 @@
                 android:text="Kayıtlı Alıcılara Ekle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aciklama_edit"></CheckBox>
+                app:layout_constraintTop_toBottomOf="@+id/aciklama_edit" />
 
             <Button
                 android:id="@+id/button"
