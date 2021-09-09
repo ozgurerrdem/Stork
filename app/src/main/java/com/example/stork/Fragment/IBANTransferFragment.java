@@ -125,6 +125,12 @@ public class IBANTransferFragment extends Fragment {
             }
         });
 
+        SavedCustomer saved = (SavedCustomer) getArguments().getSerializable("saved");
+        if (saved != null) {
+            name.setText(saved.getName());
+            iban.setText(saved.getIBAN());
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,10 +143,10 @@ public class IBANTransferFragment extends Fragment {
                 } else {
                     if (checkBox.isChecked()){
                         DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
+                        db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(),iban.getText().toString().toUpperCase(),""));
                     }
                     WireToIban wire = new WireToIban();
-                    Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString());
+                    Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString().toUpperCase(),new SourceAccount(indexAccount),name.getText().toString().toUpperCase());
                     wire.getResponse(par, new Callback<Response>() {
                         @Override
                         public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {

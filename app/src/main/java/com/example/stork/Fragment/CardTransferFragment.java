@@ -37,6 +37,7 @@ public class CardTransferFragment extends Fragment {
     private EditText amount;
     private EditText exp;
     ArrayList<String> acNameList = new ArrayList<>();
+    ArrayList<String> acBankList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
