@@ -129,8 +129,11 @@ public class IBANTransferFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
-                    MockAccount.accounts.get(0).setAccountName("dorugueeeee");
-                    Toast.makeText(getContext(),MockAccount.accounts.get(0).getAccountName(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(),"Abi oyle bi hesap yok abi?",Toast.LENGTH_LONG).show();
+                    if (checkBox.isChecked()){
+                        DatabaseUtil db = new DatabaseUtil();
+                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
+                    }
                 } else {
                     if (checkBox.isChecked()){
                         DatabaseUtil db = new DatabaseUtil();
