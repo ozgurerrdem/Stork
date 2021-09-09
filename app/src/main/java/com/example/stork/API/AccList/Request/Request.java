@@ -13,7 +13,7 @@ public class Request {
     @Expose
     private Parameters Parameters[] = new Parameters[1];
 
-    public Request(Header header, com.example.stork.API.AccList.Request.Parameters parameters) {
+    public Request(Header header, Parameters parameters) {
         this.header = header;
         this.Parameters[0]=parameters;
 

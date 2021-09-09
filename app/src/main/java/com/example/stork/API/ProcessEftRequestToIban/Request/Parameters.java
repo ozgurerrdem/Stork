@@ -39,6 +39,6 @@ public class Parameters {
                 this.customerNo = customerNo;
                 this.sourceAccount = sourceAccount;
                 this.receiverName = receiverName;
-                this.forceDuplicate = forceDuplicate;
+                this.forceDuplicate = true;
         }
 }

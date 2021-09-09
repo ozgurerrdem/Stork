@@ -10,4 +10,11 @@ public class DestinationAccount {
     public String branchCode;
     @SerializedName("AccountSuffix")
     @Expose
-    public String accountSuffix;}
+    public String accountSuffix;
+
+    public DestinationAccount(String branchCode, String accountSuffix) {
+        this.branchCode = branchCode;
+        this.accountSuffix = accountSuffix;
+    }
+}
+

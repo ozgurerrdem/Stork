@@ -29,21 +29,14 @@ public class Parameters {
         @SerializedName("ForceDuplicate")
         @Expose
         public Boolean forceDuplicate;
-
-        public Parameters(int index, String miktar, String exp, DestinationAccount dest ) {
-                Services services = new Services();
-                SourceAccount source = new SourceAccount();
-                source.accountSuffix= MockAccount.accounts.get(index).getAccountSuffix().toString();
-                source.branchCode=MockAccount.accounts.get(index).getBranchCode().toString();
-                source.currencyCode=MockAccount.accounts.get(index).getCurrencyCode();
-                source.customerNo=MockAccount.customerNo;
-                sourceAccount = source;
-                amount = miktar;
-                explanation = exp;
-                destinationAccount = dest;
-                customerNo = MockAccount.customerNo;
-                transactionDate =services.getCurrentTimeStamp();
+        Services serv = new Services();
+        public Parameters(SourceAccount sourceAccount, String amount, String explanation, DestinationAccount destinationAccount, String transactionDate) {
+                this.sourceAccount = sourceAccount;
+                this.amount = amount;
+                this.explanation = explanation;
+                this.destinationAccount = destinationAccount;
+                this.customerNo = MockAccount.customerNo;
+                this.transactionDate =serv.getCurrentTimeStamp() ;
+                this.forceDuplicate =true;
         }
-
-
 }
