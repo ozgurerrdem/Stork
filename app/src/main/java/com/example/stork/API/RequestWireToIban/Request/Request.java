@@ -1,5 +1,7 @@
 package com.example.stork.API.RequestWireToIban.Request;
 
+import com.example.stork.API.Header;
+
 public class Request {
     private Header header;
     private Parameters Parameters[] = new Parameters[1];
