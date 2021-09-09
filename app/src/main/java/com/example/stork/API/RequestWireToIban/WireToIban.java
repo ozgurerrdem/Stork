@@ -16,7 +16,7 @@ public class WireToIban {
     RequestWireToIban requestWireToIban = services.createRetrofit().create(RequestWireToIban.class);
 
     public void getResponse (Parameters param, final Callback<Response> responseCallback){
-        Header header = new Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","a9058690-a286-40b7-b610-dbf477201501");
+        Header header = new Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","test","a9058690-a286-40b7-b610-dbf477201501");
         Call<Response> res = requestWireToIban.GetPostValue(new Request(header,param));
         res.enqueue(new Callback<Response>() {
             @Override

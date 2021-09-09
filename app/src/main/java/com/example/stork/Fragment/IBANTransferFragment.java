@@ -150,9 +150,8 @@ public class IBANTransferFragment extends Fragment {
                     wire.getResponse(new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString()), new Callback<Response>() {
                         @Override
                         public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                            System.out.println("RESPONSE: "+MockAccount.accounts.get(indexAccount).getAccountName()+ " "+ response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                            System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
                         }
-
                         @Override
                         public void onFailure(Call<Response> call, Throwable t) {
                             System.out.println("HATA: "+t.getMessage());

@@ -70,7 +70,7 @@ public class MockAccount implements Serializable {
 
             //API response
             for(int i=0; i<response.body().getData().accountList.size(); i++){
-                if((response.body().getData().accountList.get(i).accountSuffix == 10 && response.body().getData().accountList.get(i).branchCode == 1000) ||
+                if((response.body().getData().accountList.get(i).accountSuffix == 351 && response.body().getData().accountList.get(i).branchCode == 9142) ||
                         (response.body().getData().accountList.get(i).accountSuffix == 32 && response.body().getData().accountList.get(i).branchCode == 1000) ||
                         (response.body().getData().accountList.get(i).accountSuffix == 352 && response.body().getData().accountList.get(i).branchCode == 9142) ||
                         (response.body().getData().accountList.get(i).accountSuffix == 35215 && response.body().getData().accountList.get(i).branchCode == 9142) ||
