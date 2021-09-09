@@ -6,26 +6,17 @@ import com.example.stork.API.GetRate.Request.Request;
 import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.API.ProcessEftRequestToIban.Request.Header;*/
 
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
-
 import com.example.stork.API.AccList.GetAccList;
 import com.example.stork.API.AccList.Request.Parameters;
 import com.example.stork.API.AccList.Request.Request;
 import com.example.stork.API.AccList.Response.Response;
-import com.example.stork.API.GetRate.GetCurrencyRatesForSpecificDay;
-import com.example.stork.API.GetReceiptData.Request.Header;
 import com.example.stork.Database.CallWrapperCustomer;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
 import com.example.stork.Database.CallWrapperTransaction;
-import com.example.stork.Fragment.CardTransferFragment;
-import com.example.stork.MockAccount;
 import com.example.stork.Services;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +37,7 @@ public class BackendTest {
 
     public void initMockAccount() {
 
-        Services services = new Services();
+        /*Services services = new Services();
         com.example.stork.API.RequestWireToAccount.Request.Header header = new com.example.stork.API.RequestWireToAccount.Request.Header("API","API7909c7de460b462aa1d","331eb5f529c74df2b800926b5f34b874","5252012362481156055");
         Parameters params = new Parameters();
         params.customerNo = "18";
@@ -81,7 +72,7 @@ public class BackendTest {
             public void onFailure(Call<Response> call, Throwable t) {
                 System.out.println("Hatalı.");
             }
-        });
+        });*/
 
     }
 

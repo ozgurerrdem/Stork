@@ -1,6 +1,8 @@
 package com.example.stork.API.ProcessEftRequestToIban.Request;
 
 
+import com.example.stork.API.Header;
+
 public class Request {
     private Header header;
     private Parameters Parameters[] = new Parameters[1];

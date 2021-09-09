@@ -1,5 +1,6 @@
 package com.example.stork.API.ProcessScheduledTransactionForIbanEft.Request;
 
+import com.example.stork.API.Header;
 import com.google.gson.annotations.SerializedName;
 
 public class Request {

@@ -1,8 +1,7 @@
 package com.example.stork.API.RequestGoldWireToIBAN;
 
 
-import com.example.stork.API.RequestGoldWireToIBAN.RequestGoldWireToIBAN;
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
+import com.example.stork.API.Header;
 import com.example.stork.API.RequestGoldWireToIBAN.Request.Parameters;
 import com.example.stork.API.RequestGoldWireToIBAN.Request.Request;
 import com.example.stork.API.RequestGoldWireToIBAN.Response.Response;
@@ -16,8 +15,7 @@ public class goldWireToIban {
     RequestGoldWireToIBAN requestGoldWireToIBAN = services.createRetrofit().create(RequestGoldWireToIBAN.class);
 
     public void getResponse (Parameters param, final Callback<Response> responseCallback){
-        Header header = new Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","a9058690-a286-40b7-b610-dbf477201501");
-        Call<Response> res = requestGoldWireToIBAN.GetPostValue(new Request(header,param));
+        Call<Response> res = requestGoldWireToIBAN.GetPostValue(new Request(new Header(),param));
         res.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {

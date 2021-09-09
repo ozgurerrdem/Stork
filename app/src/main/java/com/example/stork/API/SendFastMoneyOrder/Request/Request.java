@@ -1,7 +1,7 @@
 package com.example.stork.API.SendFastMoneyOrder.Request;
 
 
-import com.example.stork.API.ProcessEftRequestToIban.Request.Header;
+import com.example.stork.API.Header;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

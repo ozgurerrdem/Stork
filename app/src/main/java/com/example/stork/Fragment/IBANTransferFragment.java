@@ -1,6 +1,5 @@
 package com.example.stork.Fragment;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,26 +13,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.stork.API.AccList.GetAccList;
-import com.example.stork.API.RequestWireToIban.Request.Header;
 import com.example.stork.API.RequestWireToIban.Request.Parameters;
-import com.example.stork.API.RequestWireToIban.Request.Request;
 import com.example.stork.API.RequestWireToIban.Request.SourceAccount;
-import com.example.stork.API.RequestWireToIban.RequestWireToIban;
 import com.example.stork.API.RequestWireToIban.Response.Response;
+import com.example.stork.API.RequestWireToIban.WireToIban;
 import com.example.stork.Account;
-import com.example.stork.CallWrapperAccounts;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
 import com.example.stork.R;
-import com.example.stork.Services;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +35,7 @@ import retrofit2.Callback;
  * create an instance of this fragment.
  */
 public class IBANTransferFragment extends Fragment {
+    private int indexAccount =0;
     private Spinner account;
     private EditText iban;
     private EditText name;
@@ -106,23 +98,6 @@ public class IBANTransferFragment extends Fragment {
         checkBox = view.findViewById(R.id.chechBox);
         button = view.findViewById(R.id.button);
 
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
-                    MockAccount.accounts.get(0).setAccountName("dorugueeeee");
-                    Toast.makeText(getContext(),MockAccount.accounts.get(0).getAccountName(),Toast.LENGTH_LONG).show();
-                } else {
-                    if (checkBox.isChecked()){
-                        DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
-                    }
-                    /* TODO Transferi Tamamla */
-                }
-            }
-        });
-
         return view;
     }
 
@@ -140,16 +115,46 @@ public class IBANTransferFragment extends Fragment {
         account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // On selecting a spinner item
-                String item = adapterView.getItemAtPosition(i).toString();
-
                 // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+                indexAccount = i;
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
+                    MockAccount.accounts.get(0).setAccountName("dorugueeeee");
+                    Toast.makeText(getContext(),MockAccount.accounts.get(0).getAccountName(),Toast.LENGTH_LONG).show();
+                } else {
+                    if (checkBox.isChecked()){
+                        DatabaseUtil db = new DatabaseUtil();
+                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
+                    }
+                    WireToIban wire = new WireToIban();
+                    Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString());
+                    wire.getResponse(par, new Callback<Response>() {
+                        @Override
+                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                            System.out.println(par.toString());
+                            System.out.println(response.code());
+                            if (response.body().getData() != null) {
+                                System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                            } else {
+                                System.out.println("NULLLLLLLLLL" );
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<Response> call, Throwable t) {
+                            System.out.println("HATA: "+t.getMessage());
+                        }
+                    });
+                }
             }
         });
 

@@ -1,7 +1,6 @@
 package com.example.stork.API.ProcessEftRequestToAccount.Request;
 
-import com.example.stork.API.ProcessEftRequestToAccount.Request.Header;
-import com.example.stork.API.ProcessEftRequestToAccount.Request.Parameters;
+import com.example.stork.API.Header;
 
 public class Request {
     private Header header;
