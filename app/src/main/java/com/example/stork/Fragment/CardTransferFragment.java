@@ -2,18 +2,23 @@ package com.example.stork.Fragment;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.example.stork.API.RequestWireToAccount.Request.DestinationAccount;
+import com.example.stork.API.RequestWireToAccount.Request.Parameters;
+import com.example.stork.API.RequestWireToAccount.Request.SourceAccount;
+import com.example.stork.API.RequestWireToAccount.Response.Response;
+import com.example.stork.API.RequestWireToAccount.WireToAccount;
 import com.example.stork.Account;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
@@ -21,7 +26,9 @@ import com.example.stork.Model.BankMap;
 import com.example.stork.R;
 
 import java.util.ArrayList;
-import java.util.Set;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,15 +36,17 @@ import java.util.Set;
  * create an instance of this fragment.
  */
 public class CardTransferFragment extends Fragment {
-    private int indexAccount =0;
+    private int indexAccount = 0;
     private String bankValue;
     private Spinner account;
     private Spinner bank;
-    private Spinner branch;
+    private EditText branch;
     private EditText accountNum;
     private EditText name;
     private EditText amount;
     private EditText exp;
+    private EditText ekno;
+    private Button button;
     ArrayList<String> acNameList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
@@ -87,13 +96,14 @@ public class CardTransferFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card_transfer, container, false);
         account = view.findViewById(R.id.hesabim_spinnerr);
         bank = view.findViewById(R.id.bank_spin);
-        branch = view.findViewById(R.id.branch_spin);
+        branch = view.findViewById(R.id.branch_edit);
         bank = view.findViewById(R.id.bank_spin);
         accountNum = view.findViewById(R.id.hesapno_editt);
         name = view.findViewById(R.id.name_edit);
         amount = view.findViewById(R.id.gonderilecek_editt);
         exp = view.findViewById(R.id.aciklama_edit);
-
+        ekno =view.findViewById(R.id.ek_no_edit);
+        button = view.findViewById(R.id.button);
         return view;
     }
 
@@ -120,15 +130,15 @@ public class CardTransferFragment extends Fragment {
         });
         BankMap bankMap = new BankMap();
 
-        ArrayList<String> bankList=  new ArrayList<String>(bankMap.getKeyList());
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,bankList);
+        ArrayList<String> bankList = new ArrayList<String>(bankMap.getKeyList());
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, bankList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bank.setAdapter(adapter);
         bank.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-               bankValue = bankMap.getValue(bankList.get(i));
-                Toast.makeText(getContext(),bankValue,Toast.LENGTH_LONG).show();
+                bankValue = bankMap.getValue(bankList.get(i));
+                Toast.makeText(getContext(), bankValue, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -141,5 +151,41 @@ public class CardTransferFragment extends Fragment {
         if (saved != null) {
             name.setText(saved.getName());
         }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (branch.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty() || ekno.getText().toString().isEmpty()) {
+                    Toast.makeText(getContext(), "Abi oyle bi hesap yok abi?", Toast.LENGTH_LONG).show();
+                } else {
+                    WireToAccount wire = new WireToAccount();
+                    String str = accountNum.getText().toString();
+                    Parameters par = new Parameters(exp.getText().toString(),
+                            Integer.valueOf(amount.getText().toString()),
+                            new SourceAccount(indexAccount),
+                            // Branch = 9142
+                            // Customer No = 3487796
+
+                            new DestinationAccount(Integer.valueOf(ekno.getText().toString()),Integer.valueOf(branch.getText().toString()),Integer.valueOf(accountNum.getText().toString())),
+                            name.getText().toString());
+                    wire.getResponse(par, new Callback<Response>() {
+                        @Override
+                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                            System.out.println(par.toString());
+                            System.out.println(response.code());
+                            if (response.body().getData() != null) {
+                                System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                            } else {
+                                System.out.println("NULLLLLLLLLL");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Response> call, Throwable t) {
+                            System.out.println("HATA: "+t.getMessage());
+                        }
+                    });
+                }
+            }
+        });
     }
 }

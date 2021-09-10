@@ -79,14 +79,14 @@
             android:layout_height="22dp"
             android:layout_marginStart="49dp"
             android:layout_marginTop="18dp"
-            android:text="ŞUBE"
+            android:text="ŞUBE KODU"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bank_spin" />
 
-        <Spinner
-            android:id="@+id/branch_spin"
+        <EditText
+            android:id="@+id/branch_edit"
             android:layout_width="317dp"
             android:layout_height="48dp"
             android:layout_marginStart="49dp"
@@ -109,12 +109,13 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/branch_spin" />
+            app:layout_constraintTop_toBottomOf="@+id/branch_edit" />
+
 
         <EditText
             android:id="@+id/hesapno_editt"
-            android:layout_width="317dp"
-            android:layout_height="48dp"
+            android:layout_width="215dp"
+            android:layout_height="45dp"
             android:layout_marginStart="49dp"
             android:background="@drawable/btn_round_white"
             android:paddingLeft="5dp"
@@ -123,13 +124,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hesap_numara" />
 
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EK NO"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ek_no_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toEndOf="@+id/hesap_numara"
+            app:layout_constraintTop_toBottomOf="@+id/branch_edit"
+            app:layout_constraintVertical_bias="0.857" />
+
+        <EditText
+            android:id="@+id/ek_no_edit"
+            android:layout_width="85dp"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_round_white"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.258"
+            app:layout_constraintStart_toEndOf="@+id/hesapno_editt"
+            app:layout_constraintTop_toBottomOf="@+id/hesap_numara" />
+
         <TextView
             android:id="@+id/aciklama_textt"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginStart="49dp"
             android:layout_marginTop="18dp"
-            android:text="ALICI AD SOYAD"
+            android:text="ALICI ADI SOYADI"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -203,6 +231,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="100dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/gradient_orange"
             android:paddingLeft="70dp"
             android:paddingTop="15dp"
@@ -215,5 +244,6 @@
             app:layout_constraintVertical_bias="1.0">
 
         </Button>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

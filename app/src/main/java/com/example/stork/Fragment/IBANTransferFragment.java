@@ -38,7 +38,7 @@ import retrofit2.Callback;
  * create an instance of this fragment.
  */
 public class IBANTransferFragment extends Fragment {
-    private int indexAccount =0;
+    private int indexAccount = 0;
     private Spinner account;
     private EditText iban;
     private EditText name;
@@ -138,22 +138,17 @@ public class IBANTransferFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
-                    Toast.makeText(getContext(),"Abi oyle bi hesap yok abi?",Toast.LENGTH_LONG).show();
-                    if (checkBox.isChecked()){
-                        DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
-                    }
+                    Toast.makeText(getContext(), "Abi oyle bi hesap yok abi?", Toast.LENGTH_LONG).show();
                 } else {
-                    if (checkBox.isChecked()){
+                    if (checkBox.isChecked()) {
                         DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(),iban.getText().toString().toUpperCase(),""));
+                        db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(), iban.getText().toString().toUpperCase(), ""));
                     }
-                    SourceAccount sourceAccount = new SourceAccount(indexAccount);
-                    if(services.compareBanksByIban(iban.getText().toString(), MockAccount.accounts.get(indexAccount).getIBANNo())){
+                    if (services.compareBanksByIban(iban.getText().toString(), MockAccount.accounts.get(indexAccount).getIBANNo())) {
                         //HAVALE
                         System.out.println("HAVALEEEEEE");
                         WireToIban wire = new WireToIban();
-                        Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString().toUpperCase(),new SourceAccount(indexAccount),name.getText().toString().toUpperCase());
+                        Parameters par = new Parameters(exp.getText().toString(), Integer.valueOf(amount.getText().toString()), iban.getText().toString().toUpperCase(), new SourceAccount(indexAccount), name.getText().toString().toUpperCase());
                         wire.getResponse(par, new Callback<Response>() {
                             @Override
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
@@ -162,15 +157,16 @@ public class IBANTransferFragment extends Fragment {
                                 if (response.body().getData() != null) {
                                     System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
                                 } else {
-                                    System.out.println("NULLLLLLLLLL" );
+                                    System.out.println("NULLLLLLLLLL");
                                 }
                             }
+
                             @Override
                             public void onFailure(Call<Response> call, Throwable t) {
-                                System.out.println("HATA: "+t.getMessage());
+                                System.out.println("HATA: " + t.getMessage());
                             }
                         });
-                    }else{
+                    } else {
                         //EFT
                         System.out.println("EFTTTTT");
                         EftToIban eftToIban = new EftToIban();
@@ -183,14 +179,14 @@ public class IBANTransferFragment extends Fragment {
                                 new com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount(indexAccount),
                                 name.getText().toString().toUpperCase(),
                                 true
-                                );
+                        );
                         eftToIban.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToIban.Response.Response>() {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
                                 System.out.println(response.code());
-                                if(response.body().getData()==null){
+                                if (response.body().getData() == null) {
                                     System.out.println("Response boş");
-                                }else{
+                                } else {
                                     System.out.println(response.body().getData().transactionDate);
                                 }
                             }
