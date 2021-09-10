@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.stork.Database.DatabaseUtil;
-import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.Database.Models.SavedTransaction;
 import com.example.stork.R;
 
@@ -22,7 +21,7 @@ public class AddTransactionPopup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_transaction_popup);
-        Button button = findViewById(R.id.button);
+        Button button = findViewById(R.id.login_btn);
         name = findViewById(R.id.editText4);
         iban = findViewById(R.id.editText5);
         amount = findViewById(R.id.editText6);

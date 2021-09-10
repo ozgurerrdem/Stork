@@ -103,7 +103,7 @@ public class CardTransferFragment extends Fragment {
         amount = view.findViewById(R.id.gonderilecek_editt);
         exp = view.findViewById(R.id.aciklama_edit);
         ekno =view.findViewById(R.id.ek_no_edit);
-        button = view.findViewById(R.id.button);
+        button = view.findViewById(R.id.login_btn);
         return view;
     }
 

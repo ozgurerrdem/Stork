@@ -29,7 +29,8 @@ public class SendMoneyActivity extends AppCompatActivity {
         floatingActionButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SendMoneyActivity.this , SendMoneyToFriendsActivity.class));
+//              startActivity(new Intent(SendMoneyActivity.this , SendMoneyToFriendsActivity.class));
+                finish();
             }
         });
 

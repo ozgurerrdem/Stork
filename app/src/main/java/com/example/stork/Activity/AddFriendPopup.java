@@ -19,7 +19,7 @@ public class AddFriendPopup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_friend_popup);
-        Button button = findViewById(R.id.button);
+        Button button = findViewById(R.id.login_btn);
         name = findViewById(R.id.editText4);
         iban = findViewById(R.id.editText5);
 
