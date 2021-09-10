@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
+            android:name=".Activity.ProfilActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.CashbackActivity"
             android:exported="true" />
         <activity
