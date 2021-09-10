@@ -151,7 +151,7 @@ public class DatabaseUtil {
      */
     public void addSavedCustomer(SavedCustomer newCustomer){
         DatabaseReference reference = rootNode.getReference("SavedCustomers");
-        Query setRef = reference.orderByChild("name").equalTo(newCustomer.getName());
+        Query setRef = reference.orderByChild("iban").equalTo(newCustomer.getIBAN());
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
