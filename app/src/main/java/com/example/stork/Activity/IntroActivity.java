@@ -62,6 +62,8 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
+        BackendTest bdtest = new BackendTest();
+        bdtest.fillTestData();
         new MyAsyncTask().execute();
 
 

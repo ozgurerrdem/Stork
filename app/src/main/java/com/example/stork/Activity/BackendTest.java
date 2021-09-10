@@ -28,7 +28,13 @@ public class BackendTest {
     List<SavedCustomer> customersa = new ArrayList<SavedCustomer>();
 
 
-
+    public void fillTestData(){
+        DatabaseUtil db = new DatabaseUtil();
+        SavedCustomer nc1 = new SavedCustomer("CİHAT TAVLI", "TR920013400001366661900001","https://img.a.transfermarkt.technology/portrait/big/3139-1459504284.jpg?lm=1");
+        SavedCustomer nc2 = new SavedCustomer("HASAN GÜVEN", "TR900001002533034585185045","https://ichef.bbci.co.uk/news/640/cpsprodpb/CE17/production/_116395725_55588050.jpg");
+        db.addSavedCustomer(nc1);
+        db.addSavedCustomer(nc2);
+    }
 
 
     public void run(){
