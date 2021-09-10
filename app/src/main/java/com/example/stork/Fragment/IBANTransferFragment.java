@@ -99,7 +99,7 @@ public class IBANTransferFragment extends Fragment {
         amount = view.findViewById(R.id.gonderilecek_edit);
         exp = view.findViewById(R.id.aciklama_edit);
         checkBox = view.findViewById(R.id.chechBox);
-        button = view.findViewById(R.id.button);
+        button = view.findViewById(R.id.login_btn);
 
         return view;
     }
