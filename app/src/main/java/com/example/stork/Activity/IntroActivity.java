@@ -27,31 +27,7 @@ import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
 
-    private class MyAsyncTask extends AsyncTask<Void, Void, Void>
-    {
-        @Override
-        protected Void doInBackground(Void... params) {
-            MockAccount ma = new MockAccount();
-            System.out.println("Run finished..");
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            onboarding_skip.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                    finish();
-                }
-            });
-        }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        //TODO Progress bar
-        }
-    }
 
     OnboardingAdapter onboardingAdapter;
     Button onboardingActionButton;
@@ -61,10 +37,6 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
-        BackendTest bdtest = new BackendTest();
-        bdtest.fillTestData();
-        new MyAsyncTask().execute();
 
 
 
@@ -83,6 +55,14 @@ public class IntroActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 setCurrentOnboardingIndicator(position);
+            }
+        });
+
+        onboarding_skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(IntroActivity.this , LoginActivity.class));
+                finish();
             }
         });
 

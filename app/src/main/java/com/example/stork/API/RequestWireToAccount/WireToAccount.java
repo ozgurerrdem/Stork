@@ -10,7 +10,7 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class wireToAccount {
+public class WireToAccount {
     Services services = new Services();
     RequestWireToAccount requestWireToAccount = services.createRetrofit().create(RequestWireToAccount.class);
 
