@@ -25,7 +25,7 @@ public class PdfActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pdf);
         Services services = new Services();
 
-        Parameters param = new Parameters();
+        Parameters param = new Parameters(9142,"2021-01-28",3411,123,true);
         param.branchCode = 9142;
         param.isPdf = true;
         param.customerNo = 123;
