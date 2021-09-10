@@ -40,7 +40,7 @@ public class IntroActivity extends AppCompatActivity {
             onboarding_skip.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                     finish();
                 }
             });
@@ -91,7 +91,7 @@ public class IntroActivity extends AppCompatActivity {
                     viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
 
                 }else{
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                     finish();
                 }
             }
