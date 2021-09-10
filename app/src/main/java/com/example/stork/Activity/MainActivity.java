@@ -46,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
         List<CardModel> cardModels = new ArrayList<>();
 
         cardModels.add(new CardModel(R.drawable.maincard));
-        cardModels.add(new CardModel(R.drawable.usa));
-        cardModels.add(new CardModel(R.drawable.uni));
-        cardModels.add(new CardModel(R.drawable.plat));
-        cardModels.add(new CardModel(R.drawable.eutravel));
         cardModels.add(new CardModel(R.drawable.tokyotravel));
+        cardModels.add(new CardModel(R.drawable.eutravel));
+        cardModels.add(new CardModel(R.drawable.usa));
+        cardModels.add(new CardModel(R.drawable.plat));
+
+
 
         viewPager2.setAdapter(new CardAdapter(cardModels , viewPager2));
 

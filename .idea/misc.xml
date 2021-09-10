@@ -18,11 +18,16 @@
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/rece.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/layout/recycler_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/penguin/Downloads/Para Transferleri/app/src/main/res/menu/bottom_menu.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/drawable/cardview_topcorners_radius.xml" value="0.3671875" />
+        <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/drawable/gradient_cream.xml" value="0.3671875" />
+        <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/drawable/spinner_background.xml" value="0.3671875" />
+        <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_add_transaction_popup.xml" value="0.1651469098277609" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_gifts.xml" value="0.25679347826086957" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_main.xml" value="0.1707193515704154" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/activity_talimatlar2.xml" value="0.2" />
+        <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/card_item_container.xml" value="0.1707193515704154" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/fragment_iban_transfer.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/yigit/Desktop/Stork/app/src/main/res/layout/fragment_transfer_talimat.xml" value="0.2" />
@@ -43,13 +48,12 @@
         <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_send_done.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.16215277777777778" />
-        <entry key="app/src/main/res/layout/fragment_card_transfer.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_card_transfer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_create_group.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_iban_transfer.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_transfer_talimat.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/piyasa_hisse.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/recycler_item.xml" value="0.25" />
       </map>
