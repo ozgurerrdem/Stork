@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.stork.API.ProcessEftRequestToIban.EftToIban;
 import com.example.stork.API.RequestWireToIban.Request.Parameters;
 import com.example.stork.API.RequestWireToIban.Request.SourceAccount;
 import com.example.stork.API.RequestWireToIban.Response.Response;
@@ -24,6 +25,8 @@ import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
 import com.example.stork.R;
+import com.example.stork.Services;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -125,6 +128,12 @@ public class IBANTransferFragment extends Fragment {
             }
         });
 
+        SavedCustomer saved = (SavedCustomer) getArguments().getSerializable("saved");
+        if (saved != null) {
+            name.setText(saved.getName());
+            iban.setText(saved.getIBAN());
+        }
+        Services services = new Services();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,26 +146,61 @@ public class IBANTransferFragment extends Fragment {
                 } else {
                     if (checkBox.isChecked()){
                         DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString(),iban.getText().toString(),""));
+                        db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(),iban.getText().toString().toUpperCase(),""));
                     }
-                    WireToIban wire = new WireToIban();
-                    Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString(),new SourceAccount(indexAccount),name.getText().toString());
-                    wire.getResponse(par, new Callback<Response>() {
-                        @Override
-                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                            System.out.println(par.toString());
-                            System.out.println(response.code());
-                            if (response.body().getData() != null) {
-                                System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
-                            } else {
-                                System.out.println("NULLLLLLLLLL" );
+                    SourceAccount sourceAccount = new SourceAccount(indexAccount);
+                    if(services.compareBanksByIban(iban.getText().toString(), MockAccount.accounts.get(indexAccount).getIBANNo())){
+                        //HAVALE
+                        System.out.println("HAVALEEEEEE");
+                        WireToIban wire = new WireToIban();
+                        Parameters par = new Parameters(exp.getText().toString(),Integer.valueOf(amount.getText().toString()),iban.getText().toString().toUpperCase(),new SourceAccount(indexAccount),name.getText().toString().toUpperCase());
+                        wire.getResponse(par, new Callback<Response>() {
+                            @Override
+                            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                                System.out.println(par.toString());
+                                System.out.println(response.code());
+                                if (response.body().getData() != null) {
+                                    System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                                } else {
+                                    System.out.println("NULLLLLLLLLL" );
+                                }
                             }
-                        }
-                        @Override
-                        public void onFailure(Call<Response> call, Throwable t) {
-                            System.out.println("HATA: "+t.getMessage());
-                        }
-                    });
+                            @Override
+                            public void onFailure(Call<Response> call, Throwable t) {
+                                System.out.println("HATA: "+t.getMessage());
+                            }
+                        });
+                    }else{
+                        //EFT
+                        System.out.println("EFTTTTT");
+                        EftToIban eftToIban = new EftToIban();
+                        com.example.stork.API.ProcessEftRequestToIban.Request.Parameters par = new com.example.stork.API.ProcessEftRequestToIban.Request.Parameters(
+                                exp.getText().toString(),
+                                iban.getText().toString(),
+                                Integer.valueOf(services.getBankCode(iban.getText().toString())),
+                                Integer.valueOf(amount.getText().toString()),
+                                Integer.valueOf(MockAccount.customerNo),
+                                new com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount(indexAccount),
+                                name.getText().toString().toUpperCase(),
+                                true
+                                );
+                        eftToIban.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToIban.Response.Response>() {
+                            @Override
+                            public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
+                                System.out.println(response.code());
+                                if(response.body().getData()==null){
+                                    System.out.println("Response boş");
+                                }else{
+                                    System.out.println(response.body().getData().transactionDate);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, Throwable t) {
+
+                            }
+                        });
+                    }
                 }
             }
         });

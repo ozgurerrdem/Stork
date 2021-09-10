@@ -1,5 +1,6 @@
 package com.example.stork.API.RequestWireToAccount.Request;
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,5 +31,15 @@ public class Parameters {
     @Expose
     public Boolean forceDuplicate;
 
+    public Parameters(String explanation, Integer amount, Integer citizenshipNumber, Integer customerNo, SourceAccount sourceAccount, DestinationAccount destinationAccount, String receiverName, Boolean forceDuplicate) {
+        this.explanation = explanation;
+        this.amount = amount;
+        this.citizenshipNumber = Integer.valueOf(MockAccount.citizenshipNumber);
+        this.customerNo = Integer.valueOf(MockAccount.customerNo);
+        this.sourceAccount = sourceAccount;
+        this.destinationAccount = destinationAccount;
+        this.receiverName = receiverName;
+        this.forceDuplicate = true;
+    }
 }
 

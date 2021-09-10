@@ -1,7 +1,6 @@
 package com.example.stork.Fragment;
 
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,12 +15,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.stork.Account;
-import com.example.stork.CallWrapperAccounts;
+import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
+import com.example.stork.Model.BankMap;
 import com.example.stork.R;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +29,8 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class CardTransferFragment extends Fragment {
+    private int indexAccount =0;
+    private String bankValue;
     private Spinner account;
     private Spinner bank;
     private Spinner branch;
@@ -108,11 +110,7 @@ public class CardTransferFragment extends Fragment {
         account.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // On selecting a spinner item
-                String item = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+                indexAccount = i;
             }
 
             @Override
@@ -120,5 +118,28 @@ public class CardTransferFragment extends Fragment {
 
             }
         });
+        BankMap bankMap = new BankMap();
+
+        ArrayList<String> bankList=  new ArrayList<String>(bankMap.getKeyList());
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,bankList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        bank.setAdapter(adapter);
+        bank.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+               bankValue = bankMap.getValue(bankList.get(i));
+                Toast.makeText(getContext(),bankValue,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        SavedCustomer saved = (SavedCustomer) getArguments().getSerializable("saved");
+        if (saved != null) {
+            name.setText(saved.getName());
+        }
     }
 }

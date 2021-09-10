@@ -23,6 +23,7 @@ public class SendBankActivity extends AppCompatActivity {
     private ArrayList<SavedCustomer> savedList;
     private RecyclerView rview;
     private RecyclerAdapter adapter;
+    SavedCustomer saved = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class SendBankActivity extends AppCompatActivity {
             @Override
             public void onItemClick(SavedCustomer item) {
                 Toast.makeText(getApplicationContext(), "Eyyy "+ item.getName()+ " sen kimsin!!!", Toast.LENGTH_SHORT).show();
+                saved = item;
+                Intent intent = new Intent(SendBankActivity.this,MoneyTransferActivity.class);
+                intent.putExtra("saved",saved);
+                startActivity(intent);
             }
         });
 

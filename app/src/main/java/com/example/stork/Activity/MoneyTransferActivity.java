@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.stork.Adapter.PageAdapter;
+import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -26,7 +27,7 @@ public class MoneyTransferActivity extends AppCompatActivity {
         ibanFragment =(TabItem) findViewById(R.id.Tab1);
         cardFragment =(TabItem) findViewById(R.id.Tab2);
         viewpager=(ViewPager) findViewById(R.id.ViewPager);
-        pagerAdapter=new PageAdapter(getSupportFragmentManager(),tablayout.getTabCount());
+        pagerAdapter=new PageAdapter(getSupportFragmentManager(),tablayout.getTabCount(),(SavedCustomer) getIntent().getSerializableExtra("saved"));
         viewpager.setAdapter(pagerAdapter);
         tablayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
            @Override

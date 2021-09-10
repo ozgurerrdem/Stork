@@ -10,7 +10,7 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class eftToIban {
+public class EftToIban {
     Services services = new Services();
     ProcessEftRequestToIban processEftRequestToIban = services.createRetrofit().create(ProcessEftRequestToIban.class);
 

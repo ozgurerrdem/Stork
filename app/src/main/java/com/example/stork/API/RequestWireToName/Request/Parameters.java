@@ -1,5 +1,6 @@
 package com.example.stork.API.RequestWireToName.Request;
 
+import com.example.stork.MockAccount;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -44,108 +45,19 @@ public class Parameters {
     @Expose
     private SourceAccount sourceAccount;
 
-    public Integer getDestinationBranchCode() {
-        return destinationBranchCode;
-    }
-
-    public void setDestinationBranchCode(Integer destinationBranchCode) {
+    public Parameters(Integer destinationBranchCode, String destinationName, String destinationLastName, String destinationPhoneNo, String destinationMotherName, String destinationFatherName, String destinationBirthDate, String receiverName, Boolean forceDuplicate, Integer customerNo, Integer amount, String explanation, SourceAccount sourceAccount) {
         this.destinationBranchCode = destinationBranchCode;
-    }
-
-    public String getDestinationName() {
-        return destinationName;
-    }
-
-    public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
-    }
-
-    public String getDestinationLastName() {
-        return destinationLastName;
-    }
-
-    public void setDestinationLastName(String destinationLastName) {
         this.destinationLastName = destinationLastName;
-    }
-
-    public String getDestinationPhoneNo() {
-        return destinationPhoneNo;
-    }
-
-    public void setDestinationPhoneNo(String destinationPhoneNo) {
         this.destinationPhoneNo = destinationPhoneNo;
-    }
-
-    public String getDestinationMotherName() {
-        return destinationMotherName;
-    }
-
-    public void setDestinationMotherName(String destinationMotherName) {
         this.destinationMotherName = destinationMotherName;
-    }
-
-    public String getDestinationFatherName() {
-        return destinationFatherName;
-    }
-
-    public void setDestinationFatherName(String destinationFatherName) {
         this.destinationFatherName = destinationFatherName;
-    }
-
-    public String getDestinationBirthDate() {
-        return destinationBirthDate;
-    }
-
-    public void setDestinationBirthDate(String destinationBirthDate) {
         this.destinationBirthDate = destinationBirthDate;
-    }
-
-    public String getReceiverName() {
-        return receiverName;
-    }
-
-    public void setReceiverName(String receiverName) {
         this.receiverName = receiverName;
-    }
-
-    public Boolean getForceDuplicate() {
-        return forceDuplicate;
-    }
-
-    public void setForceDuplicate(Boolean forceDuplicate) {
-        this.forceDuplicate = forceDuplicate;
-    }
-
-    public Integer getCustomerNo() {
-        return customerNo;
-    }
-
-    public void setCustomerNo(Integer customerNo) {
-        this.customerNo = customerNo;
-    }
-
-    public Integer getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Integer amount) {
+        this.forceDuplicate = true;
+        this.customerNo =Integer.valueOf( MockAccount.customerNo);
         this.amount = amount;
-    }
-
-    public String getExplanation() {
-        return explanation;
-    }
-
-    public void setExplanation(String explanation) {
         this.explanation = explanation;
-    }
-
-    public SourceAccount getSourceAccount() {
-        return sourceAccount;
-    }
-
-    public void setSourceAccount(SourceAccount sourceAccount) {
         this.sourceAccount = sourceAccount;
     }
-
 }

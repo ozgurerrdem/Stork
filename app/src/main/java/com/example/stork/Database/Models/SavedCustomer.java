@@ -1,6 +1,8 @@
 package com.example.stork.Database.Models;
 
-public class SavedCustomer {
+import java.io.Serializable;
+
+public class SavedCustomer implements Serializable {
 
     private String name;
     private String IBAN;

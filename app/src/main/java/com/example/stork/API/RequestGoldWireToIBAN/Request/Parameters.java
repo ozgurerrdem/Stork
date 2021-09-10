@@ -22,4 +22,13 @@ public class Parameters {
     @SerializedName("Description")
     @Expose
     public String description;
+
+    public Parameters( String iban, Integer amount, String description) {
+        this.type = "V";
+        this.transactionType = "N";
+        this.iban = iban;
+        this.currency = "XAU";
+        this.amount = amount;
+        this.description = description;
+    }
 }
