@@ -12,10 +12,11 @@
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:layout_marginTop="300dp"
+        android:inputType="number"
         android:hint="TC Kimlik / Hesap NO"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:textColor="#30000000"
+        android:textColorHint="#30000000"
         android:background="@drawable/edit_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +24,14 @@
 
     <EditText
         android:id="@+id/editText2"
+        android:inputType="numberPassword"
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:layout_marginTop="22dp"
         android:hint="Şifre"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:textColor="#30000000"
+        android:textColorHint="#30000000"
         android:background="@drawable/edit_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,5 +73,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stork" />
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:visibility="gone"
+        style="@style/GenericProgressBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar style="@style/GenericProgressIndicator" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
