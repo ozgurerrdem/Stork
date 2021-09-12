@@ -33,6 +33,9 @@
         <entry key="app/src/main/res/drawable/profilfoto_background.xml" value="0.2638888888888889" />
         <entry key="app/src/main/res/layout/activity_add_friend_popup.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_add_transaction_popup.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_gifts.xml" value="0.24965277777777778" />
+        <entry key="app/src/main/res/layout/activity_group_details.xml" value="0.24965277777777778" />
+        <entry key="app/src/main/res/layout/activity_group_pay_done.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_market.xml" value="0.253125" />
@@ -44,6 +47,8 @@
         <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_send_done.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.16215277777777778" />
+        <entry key="app/src/main/res/layout/activity_send_money_to_friends.xml" value="0.24965277777777778" />
+        <entry key="app/src/main/res/layout/activity_transactions.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_card_transfer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_create_group.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23333333333333334" />

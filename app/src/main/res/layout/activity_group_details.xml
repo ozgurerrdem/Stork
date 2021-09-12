@@ -14,8 +14,9 @@
         android:layout_height="72dp">
 
 
-        <ImageView
-            android:id="@+id/imageView9"
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
