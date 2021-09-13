@@ -32,7 +32,6 @@ public class PaymentsActivity extends AppCompatActivity {
         talimat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PaymentsActivity.this,TalimatlarActivity.class));
             }
         });
 

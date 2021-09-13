@@ -11,6 +11,8 @@ import com.example.stork.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SendMoneyActivity extends AppCompatActivity {
+    FloatingActionButton talimat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,14 @@ public class SendMoneyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 startActivity(new Intent(SendMoneyActivity.this,SendBankActivity.class));
+            }
+        });
+
+        talimat = findViewById(R.id.floatingActionButton12);
+        talimat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SendMoneyActivity.this,TalimatlarActivity.class));
             }
         });
     }
