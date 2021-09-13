@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.stork.Adapter.PageAdapter;
 import com.example.stork.Database.Models.SavedCustomer;
@@ -22,6 +24,13 @@ public class MoneyTransferActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money_transfer);
 
+        ImageButton button = findViewById(R.id.back_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         tablayout = (TabLayout) findViewById(R.id.group_payments_tablayout);
         ibanFragment = (TabItem) findViewById(R.id.Tab1);

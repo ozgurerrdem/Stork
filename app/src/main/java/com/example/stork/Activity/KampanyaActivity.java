@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.stork.Adapter.PagAdapter;
 import com.example.stork.R;
@@ -20,6 +22,14 @@ public class KampanyaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kampanya);
+
+        ImageButton button = findViewById(R.id.back_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         tablayout=(TabLayout) findViewById(R.id.TabLayout);
         tumkamp=(TabItem) findViewById(R.id.TumKamp);

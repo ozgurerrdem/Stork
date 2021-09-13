@@ -16,7 +16,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#F5F5F5"
         tools:context=".Fragment.IBANTransferFragment">
 
@@ -72,7 +72,7 @@
             android:layout_marginStart="49dp"
             android:background="@drawable/btn_round_white"
             android:hint="TRXXXXXXXXXXXXXXXXXXXXXXXX"
-            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
             android:paddingTop="3dp"
 
             app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +101,7 @@
             android:layout_marginStart="49dp"
             android:layout_marginEnd="45dp"
             android:background="@drawable/btn_round_white"
-            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
             android:paddingTop="5dp"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +131,7 @@
             android:layout_marginStart="49dp"
             android:background="@drawable/btn_round_white"
             android:inputType="number"
-            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
             android:paddingTop="5dp"
             android:text=""
             app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="49dp"
             android:background="@drawable/btn_round_white"
-            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
             android:paddingTop="8dp"
             android:text=""
             app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +191,7 @@
             android:layout_marginEnd="100dp"
             android:layout_marginBottom="48dp"
             android:background="@drawable/gradient_orange"
-            android:paddingLeft="70dp"
+            android:paddingStart="70dp"
             android:paddingTop="15dp"
             android:text="GÖNDER"
             android:textColor="@color/white"
@@ -201,6 +201,19 @@
             app:layout_constraintTop_toBottomOf="@+id/chechBox">
 
         </Button>
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:visibility="gone"
+            style="@style/GenericProgressBackground"
+            android:layout_width="match_parent"
+            android:layout_height="822dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ProgressBar style="@style/GenericProgressIndicator" />
+        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
