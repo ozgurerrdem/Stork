@@ -158,7 +158,6 @@ public class CardTransferFragment extends Fragment {
                     Toast.makeText(getContext(), "Abi oyle bi hesap yok abi?", Toast.LENGTH_LONG).show();
                 } else {
                     WireToAccount wire = new WireToAccount();
-                    String str = accountNum.getText().toString();
                     Parameters par = new Parameters(exp.getText().toString(),
                             Integer.valueOf(amount.getText().toString()),
                             new SourceAccount(indexAccount),

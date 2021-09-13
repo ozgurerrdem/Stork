@@ -15,6 +15,9 @@
             android:name=".Activity.ProfilActivity"
             android:exported="true" />
         <activity
+            android:name=".Activity.PdfActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.CashbackActivity"
             android:exported="true" />
         <activity

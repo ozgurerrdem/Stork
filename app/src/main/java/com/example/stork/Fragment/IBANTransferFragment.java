@@ -163,7 +163,16 @@ public class IBANTransferFragment extends Fragment {
                                 if (response.code() == 200) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("pdf_key",
+                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                            response.body().getData().transactionDate.substring(0,10),
+                                                    Integer.valueOf(response.body().getData().accountingReference),
+                                            Integer.valueOf(MockAccount.customerNo),
+                                            true));
                                     Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                    intent.putExtras(bundle);
                                     getActivity().startActivity(intent);
                                 } else {
                                     bar.setVisibility(View.GONE);
@@ -199,19 +208,29 @@ public class IBANTransferFragment extends Fragment {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
                                 System.out.println(response.code());
-                                if (response.code() == 200) {
+                                if (response.code() == 200 && response.body().getData() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("pdf_key",
+                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                    response.body().getData().transactionDate.substring(0,10),
+                                                    Integer.valueOf(response.body().getData().accountingReference),
+                                                    Integer.valueOf(MockAccount.customerNo),
+                                                    true));
                                     Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                    intent.putExtras(bundle);
                                     getActivity().startActivity(intent);
+
                                 } else {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                }
-                                if (response.body().getData() == null) {
-                                    System.out.println("Response boş");
-                                } else {
-                                    System.out.println(response.body().getData().transactionDate);
+                                    if (response.body().getData() == null) {
+                                        System.out.println("Response boş");
+                                    } else {
+                                        System.out.println(response.body().getData().transactionDate);
+                                    }
                                 }
                             }
 

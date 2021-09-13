@@ -2,10 +2,12 @@ package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.stork.API.GetReceiptData.Request.Parameters;
 import com.example.stork.R;
 
 public class SendDoneActivity extends AppCompatActivity {
@@ -23,5 +25,16 @@ public class SendDoneActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton pdfButton = findViewById(R.id.pdf_button);
+        pdfButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("pdf_key",(Parameters) getIntent().getExtras().get("pdf_key"));
+                Intent intent = new Intent(getApplicationContext(), PdfActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 }
