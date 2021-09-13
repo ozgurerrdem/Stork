@@ -10,7 +10,7 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class moneyOrd {
+public class MoneyOrd {
     Services services = new Services();
     MoneyOrder moneyOrder = services.createRetrofit().create(MoneyOrder.class);
 

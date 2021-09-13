@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.VirmanActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:background="#F5F5F5"
+            android:backgroundTint="#F5F5F5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_36" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:letterSpacing="0.04"
+            android:text="Virman"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/hesabim_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="Gönderen Hesap"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+    <Spinner
+        android:id="@+id/hesabim_spinner1"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="57dp"
+        android:background="@drawable/btn_round_white"
+        android:textAlignment="center"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hesabim_text">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/hesabim_spinner2"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_round_white"
+        android:textAlignment="center"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hesabim_text2">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/hesabim_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif"
+        android:text="Alıcı Hesap"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hesabim_spinner1" />
+
+    <TextView
+        android:id="@+id/gonderilecek_text"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:text="GÖNDERİLECEK MİKTAR"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hesabim_spinner2">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/gonderilecek_edit"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="49dp"
+        android:background="@drawable/btn_round_white"
+        android:inputType="number"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gonderilecek_text"/>
+
+    <TextView
+        android:id="@+id/birim"
+        android:layout_width="55dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_round_white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/gonderilecek_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toEndOf="@+id/gonderilecek_edit"
+        app:layout_constraintTop_toBottomOf="@+id/gonderilecek_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/aciklama_text"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="18dp"
+        android:text="AÇIKLAMA"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gonderilecek_edit">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/aciklama_edit"
+        android:layout_width="317dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="49dp"
+        android:background="@drawable/btn_round_white"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aciklama_text" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="193dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/gradient_orange"
+        android:paddingStart="70dp"
+        android:paddingTop="15dp"
+        android:text="GÖNDER"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aciklama_edit"
+        app:layout_constraintVertical_bias="0.227" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
