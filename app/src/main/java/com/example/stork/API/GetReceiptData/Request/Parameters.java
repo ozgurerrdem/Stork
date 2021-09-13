@@ -3,7 +3,9 @@ package com.example.stork.API.GetReceiptData.Request;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Parameters {
+import java.io.Serializable;
+
+public class Parameters implements Serializable {
     @SerializedName("BranchCode")
     @Expose
     public Integer branchCode;
@@ -26,5 +28,16 @@ public class Parameters {
         this.referenceNo = referenceNo;
         this.customerNo = customerNo;
         this.isPdf = isPdf;
+    }
+
+    @Override
+    public String toString() {
+        return "Parameters{" +
+                "branchCode=" + branchCode +
+                ", transactionDate='" + transactionDate + '\'' +
+                ", referenceNo=" + referenceNo +
+                ", customerNo=" + customerNo +
+                ", isPdf=" + isPdf +
+                '}';
     }
 }

@@ -143,10 +143,10 @@
                 android:layout_height="80dp"
                 app:elevation="3dp"
                 android:src="@drawable/receive_money_24"
-                app:fabCustomSize="80dp"
                 app:backgroundTint="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
+                app:fabCustomSize="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

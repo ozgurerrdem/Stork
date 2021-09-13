@@ -23,16 +23,19 @@ public class PdfActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
-        Services services = new Services();
 
-        Parameters param = new Parameters(9142,"2021-01-28",3411,123,true);
+        /* Parameters param = new Parameters(9142,"2021-01-28",3411,123,true);
         param.branchCode = 9142;
         param.isPdf = true;
         param.customerNo = 123;
         param.referenceNo = 3411;
         param.transactionDate = "2021-01-28";
+        */
+
 
         receiptData rData = new receiptData();
+        Parameters param = (Parameters) getIntent().getExtras().getSerializable("pdf_key");
+        System.out.println(param);
         rData.getResponse(param, new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
