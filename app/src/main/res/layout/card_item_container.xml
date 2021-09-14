@@ -27,14 +27,14 @@
 
             <TextView
                 android:id="@+id/account_name"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
-                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Hesap Adı"/>
+                android:text="Hesap Adı"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/account_balance"
@@ -53,10 +53,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="170dp"
-                android:textSize="24dp"
                 android:fontFamily="@font/poppins_regular"
+                android:text="Hesap Numarası"
                 android:textColor="@color/white"
-                android:text="Hesap Numarası"/>
+                android:textSize="16dp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
