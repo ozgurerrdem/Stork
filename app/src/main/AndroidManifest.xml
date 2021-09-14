@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stork">
         <activity
+            android:name=".Activity.IbanSendAnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.TransactionsDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.VirmanActivity"
             android:exported="true" />
         <activity
