@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,13 +13,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.stork.Model.CardModel;
 import com.example.stork.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.CardViewHolder> {
     private List<CardModel> cardModelList;
     private ViewPager2 small_cards_viewpager;
 
-    public SmallCardsAdapter(List<CardModel>cardModelList,ViewPager2 small_cards_viewpager){
+    public SmallCardsAdapter(List<CardModel> cardModelList, ViewPager2 small_cards_viewpager) {
         this.cardModelList = cardModelList;
         this.small_cards_viewpager = small_cards_viewpager;
     }
@@ -47,13 +50,19 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Ca
 
     class CardViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
+        private TextView account_name;
+        private TextView account_balance;
+        private TextView account_number;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.cardView);
+            imageView = itemView.findViewById(R.id.card_image);
         }
-        void setImageView(CardModel cardModel){
+
+        void setImageView(CardModel cardModel) {
             imageView.setImageResource(cardModel.getCard());
+
+
         }
     }
 }

@@ -25,6 +25,7 @@ import com.example.stork.Activity.SendMoneyActivity;
 import com.example.stork.Activity.TransactionsActivity;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Model.CardModel;
+import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
@@ -133,14 +134,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        List<CardModel> cardModels = new ArrayList<>();
+        List<NewCardModel> cardModels = new ArrayList<>();
 
-        cardModels.add(new CardModel(R.drawable.maincard));
-        cardModels.add(new CardModel(R.drawable.usa));
-        cardModels.add(new CardModel(R.drawable.uni));
-        cardModels.add(new CardModel(R.drawable.plat));
-        cardModels.add(new CardModel(R.drawable.eutravel));
-        cardModels.add(new CardModel(R.drawable.tokyotravel));
+        cardModels.add(new NewCardModel(R.drawable.maincard,"Ana Hesap","3,444.30","TR32132132131"));
+        cardModels.add(new NewCardModel(R.drawable.tokyotravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
+        cardModels.add(new NewCardModel(R.drawable.eutravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
+        cardModels.add(new NewCardModel(R.drawable.usa,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
+        cardModels.add(new NewCardModel(R.drawable.plat,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
 
         viewPager2.setAdapter(new CardAdapter(cardModels , viewPager2));
 

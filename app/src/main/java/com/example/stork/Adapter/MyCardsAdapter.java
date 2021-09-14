@@ -10,17 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.stork.Model.CardModel;
+import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
 
 import java.util.List;
 
 public class MyCardsAdapter extends RecyclerView.Adapter<MyCardsAdapter.CardViewHolder> {
 
-    private List<CardModel>cardModelList;
+    private List<NewCardModel>cardModelList;
     private ViewPager2 mycards_viewPager;
 
 
-    public MyCardsAdapter(List<CardModel> cardModelList, ViewPager2 mycards_viewPager) {
+    public MyCardsAdapter(List<NewCardModel> cardModelList, ViewPager2 mycards_viewPager) {
         this.cardModelList = cardModelList;
         this.mycards_viewPager = mycards_viewPager;
     }
@@ -53,13 +54,13 @@ public class MyCardsAdapter extends RecyclerView.Adapter<MyCardsAdapter.CardView
 
         CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.cardView);
+            imageView = itemView.findViewById(R.id.card_image);
 
 
         }
 
-        void setImage(CardModel cardModel){
-            imageView.setImageResource(cardModel.getCard());
+        void setImage(NewCardModel cardModel){
+            imageView.setImageResource(cardModel.getImage());
         }
 
     }
