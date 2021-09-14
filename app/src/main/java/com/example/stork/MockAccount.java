@@ -70,11 +70,12 @@ public class MockAccount implements Serializable {
 
             //API response
             for(int i=0; i<response.body().getData().accountList.size(); i++){
-                if((response.body().getData().accountList.get(i).accountSuffix == 351 && response.body().getData().accountList.get(i).branchCode == 9142) ||
-                        (response.body().getData().accountList.get(i).accountSuffix == 32 && response.body().getData().accountList.get(i).branchCode == 1000) ||
-                        (response.body().getData().accountList.get(i).accountSuffix == 352 && response.body().getData().accountList.get(i).branchCode == 9142) ||
-                        (response.body().getData().accountList.get(i).accountSuffix == 35215 && response.body().getData().accountList.get(i).branchCode == 9142) ||
-                        (response.body().getData().accountList.get(i).accountSuffix == 351 && response.body().getData().accountList.get(i).branchCode == 9142)
+                if((response.body().getData().accountList.get(i).accountSuffix == 351 && response.body().getData().accountList.get(i).branchCode == 9142 && response.body().getData().accountList.get(i).currencyCode.equals("TRY")) ||
+                        (response.body().getData().accountList.get(i).accountSuffix == 32 && response.body().getData().accountList.get(i).branchCode == 1000 && response.body().getData().accountList.get(i).currencyCode.equals("TRY")) ||
+                        //Dolar hesabı
+                        (response.body().getData().accountList.get(i).accountSuffix == 400 && response.body().getData().accountList.get(i).branchCode == 9142 && response.body().getData().accountList.get(i).currencyCode.equals("USD") ) ||
+                        (response.body().getData().accountList.get(i).accountSuffix == 35215 && response.body().getData().accountList.get(i).branchCode == 9142 && response.body().getData().accountList.get(i).currencyCode.equals("XAU")) ||
+                        (response.body().getData().accountList.get(i).accountSuffix == 357 && response.body().getData().accountList.get(i).branchCode == 9142 && response.body().getData().accountList.get(i).currencyCode.equals("EUR"))
                 ) {
                     System.out.println(response.body().getData().accountList.get(i).accountName);
                     System.out.println(response.body().getData().accountList.get(i).currencyCode);

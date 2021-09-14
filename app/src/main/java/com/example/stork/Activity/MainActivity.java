@@ -19,6 +19,7 @@ import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.MockAccount;
 import com.example.stork.Model.CardModel;
+import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -67,13 +68,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
         viewPager2 = findViewById(R.id.viewPager);
-        List<CardModel> cardModels = new ArrayList<>();
+        List<NewCardModel> cardModels = new ArrayList<>();
 
-        cardModels.add(new CardModel(R.drawable.maincard));
-        cardModels.add(new CardModel(R.drawable.tokyotravel));
-        cardModels.add(new CardModel(R.drawable.eutravel));
-        cardModels.add(new CardModel(R.drawable.usa));
-        cardModels.add(new CardModel(R.drawable.plat));
+        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString(),MockAccount.accounts.get(0).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.tokyotravel,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString(),MockAccount.accounts.get(1).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString(),MockAccount.accounts.get(2).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString(),MockAccount.accounts.get(3).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString(),MockAccount.accounts.get(4).getIBANNo()));
 
 
 

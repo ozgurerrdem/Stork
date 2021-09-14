@@ -10,7 +10,7 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class scheduledTransactionForToAccountEft {
+public class ScheduledTransactionForToAccountEft {
     Services services = new Services();
     ProcessScheduledTransactionForToAccountEft processScheduledTransactionForToAccountEft = services.createRetrofit().create(ProcessScheduledTransactionForToAccountEft.class);
 

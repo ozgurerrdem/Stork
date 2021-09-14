@@ -10,7 +10,7 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class goldWireToIban {
+public class GoldWireToIban {
     Services services = new Services();
     RequestGoldWireToIBAN requestGoldWireToIBAN = services.createRetrofit().create(RequestGoldWireToIBAN.class);
 

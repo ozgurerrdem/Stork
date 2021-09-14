@@ -1,21 +1,21 @@
-package com.example.stork.API.GetReceiptData;
+package com.example.stork.API.SendFastMoneyOrder;
 
 
-import com.example.stork.API.GetReceiptData.Request.Parameters;
-import com.example.stork.API.GetReceiptData.Request.Request;
-import com.example.stork.API.GetReceiptData.Response.Response;
 import com.example.stork.API.Header;
+import com.example.stork.API.SendFastMoneyOrder.Request.Parameters;
+import com.example.stork.API.SendFastMoneyOrder.Request.Request;
+import com.example.stork.API.SendFastMoneyOrder.Response.Response;
 import com.example.stork.Services;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class receiptData {
+public class FastMoneyOrder {
     Services services = new Services();
-    GetReceiptData getReceiptData = services.createRetrofit().create(GetReceiptData.class);
+    SendFastMoneyOrder sendFastMoneyOrder = services.createRetrofit().create(SendFastMoneyOrder.class);
 
     public void getResponse (Parameters param, final Callback<Response> responseCallback){
-        Call<Response> res = getReceiptData.GetPostValue(new Request(new Header(),param));
+        Call<Response> res = sendFastMoneyOrder.GetPostValue(new Request(new Header(),param));
         res.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {

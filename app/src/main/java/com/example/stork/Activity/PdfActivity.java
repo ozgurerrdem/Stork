@@ -5,13 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 
-import com.example.stork.API.GetReceiptData.GetReceiptData;
 import com.example.stork.API.GetReceiptData.Request.Parameters;
-import com.example.stork.API.GetReceiptData.Request.Request;
 import com.example.stork.API.GetReceiptData.Response.Response;
-import com.example.stork.API.GetReceiptData.receiptData;
+import com.example.stork.API.GetReceiptData.ReceiptData;
 import com.example.stork.R;
-import com.example.stork.Services;
 import com.github.barteksc.pdfviewer.PDFView;
 
 import retrofit2.Call;
@@ -33,7 +30,7 @@ public class PdfActivity extends AppCompatActivity {
         */
 
 
-        receiptData rData = new receiptData();
+        ReceiptData rData = new ReceiptData();
         Parameters param = (Parameters) getIntent().getExtras().getSerializable("pdf_key");
         System.out.println(param);
         rData.getResponse(param, new Callback<Response>() {
