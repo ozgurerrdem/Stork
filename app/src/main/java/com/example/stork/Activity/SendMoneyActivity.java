@@ -19,7 +19,7 @@ public class SendMoneyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_money);
 
         ImageButton back_btn = findViewById(R.id.send_money_screen_back_btn);
-        ImageButton floatActionButton3=findViewById(R.id.floatingActionButton3);
+        ImageButton floatActionButton3 = findViewById(R.id.floatingActionButton3);
         FloatingActionButton floatingActionButton4 = findViewById(R.id.floatingActionButton4);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,16 +31,15 @@ public class SendMoneyActivity extends AppCompatActivity {
         floatingActionButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//              startActivity(new Intent(SendMoneyActivity.this , SendMoneyToFriendsActivity.class));
-                finish();
+                startActivity(new Intent(SendMoneyActivity.this, SendMoneyToFriendsActivity.class));
             }
         });
 
 
-        floatActionButton3.setOnClickListener(new View.OnClickListener(){
+        floatActionButton3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                startActivity(new Intent(SendMoneyActivity.this,SendBankActivity.class));
+            public void onClick(View view) {
+                startActivity(new Intent(SendMoneyActivity.this, SendBankActivity.class));
             }
         });
 
@@ -48,7 +47,15 @@ public class SendMoneyActivity extends AppCompatActivity {
         talimat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SendMoneyActivity.this,TalimatlarActivity.class));
+                startActivity(new Intent(SendMoneyActivity.this, TalimatlarActivity.class));
+            }
+        });
+
+        FloatingActionButton fb5 = findViewById(R.id.floatingActionButton5);
+        fb5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SendMoneyActivity.this,VirmanActivity.class));
             }
         });
     }

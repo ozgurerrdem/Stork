@@ -30,7 +30,7 @@ public class Parameters {
         @Expose
         public Boolean forceDuplicate;
         Services serv = new Services();
-        public Parameters(SourceAccount sourceAccount, String amount, String explanation, DestinationAccount destinationAccount, String transactionDate) {
+        public Parameters(SourceAccount sourceAccount, String amount, String explanation, DestinationAccount destinationAccount) {
                 this.sourceAccount = sourceAccount;
                 this.amount = amount;
                 this.explanation = explanation;

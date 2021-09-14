@@ -395,8 +395,7 @@
         android:layout_height="47dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Tüm
-        Transferler"
+        android:text="Hesaplarım Arası"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton5" />
 

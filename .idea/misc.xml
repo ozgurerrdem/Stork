@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/activity_my_cards.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_payments.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_pdf.xml" value="0.24965277777777778" />
+        <entry key="app/src/main/res/layout/activity_profil.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_receive_done.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_receive_money.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.22" />
@@ -50,6 +51,7 @@
         <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_send_money_to_friends.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_transactions.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_virman.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_card_transfer.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_create_group.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
