@@ -199,6 +199,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gonderilecek_textt" />
 
+
+        <TextView
+            android:id="@+id/tum_bak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:text="@string/t_m_bakiye"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.611"
+            app:layout_constraintStart_toEndOf="@+id/gonderilecek_textt"
+            app:layout_constraintTop_toBottomOf="@+id/name_edit" />
+
+        <TextView
+            android:id="@+id/birim"
+            android:layout_width="55dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_round_white"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="22sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/gonderilecek_editt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintStart_toEndOf="@+id/gonderilecek_editt"
+            app:layout_constraintTop_toBottomOf="@+id/gonderilecek_textt"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
             android:id="@+id/aciklama_text"
             android:layout_width="wrap_content"
@@ -244,6 +271,18 @@
             app:layout_constraintVertical_bias="1.0">
 
         </Button>
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:visibility="gone"
+            style="@style/GenericProgressBackground"
+            android:layout_width="match_parent"
+            android:layout_height="822dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ProgressBar style="@style/GenericProgressIndicator" />
+        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
