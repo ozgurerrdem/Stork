@@ -41,15 +41,18 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView name;
         private final TextView selling;
+        private final TextView buying;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             selling = itemView.findViewById(R.id.selling);
+            buying = itemView.findViewById(R.id.buying);
         }
         public void bind(final MarketActivity.Currency item) {
             name.setText(item.getName());
             selling.setText(item.getSatis().toString());
+            buying.setText(item.getAlis().toString());
         }
     }
 }

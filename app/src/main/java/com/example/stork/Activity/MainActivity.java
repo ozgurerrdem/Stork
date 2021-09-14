@@ -14,6 +14,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.stork.API.CurrencyRate.GetCripto;
+import com.example.stork.API.CurrencyRate.Response.Response;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.MockAccount;
 
@@ -24,6 +26,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,9 +40,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test
-        System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
+           // System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
+        /*GetCripto cripto = new GetCripto();
+        cripto.getResponse(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<com.example.stork.API.CurrencyRate.Response.Response> response) {
+                System.out.println("///////////////////////////////////////////////");
+                System.out.println(response.body().result.get(0).name);
+
+            }
+
+            @Override
+            public void onFailure(Call<com.example.stork.API.CurrencyRate.Response.Response> call, Throwable t) {
+                System.out.println("BTC YOK ");
+            }
+        });
 
 
+
+*/
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);

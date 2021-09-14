@@ -1,5 +1,5 @@
 package com.example.stork.API.GoldRate;
-import com.example.stork.API.GetRate.Response.Response;
+import com.example.stork.API.GoldRate.Response.Response;
 import com.example.stork.Services;
 
 import retrofit2.Call;
