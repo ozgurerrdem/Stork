@@ -10,10 +10,10 @@ import retrofit2.http.POST;
 
 public interface GetCurrencyRatesForSpecificDay {
     @Headers({
-            "authorization:apikey 3eEmam7XKXmCtLoVY4IXwi:1RzSJvjIHhPY8sQcM4W6NT",
+            "authorization:apikey 6Sl11wyJMeXNsVslaXwF6f:3ciAPg6jZ1c9bCaY5RF7pB",
             "Content-Type:application/json"
     })
-    @GET("currencyToAll?int=10&base=TRY")
+    @GET("allCurrency")
     Call<Response> GetPostValue();
 
 }

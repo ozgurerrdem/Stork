@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Test
         System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
-/*
         GetRate get = new GetRate();
         get.getResponse(new Callback<Response>() {
             @Override
@@ -49,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i=0;i<10;i++){
                     System.out.println("---------------------------------------------");
-                    System.out.println(response.body().result.data.get(i).name + ": "+response.body().result.data.get(i).rate);
-                    System.out.println("************************************************");
+
+                    System.out.println(response.body().result.get(i).name + " Satış : "+response.body().result.get(i).selling +  " Alış : "+response.body().result.get(i).buying );
                 }
 
 
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<Response> call, Throwable t) {
 
             }
-        });*/
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);

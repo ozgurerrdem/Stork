@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.stork.API.GetRate.GetRate;
+import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.Account;
 import com.example.stork.Adapter.OnboardingAdapter;
 import com.example.stork.MockAccount;
@@ -24,6 +26,9 @@ import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -37,6 +42,8 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+
+
 
 
 
