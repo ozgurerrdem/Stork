@@ -8,9 +8,9 @@ import com.example.stork.Services;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class getRate {
+public class GetRate {
     Services services = new Services();
-    GetCurrencyRatesForSpecificDay getCurrencyRatesForSpecificDay = services.createRetrofit().create(GetCurrencyRatesForSpecificDay.class);
+    GetCurrencyRatesForSpecificDay getCurrencyRatesForSpecificDay = services.createExchangeRetrofit().create(GetCurrencyRatesForSpecificDay.class);
 
     public void getResponse (final Callback<Response> responseCallback){
         Call<Response> res = getCurrencyRatesForSpecificDay.GetPostValue();
