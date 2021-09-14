@@ -176,7 +176,7 @@ public class IBANTransferFragment extends Fragment {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 System.out.println(par.toString());
                                 System.out.println(response.code());
-                                if (response.code() == 200) {
+                                if (response.code() == 200 && response.body() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
@@ -224,10 +224,10 @@ public class IBANTransferFragment extends Fragment {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
                                 System.out.println(response.code());
-                                if (response.code() == 200 && response.body().getData() != null) {
+                                if (response.code() == 200 && response.body() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())- response.body().getData().expenseAmount));
                                     Bundle bundle = new Bundle();
                                     bundle.putSerializable("pdf_key",
                                             new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
@@ -242,7 +242,7 @@ public class IBANTransferFragment extends Fragment {
                                 } else {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                    if (response.body().getData() == null) {
+                                    if (response.body() == null) {
                                         System.out.println("Response boş");
                                     } else {
                                         System.out.println(response.body().getData().transactionDate);

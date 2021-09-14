@@ -1,6 +1,7 @@
 package com.example.stork.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.example.stork.API.RequestWireToAccount.Request.SourceAccount;
 import com.example.stork.API.RequestWireToAccount.Response.Response;
 import com.example.stork.API.RequestWireToAccount.WireToAccount;
 import com.example.stork.Account;
+import com.example.stork.Activity.SendDoneActivity;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
 import com.example.stork.Model.BankMap;
@@ -176,7 +178,7 @@ public class CardTransferFragment extends Fragment {
                     Toast.makeText(getContext(), "Bütün alanların doldurulması zorunludur", Toast.LENGTH_LONG).show();
                 } else {
                     bar.setVisibility(View.VISIBLE);
-                    if (bankValue.equals(services.getBankCode(MockAccount.accounts.get(indexAccount).getIBANNo()))) {
+                    if (Integer.valueOf(bankValue).equals(Integer.valueOf(services.getBankCode(MockAccount.accounts.get(indexAccount).getIBANNo())))) {
                         //HAVALE
                         System.out.println("HAVALEEEEEE");
                         WireToAccount wire = new WireToAccount();
@@ -191,7 +193,20 @@ public class CardTransferFragment extends Fragment {
                         wire.getResponse(par, new Callback<Response>() {
                             @Override
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                                if (response.code() == 200 && response.body().getData() != null) {
+                                if (response.code() == 200 && response.body() != null) {
+                                    bar.setVisibility(View.GONE);
+                                    Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString()) - response.body().getData().getExpenseAmount()));
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("pdf_key",
+                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                    response.body().getData().transactionDate.substring(0,10),
+                                                    Integer.valueOf(response.body().getData().accountingReference),
+                                                    Integer.valueOf(MockAccount.customerNo),
+                                                    true));
+                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                    intent.putExtras(bundle);
+                                    getActivity().startActivity(intent);
                                     System.out.println(par.toString());
                                     System.out.println(response.code());
                                     if (response.body().getData() != null) {
@@ -234,7 +249,20 @@ public class CardTransferFragment extends Fragment {
                         eft.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToAccount.Response.Response>() {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> response) {
-                                if (response.code() == 200 && response.body().getData() != null) {
+                                if (response.code() == 200 && response.body() != null) {
+                                    bar.setVisibility(View.GONE);
+                                    Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().getExpenseAmount()));
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("pdf_key",
+                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                    response.body().getData().getTransactionDate().substring(0,10),
+                                                    Integer.valueOf(response.body().getData().getAccountingReference()),
+                                                    Integer.valueOf(MockAccount.customerNo),
+                                                    true));
+                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                    intent.putExtras(bundle);
+                                    getActivity().startActivity(intent);
                                     System.out.println(par.toString());
                                     System.out.println(response.code());
                                     if (response.body().getData() != null) {

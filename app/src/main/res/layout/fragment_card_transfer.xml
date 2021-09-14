@@ -105,7 +105,7 @@
             android:layout_height="22dp"
             android:layout_marginStart="49dp"
             android:layout_marginTop="18dp"
-            android:text="HESAP NUMARASI"
+            android:text="MÜŞTERİ NUMARASI"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
