@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.stork.API.MoneyOrder.MoneyOrd;
 import com.example.stork.API.MoneyOrder.Request.DestinationAccount;
@@ -33,6 +34,7 @@ public class VirmanActivity extends AppCompatActivity {
     private EditText amount;
     private EditText exp;
     private TextView birim;
+    private TextView tum_bak;
     private ArrayList<String> acNameList1 = new ArrayList<String>();
     private ArrayList<String> acNameList2 = new ArrayList<String>();
     private int indexAccount = 0;
@@ -47,9 +49,11 @@ public class VirmanActivity extends AppCompatActivity {
         amount = findViewById(R.id.gonderilecek_edit);
         exp = findViewById(R.id.aciklama_edit);
         birim = findViewById(R.id.birim);
+        tum_bak = findViewById(R.id.tum_bak);
         ac1 = findViewById(R.id.hesabim_spinner1);
         ac2 = findViewById(R.id.hesabim_spinner2);
-        ImageButton back = findViewById(R.id.back_btn77);
+        amount.setText("0");
+        ImageButton back = findViewById(R.id.back_btn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,8 +67,8 @@ public class VirmanActivity extends AppCompatActivity {
         super.onResume();
         acNameList1.clear();
         for (Account a : MockAccount.accounts) {
-            acNameList1.add(a.getAccountName());
-            acNameList2.add(a.getAccountName());
+            acNameList1.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
+            acNameList2.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
         }
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, acNameList1);
@@ -75,7 +79,16 @@ public class VirmanActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Showing selected spinner item
                 indexAccount = i;
-                birim.setText(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                // TODO Talimat
+                // TODO Tum parayi yolla butonlari
+                // TODO Turkce cevir cashback falan
+                // TODO Test hesabini editle
+                // TODO Toastlari incele
+                if (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals("TRY")) {
+                    birim.setText("TL");
+                } else {
+                    birim.setText(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                }
             }
 
             @Override
@@ -103,26 +116,40 @@ public class VirmanActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!amount.getText().toString().isEmpty() && (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals(MockAccount.accounts.get(indexAccount1).getCurrencyCode()))) {
-                    Parameters param = new Parameters(new SourceAccount(indexAccount), amount.getText().toString(), exp.getText().toString(), new DestinationAccount(indexAccount1));
-                    MoneyOrd ord = new MoneyOrd();
-                    ord.getResponse(param, new Callback<Response>() {
-                        @Override
-                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                            System.out.println(response.code());
-                            if (response.code() == 200) {
-                                System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
-                            } else {
-                                System.out.println("ALARM ALARM");
+                if (Float.parseFloat(amount.getText().toString()) > MockAccount.accounts.get(indexAccount).getAmountOfBalance()) {
+                    Toast.makeText(getApplicationContext(), "Bakiyeniz yeterli değildir", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (!amount.getText().toString().isEmpty() && (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals(MockAccount.accounts.get(indexAccount1).getCurrencyCode()))) {
+                        Parameters param = new Parameters(new SourceAccount(indexAccount), amount.getText().toString(), exp.getText().toString(), new DestinationAccount(indexAccount1));
+                        MoneyOrd ord = new MoneyOrd();
+                        ord.getResponse(param, new Callback<Response>() {
+                            @Override
+                            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                                System.out.println(response.code());
+                                if (response.code() == 200) {
+                                    System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
+                                } else {
+                                    System.out.println("ALARM ALARM");
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<Response> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<Response> call, Throwable t) {
 
-                        }
-                    });
+                            }
+                        });
+                    } else
+                    {
+                        Toast.makeText(getApplicationContext(), "Hesapların Bakiye Tipi Farklı", Toast.LENGTH_SHORT).show();
+                    }
                 }
+            }
+        });
+
+        tum_bak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                amount.setText(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
             }
         });
 

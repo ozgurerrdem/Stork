@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stork.API.ProcessEftRequestToIban.EftToIban;
@@ -47,6 +48,8 @@ public class IBANTransferFragment extends Fragment {
     private EditText name;
     private EditText amount;
     private EditText exp;
+    private TextView tum_bak;
+    private TextView birim;
     private CheckBox checkBox;
     private Button button;
     private RelativeLayout bar;
@@ -105,6 +108,8 @@ public class IBANTransferFragment extends Fragment {
         checkBox = view.findViewById(R.id.chechBox);
         button = view.findViewById(R.id.login_btn);
         bar = view.findViewById(R.id.loadingPanel);
+        tum_bak = view.findViewById(R.id.tum_bak);
+        birim = view.findViewById(R.id.birim);
 
         return view;
     }
@@ -114,7 +119,7 @@ public class IBANTransferFragment extends Fragment {
         super.onResume();
         acNameList.clear();
         for (Account a : MockAccount.accounts) {
-            acNameList.add(a.getAccountName());
+            acNameList.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
         }
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
@@ -125,11 +130,22 @@ public class IBANTransferFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Showing selected spinner item
                 indexAccount = i;
+                if (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals("TRY")) {
+                    birim.setText("TL");
+                } else {
+                    birim.setText(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+        tum_bak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                amount.setText(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
             }
         });
 
@@ -160,7 +176,7 @@ public class IBANTransferFragment extends Fragment {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 System.out.println(par.toString());
                                 System.out.println(response.code());
-                                if (response.code() == 200) {
+                                if (response.code() == 200 && response.body() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
@@ -178,7 +194,7 @@ public class IBANTransferFragment extends Fragment {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
                                 }
-                                if (response.body().getData() != null) {
+                                if (response.body() != null) {
                                     System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
                                 } else {
                                     System.out.println("NULLLLLLLLLL");
@@ -208,10 +224,10 @@ public class IBANTransferFragment extends Fragment {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
                                 System.out.println(response.code());
-                                if (response.code() == 200 && response.body().getData() != null) {
+                                if (response.code() == 200 && response.body() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())- response.body().getData().expenseAmount));
                                     Bundle bundle = new Bundle();
                                     bundle.putSerializable("pdf_key",
                                             new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
@@ -226,7 +242,7 @@ public class IBANTransferFragment extends Fragment {
                                 } else {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                    if (response.body().getData() == null) {
+                                    if (response.body() == null) {
                                         System.out.println("Response boş");
                                     } else {
                                         System.out.println(response.body().getData().transactionDate);
