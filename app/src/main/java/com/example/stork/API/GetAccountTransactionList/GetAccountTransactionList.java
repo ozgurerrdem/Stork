@@ -14,6 +14,6 @@ public interface GetAccountTransactionList {
             "Ocp-Apim-Subscription-Key:e0c1fb1bcce341eaa372b754f7bba785",
             "Content-Type:application/json"
     })
-    @POST("customers/GetReceiptData")
+    @POST("Accounts/GetAccountTransactionList")
     Call<Response> GetPostValue(@Body Request Request);
 }
