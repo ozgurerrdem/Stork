@@ -58,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
 
-
             }
         });
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
