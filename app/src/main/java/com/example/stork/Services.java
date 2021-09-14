@@ -14,6 +14,12 @@ public class Services {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
+    public Retrofit createExchangeRetrofit(){
+        return new Retrofit.Builder()
+                .baseUrl("https://api.collectapi.com/economy/%22")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+    }
     public String getBankCode(String iban){
         return iban.substring(5,9);
     }
