@@ -14,11 +14,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.stork.API.GetRate.GetRate;
-import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.MockAccount;
-import com.example.stork.Model.CardModel;
+
 import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,8 +24,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,25 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Test
         System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
-        GetRate get = new GetRate();
-        get.getResponse(new Callback<Response>() {
-            @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
 
-                for (int i=0;i<10;i++){
-                    System.out.println("---------------------------------------------");
-
-                    System.out.println(response.body().result.get(i).name + " Satış : "+response.body().result.get(i).selling +  " Alış : "+response.body().result.get(i).buying );
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-
-            }
-        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
