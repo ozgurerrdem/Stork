@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/manrope_bold"
         android:letterSpacing="0.04"
-        android:text="Banka Transferi"
+        android:text="Talimatlar"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
