@@ -49,7 +49,7 @@ public class VirmanActivity extends AppCompatActivity {
         birim = findViewById(R.id.birim);
         ac1 = findViewById(R.id.hesabim_spinner1);
         ac2 = findViewById(R.id.hesabim_spinner2);
-        ImageButton back = findViewById(R.id.back_btn);
+        ImageButton back = findViewById(R.id.back_btn77);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

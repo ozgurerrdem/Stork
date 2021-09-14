@@ -22,7 +22,7 @@ public class TalimatlarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_talimatlar);
-        ImageButton back = findViewById(R.id.back_btn);
+        ImageButton back = findViewById(R.id.back_btn77);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
