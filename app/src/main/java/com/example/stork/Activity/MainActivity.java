@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Test
         System.out.println("Bakalım Hata var mi "+ MockAccount.accounts.get(3).getAccountName());
-
+/*
         GetRate get = new GetRate();
         get.getResponse(new Callback<Response>() {
             @Override
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<Response> call, Throwable t) {
 
             }
-        });
+        });*/
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         NavController navController = Navigation.findNavController(this,  R.id.fragment);
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPager);
         List<NewCardModel> cardModels = new ArrayList<>();
 
-        cardModels.add(new NewCardModel(R.drawable.maincard,"Ana Hesap","3,444.30","TR32132132131"));
-        cardModels.add(new NewCardModel(R.drawable.tokyotravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.eutravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.usa,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.plat,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
+        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString(),MockAccount.accounts.get(0).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.tokyotravel,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString(),MockAccount.accounts.get(1).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString(),MockAccount.accounts.get(2).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString(),MockAccount.accounts.get(3).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString(),MockAccount.accounts.get(4).getIBANNo()));
 
 
 
