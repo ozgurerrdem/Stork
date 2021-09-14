@@ -64,7 +64,7 @@ public class MyCardsActivity extends AppCompatActivity {
 
         mycards_viewpager.setPageTransformer(compositePageTransformer);
 
-        ImageView back_btn = findViewById(R.id.back_btn);
+        ImageView back_btn = findViewById(R.id.back_btn77);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -16,7 +16,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_details);
-        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton backButton = findViewById(R.id.back_btn77);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

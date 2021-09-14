@@ -25,7 +25,7 @@ public class TransactionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transactions);
 
-        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton backButton = findViewById(R.id.back_btn77);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

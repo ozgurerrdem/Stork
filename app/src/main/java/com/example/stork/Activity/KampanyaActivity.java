@@ -23,7 +23,7 @@ public class KampanyaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kampanya);
 
-        ImageButton button = findViewById(R.id.back_btn);
+        ImageButton button = findViewById(R.id.back_btn77);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,25 +2,28 @@ package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.stork.R;
 
-public class MarketActivity extends AppCompatActivity {
+public class StorkPointsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_market);
-        ImageButton backButton = findViewById(R.id.back_btn77);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_stork_points);
+        ImageButton back_btn = findViewById(R.id.back_btn77);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-
             }
         });
+
     }
 }

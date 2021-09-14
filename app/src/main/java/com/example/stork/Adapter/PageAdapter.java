@@ -31,11 +31,7 @@ public class PageAdapter extends FragmentPagerAdapter {
                 iban.setArguments(bundle);
                 return iban;
             case 1:
-                CardTransferFragment card = new CardTransferFragment();
-                Bundle bundle1 = new Bundle();
-                bundle1.putSerializable("saved",saved);
-                card.setArguments(bundle1);
-                return card;
+                return new CardTransferFragment();
             default:
                 return null;
         }

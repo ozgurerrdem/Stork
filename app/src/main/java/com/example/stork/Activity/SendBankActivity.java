@@ -31,7 +31,7 @@ public class SendBankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_bank);
 
-        ImageButton back = findViewById(R.id.back_btn);
+        ImageButton back = findViewById(R.id.back_btn77);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

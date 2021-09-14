@@ -25,7 +25,7 @@ public class SendMoneyToFriendsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money_to_friends);
-        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton backButton = findViewById(R.id.back_btn77);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
