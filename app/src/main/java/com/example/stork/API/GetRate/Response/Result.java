@@ -7,14 +7,14 @@ import java.util.List;
 
 public class Result {
 
-    @SerializedName("base")
+    @SerializedName("name")
     @Expose
-    public String base;
-    @SerializedName("lastupdate")
+    public String name;
+    @SerializedName("buying")
     @Expose
-    public String lastupdate;
-    @SerializedName("data")
+    public String buying;
+    @SerializedName("selling")
     @Expose
-    public List<Datum> data = null;
+    public String selling;
 
 }

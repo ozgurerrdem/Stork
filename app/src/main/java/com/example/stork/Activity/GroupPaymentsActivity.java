@@ -7,10 +7,15 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.stork.API.GetRate.GetRate;
+import com.example.stork.API.GetRate.Response.Response;
 import com.example.stork.Adapter.GroupPaymentsAdapter;
 import com.example.stork.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class GroupPaymentsActivity extends AppCompatActivity {
 
@@ -24,6 +29,9 @@ public class GroupPaymentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_payments);
+
+
+
 
         tabLayout = findViewById(R.id.group_payments_tablayout);
         tab1 =(TabItem) findViewById(R.id.group_payments_tab1);
