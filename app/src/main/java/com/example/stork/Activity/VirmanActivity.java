@@ -129,6 +129,7 @@ public class VirmanActivity extends AppCompatActivity {
                                 if (response.code() == 200) {
                                     System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
                                 } else {
+                                    Toast.makeText(getApplicationContext(), "İşlem Gerçekleştirilemedi", Toast.LENGTH_SHORT).show();
                                     System.out.println("ALARM ALARM");
                                 }
                             }

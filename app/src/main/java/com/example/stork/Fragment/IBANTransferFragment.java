@@ -119,7 +119,7 @@ public class IBANTransferFragment extends Fragment {
         super.onResume();
         acNameList.clear();
         for (Account a : MockAccount.accounts) {
-            acNameList.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
+            acNameList.add(a.getAccountName() + " \n" + a.getAmountOfBalance() + " " + a.getCurrencyCode());
         }
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
@@ -161,100 +161,105 @@ public class IBANTransferFragment extends Fragment {
                 if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Bütün alanların doldurulması zorunludur", Toast.LENGTH_LONG).show();
                 } else {
-                    bar.setVisibility(View.VISIBLE);
-                    if (checkBox.isChecked()) {
-                        DatabaseUtil db = new DatabaseUtil();
-                        db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(), iban.getText().toString().toUpperCase(), ""));
-                    }
-                    if (services.compareBanksByIban(iban.getText().toString(), MockAccount.accounts.get(indexAccount).getIBANNo())) {
-                        //HAVALE
-                        System.out.println("HAVALEEEEEE");
-                        WireToIban wire = new WireToIban();
-                        Parameters par = new Parameters(exp.getText().toString(), Integer.valueOf(amount.getText().toString()), iban.getText().toString().toUpperCase(), new SourceAccount(indexAccount), name.getText().toString().toUpperCase());
-                        wire.getResponse(par, new Callback<Response>() {
-                            @Override
-                            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                                System.out.println(par.toString());
-                                System.out.println(response.code());
-                                if (response.code() == 200 && response.body() != null) {
-                                    bar.setVisibility(View.GONE);
-                                    Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().expenseAmount));
-                                    Bundle bundle = new Bundle();
-                                    bundle.putSerializable("pdf_key",
-                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                            response.body().getData().transactionDate.substring(0,10),
-                                                    Integer.valueOf(response.body().getData().accountingReference),
-                                            Integer.valueOf(MockAccount.customerNo),
-                                            true));
-                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
-                                    intent.putExtras(bundle);
-                                    getActivity().startActivity(intent);
-                                } else {
-                                    bar.setVisibility(View.GONE);
-                                    Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                }
-                                if (response.body() != null) {
-                                    System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
-                                } else {
-                                    System.out.println("NULLLLLLLLLL");
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<Response> call, Throwable t) {
-                                System.out.println("HATA: " + t.getMessage());
-                            }
-                        });
-                    } else {
-                        //EFT
-                        System.out.println("EFTTTTT");
-                        EftToIban eftToIban = new EftToIban();
-                        com.example.stork.API.ProcessEftRequestToIban.Request.Parameters par = new com.example.stork.API.ProcessEftRequestToIban.Request.Parameters(
-                                exp.getText().toString(),
-                                iban.getText().toString(),
-                                Integer.valueOf(services.getBankCode(iban.getText().toString())),
-                                Integer.valueOf(amount.getText().toString()),
-                                Integer.valueOf(MockAccount.customerNo),
-                                new com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount(indexAccount),
-                                name.getText().toString().toUpperCase(),
-                                true
-                        );
-                        eftToIban.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToIban.Response.Response>() {
-                            @Override
-                            public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
-                                System.out.println(response.code());
-                                if (response.code() == 200 && response.body() != null) {
-                                    bar.setVisibility(View.GONE);
-                                    Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())- response.body().getData().expenseAmount));
-                                    Bundle bundle = new Bundle();
-                                    bundle.putSerializable("pdf_key",
-                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                    response.body().getData().transactionDate.substring(0,10),
-                                                    Integer.valueOf(response.body().getData().accountingReference),
-                                                    Integer.valueOf(MockAccount.customerNo),
-                                                    true));
-                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
-                                    intent.putExtras(bundle);
-                                    getActivity().startActivity(intent);
-
-                                } else {
-                                    bar.setVisibility(View.GONE);
-                                    Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                    if (response.body() == null) {
-                                        System.out.println("Response boş");
+                    if (Integer.parseInt(amount.getText().toString()) <= MockAccount.accounts.get(indexAccount).getAmountOfBalance() - 30) {
+                        bar.setVisibility(View.VISIBLE);
+                        if (checkBox.isChecked()) {
+                            DatabaseUtil db = new DatabaseUtil();
+                            db.addSavedCustomer(new SavedCustomer(name.getText().toString().toUpperCase(), iban.getText().toString().toUpperCase(), ""));
+                        }
+                        if (services.compareBanksByIban(iban.getText().toString(), MockAccount.accounts.get(indexAccount).getIBANNo())) {
+                            //HAVALE
+                            System.out.println("HAVALEEEEEE");
+                            WireToIban wire = new WireToIban();
+                            Parameters par = new Parameters(exp.getText().toString(), Integer.valueOf(amount.getText().toString()), iban.getText().toString().toUpperCase(), new SourceAccount(indexAccount), name.getText().toString().toUpperCase());
+                            wire.getResponse(par, new Callback<Response>() {
+                                @Override
+                                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                                    System.out.println(par.toString());
+                                    System.out.println(response.code());
+                                    if (response.code() == 200 && response.body() != null) {
+                                        bar.setVisibility(View.GONE);
+                                        Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                        MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("pdf_key",
+                                                new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                        response.body().getData().transactionDate.substring(0, 10),
+                                                        Integer.valueOf(response.body().getData().accountingReference),
+                                                        Integer.valueOf(MockAccount.customerNo),
+                                                        true));
+                                        Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                        intent.putExtras(bundle);
+                                        getActivity().startActivity(intent);
                                     } else {
-                                        System.out.println(response.body().getData().transactionDate);
+                                        bar.setVisibility(View.GONE);
+                                        Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
+                                    }
+                                    if (response.body() != null) {
+                                        System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
+                                    } else {
+                                        System.out.println("NULLLLLLLLLL");
                                     }
                                 }
-                            }
 
-                            @Override
-                            public void onFailure(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, Throwable t) {
+                                @Override
+                                public void onFailure(Call<Response> call, Throwable t) {
+                                    System.out.println("HATA: " + t.getMessage());
+                                }
+                            });
+                        } else {
+                            //EFT
+                            System.out.println("EFTTTTT");
+                            EftToIban eftToIban = new EftToIban();
+                            com.example.stork.API.ProcessEftRequestToIban.Request.Parameters par = new com.example.stork.API.ProcessEftRequestToIban.Request.Parameters(
+                                    exp.getText().toString(),
+                                    iban.getText().toString(),
+                                    Integer.valueOf(services.getBankCode(iban.getText().toString())),
+                                    Integer.valueOf(amount.getText().toString()),
+                                    Integer.valueOf(MockAccount.customerNo),
+                                    new com.example.stork.API.ProcessEftRequestToIban.Request.SourceAccount(indexAccount),
+                                    name.getText().toString().toUpperCase(),
+                                    true
+                            );
+                            eftToIban.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToIban.Response.Response>() {
+                                @Override
+                                public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
+                                    System.out.println(response.code());
+                                    if (response.code() == 200 && response.body() != null) {
+                                        bar.setVisibility(View.GONE);
+                                        Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
+                                        MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) - response.body().getData().expenseAmount));
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("pdf_key",
+                                                new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                        response.body().getData().transactionDate.substring(0, 10),
+                                                        Integer.valueOf(response.body().getData().accountingReference),
+                                                        Integer.valueOf(MockAccount.customerNo),
+                                                        true));
+                                        Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                        intent.putExtras(bundle);
+                                        getActivity().startActivity(intent);
 
-                            }
-                        });
+                                    } else {
+                                        bar.setVisibility(View.GONE);
+                                        Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
+                                        if (response.body() == null) {
+                                            System.out.println("Response boş");
+                                        } else {
+                                            System.out.println(response.body().getData().transactionDate);
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, Throwable t) {
+
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        Toast.makeText(getContext(),"Bakiyeniz Yeterli değil",Toast.LENGTH_LONG).show();
                     }
                 }
             }
