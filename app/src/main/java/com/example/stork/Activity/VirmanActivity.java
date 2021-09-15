@@ -123,6 +123,8 @@ public class VirmanActivity extends AppCompatActivity {
                                 System.out.println(response.code());
                                 if (response.code() == 200 && response.body() != null) {
                                     Toast.makeText(getApplicationContext(), "İşlem Başarıyla Gerçekleştirildi", Toast.LENGTH_SHORT).show();
+                                    MockAccount.accounts.get(indexAccount).setAmountOfBalance(MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()));
+                                    MockAccount.accounts.get(indexAccount1).setAmountOfBalance(MockAccount.accounts.get(indexAccount1).getAmountOfBalance() + Float.parseFloat(amount.getText().toString()));
                                     System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "İşlem Gerçekleştirilemedi", Toast.LENGTH_SHORT).show();

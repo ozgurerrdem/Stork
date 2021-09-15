@@ -181,7 +181,11 @@ public class IBANTransferFragment extends Fragment {
                                     if (response.code() == 200 && response.body() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                        MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
+                                        if(response.body().getData().expenseAmount != null){
+                                            MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
+                                        }else{
+                                            MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));
+                                        }
                                         Bundle bundle = new Bundle();
                                         bundle.putSerializable("pdf_key",
                                                 new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
@@ -229,7 +233,11 @@ public class IBANTransferFragment extends Fragment {
                                     if (response.code() == 200 && response.body() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                        MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) - response.body().getData().expenseAmount));
+                                        if(response.body().getData().expenseAmount != null){
+                                            MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
+                                        }else{
+                                            MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));
+                                        }
                                         Bundle bundle = new Bundle();
                                         bundle.putSerializable("pdf_key",
                                                 new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
