@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="lorem ipsum dolor sit amet"
+                android:text="Okula Dönüş Heyecanı Stork'ta"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textAlignment="center"
@@ -59,7 +59,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="lorem ipsum dolor sit amet"
+                android:text="Restoran Kampanyaları"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textAlignment="center"
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="lorem ipsum dolor sit amet"
+                android:text="İkinci Sinema Biletinde %50 İndirim"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textAlignment="center"
