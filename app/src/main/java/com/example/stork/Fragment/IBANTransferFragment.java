@@ -181,7 +181,7 @@ public class IBANTransferFragment extends Fragment {
                                     if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                        if(response.body().getData().expenseAmount != null){
+                                        if(response.body().getData()  != null){
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
                                         }else{
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));
@@ -233,7 +233,7 @@ public class IBANTransferFragment extends Fragment {
                                     if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
-                                        if(response.body().getData().expenseAmount != null){
+                                        if(response.body().getData()  != null){
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()) + response.body().getData().expenseAmount));
                                         }else{
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));

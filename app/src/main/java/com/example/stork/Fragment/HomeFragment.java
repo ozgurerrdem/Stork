@@ -22,6 +22,7 @@ import com.example.stork.Activity.MarketActivity;
 import com.example.stork.Activity.PaymentsActivity;
 import com.example.stork.Activity.ReceiveMoneyActivity;
 import com.example.stork.Activity.SendMoneyActivity;
+import com.example.stork.Activity.StorkPointsActivity;
 import com.example.stork.Activity.TransactionsActivity;
 import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.MockAccount;
@@ -104,7 +105,7 @@ public class HomeFragment extends Fragment {
         buttons[5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), GiftsActivity.class));
+                startActivity(new Intent(getActivity(), StorkPointsActivity.class));
             }
         });
 

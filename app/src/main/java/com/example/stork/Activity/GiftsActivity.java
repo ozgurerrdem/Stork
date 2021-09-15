@@ -25,12 +25,7 @@ public class GiftsActivity extends AppCompatActivity {
 
             }
         });
-        stork_points_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(GiftsActivity.this , StorkPointsActivity.class));
-            }
-        });
+
 
     }
 }
