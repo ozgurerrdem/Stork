@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.stork.API.GetReceiptData.Request.Parameters;
@@ -22,6 +23,15 @@ public class SendDoneActivity extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
 
+            }
+        });
+
+        Button ana = findViewById(R.id.ana_sayfa);
+        ana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
             }
         });
 
