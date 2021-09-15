@@ -24,6 +24,7 @@ import com.example.stork.API.RequestWireToIban.Request.SourceAccount;
 import com.example.stork.API.RequestWireToIban.Response.Response;
 import com.example.stork.API.RequestWireToIban.WireToIban;
 import com.example.stork.Account;
+import com.example.stork.Activity.IbanSendAnimationActivity;
 import com.example.stork.Activity.SendDoneActivity;
 import com.example.stork.Database.DatabaseUtil;
 import com.example.stork.Database.Models.SavedCustomer;
@@ -188,7 +189,7 @@ public class IBANTransferFragment extends Fragment {
                                                         Integer.valueOf(response.body().getData().accountingReference),
                                                         Integer.valueOf(MockAccount.customerNo),
                                                         true));
-                                        Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                        Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                         intent.putExtras(bundle);
                                         getActivity().startActivity(intent);
                                     } else {

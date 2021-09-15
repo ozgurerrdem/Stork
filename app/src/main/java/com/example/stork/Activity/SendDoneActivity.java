@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.stork.API.GetReceiptData.Request.Parameters;
@@ -17,10 +18,18 @@ public class SendDoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_done);
         ImageButton backButton = findViewById(R.id.receive_money_screen_back_btn);
+        Button homepage = findViewById(R.id.go_to_hp);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+
+            }
+        });
+        homepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SendDoneActivity.this,MainActivity.class));
 
             }
         });
