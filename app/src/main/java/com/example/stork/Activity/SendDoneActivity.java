@@ -18,7 +18,7 @@ public class SendDoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_done);
         ImageButton backButton = findViewById(R.id.receive_money_screen_back_btn);
-        Button homepage = findViewById(R.id.go_to_hp);
+        Button homepage = findViewById(R.id.ana_sayfa);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

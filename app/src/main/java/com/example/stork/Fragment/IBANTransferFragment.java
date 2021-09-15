@@ -237,7 +237,7 @@ public class IBANTransferFragment extends Fragment {
                                                         Integer.valueOf(response.body().getData().accountingReference),
                                                         Integer.valueOf(MockAccount.customerNo),
                                                         true));
-                                        Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                        Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                         intent.putExtras(bundle);
                                         getActivity().startActivity(intent);
 
