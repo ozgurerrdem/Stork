@@ -194,5 +194,28 @@
         app:layout_constraintTop_toBottomOf="@+id/aciklama_edit"
         app:layout_constraintVertical_bias="0.227" />
 
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:visibility="gone"
+        style="@style/GenericProgressBackground"
+        android:layout_width="match_parent"
+        android:layout_height="822dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="800dp"
+            android:layout_height="600dp"
+            android:layout_centerVertical="true"
+            android:paddingBottom="211dp"
+            app:lottie_rawRes="@raw/send_loading"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +23,7 @@ import com.example.stork.API.MoneyOrder.Response.Response;
 import com.example.stork.Account;
 import com.example.stork.MockAccount;
 import com.example.stork.R;
+import com.example.stork.Services;
 
 import java.util.ArrayList;
 
@@ -35,6 +38,7 @@ public class VirmanActivity extends AppCompatActivity {
     private EditText exp;
     private TextView birim;
     private TextView tum_bak;
+    private RelativeLayout bar;
     private ArrayList<String> acNameList1 = new ArrayList<String>();
     private ArrayList<String> acNameList2 = new ArrayList<String>();
     private int indexAccount = 0;
@@ -52,6 +56,7 @@ public class VirmanActivity extends AppCompatActivity {
         tum_bak = findViewById(R.id.tum_bak);
         ac1 = findViewById(R.id.hesabim_spinner1);
         ac2 = findViewById(R.id.hesabim_spinner2);
+        bar = findViewById(R.id.loadingPanel);
         amount.setText("0");
         ImageButton back = findViewById(R.id.back_btn);
         back.setOnClickListener(new View.OnClickListener() {
@@ -115,17 +120,30 @@ public class VirmanActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Bakiyeniz yeterli değildir", Toast.LENGTH_SHORT).show();
                 } else {
                     if (!amount.getText().toString().isEmpty() && (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals(MockAccount.accounts.get(indexAccount1).getCurrencyCode()))) {
+                        bar.setVisibility(View.VISIBLE);
                         Parameters param = new Parameters(new SourceAccount(indexAccount), amount.getText().toString(), exp.getText().toString(), new DestinationAccount(indexAccount1));
                         MoneyOrd ord = new MoneyOrd();
                         ord.getResponse(param, new Callback<Response>() {
                             @Override
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 System.out.println(response.code());
-                                if (response.code() == 200 && response.body() != null) {
-                                    Toast.makeText(getApplicationContext(), "İşlem Başarıyla Gerçekleştirildi", Toast.LENGTH_SHORT).show();
+                                if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
+                                    bar.setVisibility(View.GONE);
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance(MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString()));
                                     MockAccount.accounts.get(indexAccount1).setAmountOfBalance(MockAccount.accounts.get(indexAccount1).getAmountOfBalance() + Float.parseFloat(amount.getText().toString()));
-                                    System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
+                                    //System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
+
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("pdf_key",
+                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
+                                                    Services.getCurrentTimeStamp().substring(0, 10),
+                                                    Integer.valueOf(response.body().getData().accountingReference),
+                                                    Integer.valueOf(MockAccount.customerNo),
+                                                    true));
+                                    Intent intent = new Intent(VirmanActivity.this , SendDoneActivity.class);
+                                    intent.putExtras(bundle);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
                                     Toast.makeText(getApplicationContext(), "İşlem Gerçekleştirilemedi", Toast.LENGTH_SHORT).show();
                                     System.out.println("ALARM ALARM");
