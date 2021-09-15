@@ -12,6 +12,6 @@ public interface ProcessEftRequestToAccount {
             "Ocp-Apim-Subscription-Key:18e42a2ed35549b4a09007722af387b1",
             "Content-Type:application/json"
     })
-    @POST("ProcessEftRequestToAccount")
+    @POST("moneytransfers/ProcessEftRequestToAccount")
     Call<Response> GetPostValue(@Body Request Request);
 }
