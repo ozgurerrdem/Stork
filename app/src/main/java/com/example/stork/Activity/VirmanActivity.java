@@ -53,7 +53,7 @@ public class VirmanActivity extends AppCompatActivity {
         ac1 = findViewById(R.id.hesabim_spinner1);
         ac2 = findViewById(R.id.hesabim_spinner2);
         amount.setText("0");
-        ImageButton back = findViewById(R.id.back_btn77);
+        ImageButton back = findViewById(R.id.back_btn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,11 +79,6 @@ public class VirmanActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Showing selected spinner item
                 indexAccount = i;
-                // TODO Talimat
-                // TODO Tum parayi yolla butonlari
-                // TODO Turkce cevir cashback falan
-                // TODO Test hesabini editle
-                // TODO Toastlari incele
                 if (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals("TRY")) {
                     birim.setText("TL");
                 } else {
@@ -126,7 +121,8 @@ public class VirmanActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 System.out.println(response.code());
-                                if (response.code() == 200) {
+                                if (response.code() == 200 && response.body() != null) {
+                                    Toast.makeText(getApplicationContext(), "İşlem Başarıyla Gerçekleştirildi", Toast.LENGTH_SHORT).show();
                                     System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "İşlem Gerçekleştirilemedi", Toast.LENGTH_SHORT).show();

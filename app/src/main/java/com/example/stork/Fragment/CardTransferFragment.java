@@ -174,7 +174,7 @@ public class CardTransferFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (branch.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty() || ekno.getText().toString().isEmpty()) {
+                if (branch.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Bütün alanların doldurulması zorunludur", Toast.LENGTH_LONG).show();
                 } else {
                     bar.setVisibility(View.VISIBLE);
@@ -239,7 +239,7 @@ public class CardTransferFragment extends Fragment {
                                 MockAccount.name,
                                 "I",
                                 Integer.valueOf(bankValue),
-                                "123456",
+                                accountNum.getText().toString(),
                                 Integer.valueOf(branch.getText().toString()),
                                 "EFT_TYPE_TO_BRANCH",
                                 amount.getText().toString(),
