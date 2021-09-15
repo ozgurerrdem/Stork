@@ -193,7 +193,7 @@ public class CardTransferFragment extends Fragment {
                         wire.getResponse(par, new Callback<Response>() {
                             @Override
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                                if (response.code() == 200 && response.body() != null) {
+                                if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString()) - response.body().getData().getExpenseAmount()));
@@ -249,7 +249,7 @@ public class CardTransferFragment extends Fragment {
                         eft.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToAccount.Response.Response>() {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> response) {
-                                if (response.code() == 200 && response.body() != null) {
+                                if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().getExpenseAmount()));

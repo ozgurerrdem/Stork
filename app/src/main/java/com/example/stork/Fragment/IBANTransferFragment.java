@@ -178,7 +178,7 @@ public class IBANTransferFragment extends Fragment {
                                 public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                     System.out.println(par.toString());
                                     System.out.println(response.code());
-                                    if (response.code() == 200 && response.body() != null) {
+                                    if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                         if(response.body().getData()  != null){
@@ -230,7 +230,7 @@ public class IBANTransferFragment extends Fragment {
                                 @Override
                                 public void onResponse(Call<com.example.stork.API.ProcessEftRequestToIban.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToIban.Response.Response> response) {
                                     System.out.println(response.code());
-                                    if (response.code() == 200 && response.body() != null) {
+                                    if (response.code() == 200 && response.body() != null && response.body().getData() != null) {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                         if(response.body().getData()  != null){

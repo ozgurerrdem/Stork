@@ -26,7 +26,7 @@ public class Services {
     public boolean compareBanksByIban (String iban1, String iban2){
         return getBankCode(iban1).equals(getBankCode(iban2));
     }
-    public String getCurrentTimeStamp() {
+    public static String getCurrentTimeStamp() {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
     }
 }
