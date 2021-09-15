@@ -239,7 +239,7 @@ public class CardTransferFragment extends Fragment {
                                 MockAccount.name,
                                 "I",
                                 Integer.valueOf(bankValue),
-                                "123456",
+                                accountNum.getText().toString(),
                                 Integer.valueOf(branch.getText().toString()),
                                 "EFT_TYPE_TO_BRANCH",
                                 amount.getText().toString(),
