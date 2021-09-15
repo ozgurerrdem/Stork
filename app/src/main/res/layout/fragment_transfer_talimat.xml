@@ -27,7 +27,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/gonderici_spinner"
@@ -36,7 +36,28 @@
             android:layout_marginStart="40dp"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderici_text"></Spinner>
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_text" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="18dp"
+            android:text="Alıcı Isim Soyisim"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gonderici_spinner" />
+
+        <EditText
+            android:id="@+id/name_edit"
+            android:layout_width="317dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/alici_iban_text"
@@ -48,7 +69,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderici_spinner"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
         <EditText
             android:id="@+id/alici_iban_edit"
@@ -57,7 +78,7 @@
             android:layout_marginStart="40dp"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alici_iban_text"></EditText>
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_text" />
 
         <TextView
             android:id="@+id/gonderim_miktar_text"
@@ -69,16 +90,17 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alici_iban_edit"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/alici_iban_edit" />
 
         <EditText
             android:id="@+id/gonderim_edit"
-            android:layout_width="317dp"
+            android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
+            android:fontFamily="@font/manrope_semibold"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text"></EditText>
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text" />
 
         <TextView
             android:id="@+id/tarih_text"
@@ -90,32 +112,42 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit" />
 
         <EditText
             android:id="@+id/tarih_edit"
             android:layout_width="230dp"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:fontFamily="@font/manrope_semibold"
             android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tarih_text"></EditText>
+            app:layout_constraintTop_toBottomOf="@+id/tarih_text" />
 
-        <EditText
-            android:layout_width="80dp"
+        <TextView
+            android:id="@+id/birim"
+            android:layout_width="55dp"
             android:layout_height="48dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="40dp"
             android:background="@drawable/gradient_cream"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gonderim_edit"></EditText>
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="22sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toEndOf="@+id/gonderim_edit"
+            app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text" />
 
         <Button
+            android:id="@+id/buton"
             android:layout_width="250dp"
             android:layout_height="51dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/gradient_orange"
-            android:paddingLeft="80dp"
+            android:paddingStart="80dp"
             android:paddingTop="10dp"
             android:text="Talimat Ver"
             android:textColor="@color/white"
@@ -123,7 +155,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tarih_edit"></Button>
+            app:layout_constraintTop_toBottomOf="@+id/tarih_edit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
