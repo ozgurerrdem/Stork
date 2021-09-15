@@ -34,7 +34,7 @@ public class SendDoneActivity extends AppCompatActivity {
             }
         });
 
-        Button ana = findViewById(R.id.ana_sayfa);
+        Button ana = findViewById(R.id.go_to_homapage);
         ana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
