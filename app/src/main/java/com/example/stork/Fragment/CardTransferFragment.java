@@ -174,7 +174,7 @@ public class CardTransferFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (branch.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty() || ekno.getText().toString().isEmpty()) {
+                if (branch.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Bütün alanların doldurulması zorunludur", Toast.LENGTH_LONG).show();
                 } else {
                     bar.setVisibility(View.VISIBLE);
