@@ -53,7 +53,7 @@ public class VirmanActivity extends AppCompatActivity {
         ac1 = findViewById(R.id.hesabim_spinner1);
         ac2 = findViewById(R.id.hesabim_spinner2);
         amount.setText("0");
-        ImageButton back = findViewById(R.id.back_btn77);
+        ImageButton back = findViewById(R.id.back_btn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
