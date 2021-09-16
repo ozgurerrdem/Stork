@@ -131,51 +131,54 @@
             android:layout_marginTop="344dp"
             android:layout_marginLeft="15dp"
             app:srcCompat="@drawable/pp" />
+
         <ImageView
             android:id="@+id/imageView15444"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="71dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/aleyna_tilki" />
+
         <ImageView
             android:id="@+id/imageView1544422"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="127dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/didem" />
+
         <ImageView
             android:id="@+id/imageView1544422s"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="186dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/cenk" />
 
         <ImageView
             android:id="@+id/imageView15442422"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="242dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/dimashr" />
 
         <ImageView
             android:id="@+id/imageView144422"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="296dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/buse" />
 
         <ImageView
             android:id="@+id/imageView1544242"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:layout_marginLeft="344dp"
-            app:srcCompat="@drawable/pp" />
+            android:layout_marginTop="344dp"
+            app:srcCompat="@drawable/dog" />
         <TextView
             android:id="@+id/textView22345"
             android:layout_width="411dp"
@@ -187,6 +190,7 @@
             android:text="Toplam Ödeme Miktarı"
             android:textColor="@color/black"
             android:textSize="18dp" />
+
         <TextView
             android:id="@+id/textView223222"
             android:layout_width="411dp"
@@ -195,7 +199,7 @@
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="1000 ₺"
+            android:text="800 ₺"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
