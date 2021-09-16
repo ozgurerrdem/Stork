@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.ServiceState;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -134,13 +135,17 @@ public class VirmanActivity extends AppCompatActivity {
                                     //System.out.println("RESPONSE: " + response.body().getData().accountingReference + " " + response.body().getData().state);
 
                                     Bundle bundle = new Bundle();
+                                    ArrayList<String> a = new ArrayList<String>();
+                                    Services serv = new Services();
+                                    a.add(serv.getCurrentTimeStamp());
+                                    a.add("0");
+                                    a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
+                                    a.add(MockAccount.accounts.get(indexAccount).getAccountName());
+                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+
                                     bundle.putSerializable("pdf_key",
-                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                    Services.getCurrentTimeStamp().substring(0, 10),
-                                                    Integer.valueOf(response.body().getData().accountingReference),
-                                                    Integer.valueOf(MockAccount.customerNo),
-                                                    true));
-                                    Intent intent = new Intent(VirmanActivity.this , SendDoneActivity.class);
+                                            a ); // burayı değiştim
+                                    Intent intent = new Intent(getApplicationContext(), IbanSendAnimationActivity.class);
                                     intent.putExtras(bundle);
                                     startActivity(intent);
                                     finish();
