@@ -48,35 +48,35 @@
             android:text="Oluşturan: Kemal Kükrer" />
 
         <TextView
-            android:layout_marginTop="88dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="14dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toplam Ödeme: 1000₺" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Toplam Ödeme: 800₺"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
         <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="301dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_regular"
-            android:id="@+id/textView14"
-            android:textSize="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10 katılımcı" />
+            android:text="8 katılımcı"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_marginLeft="301dp"
-            android:layout_marginTop="88dp"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5dk önce" />
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="5dk Önce"
+            android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_marginTop="36dp"
@@ -91,61 +91,61 @@
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pp" />
+            android:src="@drawable/aleyna_tilki" />
 
         <TextView
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1233"
             android:layout_width="wrap_content"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Pazar Kahvaltısı" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Eylül Kirası"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <TextView
-            android:layout_marginTop="45dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1211"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oluşturan: Kemal Kükrer" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Oluşturan: Aleyna Tilki"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <TextView
-            android:layout_marginTop="88dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="14dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1342"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toplam Ödeme: 1000₺" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Toplam Ödeme: 2100₺"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
         <TextView
+            android:id="@+id/textView1412"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="301dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_regular"
-            android:id="@+id/textView1412"
-            android:textSize="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10 katılımcı" />
+            android:text="3 katılımcı"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/textView1532"
-            android:layout_marginLeft="301dp"
-            android:layout_marginTop="88dp"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5dk önce" />
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="2s Önce"
+            android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_marginTop="36dp"
@@ -160,41 +160,41 @@
             android:id="@+id/imageView5112"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pp" />
+            android:src="@drawable/cenk" />
 
         <TextView
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1124"
             android:layout_width="wrap_content"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Pazar Kahvaltısı" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Klüp Giderleri"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <TextView
-            android:layout_marginTop="45dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView12232"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oluşturan: Kemal Kükrer" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Oluşturan: Cenk Koçak"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <TextView
-            android:layout_marginTop="88dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="14dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1311123"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toplam Ödeme: 1000₺" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Toplam Ödeme: 500₺"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
         <TextView
             android:layout_marginLeft="301dp"
@@ -208,13 +208,13 @@
 
         <TextView
             android:id="@+id/textView15242"
-            android:layout_marginLeft="301dp"
-            android:layout_marginTop="88dp"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5dk önce" />
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="4s Önce"
+            android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_marginTop="36dp"
@@ -229,30 +229,30 @@
             android:id="@+id/imageView522"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pp" />
+            android:src="@drawable/didem" />
 
         <TextView
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1133"
             android:layout_width="wrap_content"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Pazar Kahvaltısı" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Altın Günü"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <TextView
-            android:layout_marginTop="45dp"
-            android:layout_marginLeft="90dp"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView1244"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oluşturan: Kemal Kükrer" />
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Oluşturan: Didem Aslan"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <TextView
             android:layout_marginTop="88dp"
@@ -277,13 +277,13 @@
 
         <TextView
             android:id="@+id/textView152152"
-            android:layout_marginLeft="301dp"
-            android:layout_marginTop="88dp"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5dk önce" />
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="1g Önce"
+            android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
 
 
