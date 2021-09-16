@@ -70,7 +70,7 @@
             android:layout_marginStart="140dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Alış/₺"
-            android:textColor="#118C4F "
+            android:textColor="#118C4F"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"

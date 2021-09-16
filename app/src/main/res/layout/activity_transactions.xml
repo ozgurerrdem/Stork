@@ -66,6 +66,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="-24.99 ₺"
+            android:textColor="@color/red"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -240,6 +241,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="-7,99 ₺"
+            android:textColor="@color/red"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -288,32 +290,14 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/profilfoto_foreground" /><![CDATA[
-
-"
-    android:textStyle="bold"
-    app:layout_constraintStart_toEndOf="@+id/imageView1534"
-    app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-
-
-
-
-
-
-
-        ]]>
-
+            app:srcCompat="@drawable/img_10" />
         <TextView
             android:id="@+id/textView22534"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="Osman Kutay Çelik"
+            android:text="Kerem Alp Özecik"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -339,7 +323,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="+100 ₺"
+            android:text="+800 ₺"
+            android:textColor="@color/green"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -415,6 +400,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="-40 ₺"
+            android:textColor="@color/red"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -512,6 +498,7 @@ app:layout_constraintTop_toTopOf="parent" />
             android:layout_marginEnd="16dp"
             android:text="-1250 ₺"
             android:textSize="16dp"
+            android:textColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

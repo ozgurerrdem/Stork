@@ -149,7 +149,11 @@ public class MarketActivity extends AppCompatActivity {
 
                 System.out.println("---------------------------------------------");
                 System.out.println(response.body().result.get(i).name + " Satış : " + response.body().result.get(i).selling + " Alış : " + response.body().result.get(i).buying);
-                currencies.add(new Currency(response.body().result.get(i).name, response.body().result.get(i).buying, response.body().result.get(i).selling));
+                if (response.body().result.get(i).name.isEmpty() || response.body().result.get(i).name == null) {
+                    currencies.add(new Currency("Birim", response.body().result.get(i).buying, response.body().result.get(i).selling));
+                } else {
+                    currencies.add(new Currency(response.body().result.get(i).name, response.body().result.get(i).buying, response.body().result.get(i).selling));
+                }
             }
         }
         catch (Exception ex)

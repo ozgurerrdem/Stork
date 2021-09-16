@@ -57,6 +57,8 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Ca
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.card_image);
+            TextView v = itemView.findViewById(R.id.account_name);
+            v.setText("");
         }
 
         void setImageView(CardModel cardModel) {

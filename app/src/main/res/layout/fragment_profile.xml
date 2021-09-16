@@ -32,7 +32,7 @@
             android:layout_width="160dp"
             android:layout_height="169dp"
             android:layout_marginStart="125dp"
-            android:background="@drawable/img"
+            android:background="@drawable/img11"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView63" />
     </androidx.constraintlayout.widget.ConstraintLayout>

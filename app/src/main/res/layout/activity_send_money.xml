@@ -35,26 +35,15 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/profilfoto_foreground" /><![CDATA[
-
-        "
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView15"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-        ]]>
-
+            android:src="@drawable/img_1"/>
         <TextView
             android:id="@+id/textView235"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:text="Osman Kutay Çelik"
+            android:text="Özgür Erdem Dağdeviren"
             android:textSize="20dp"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView16"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="DuplicateIds" />
@@ -76,8 +65,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="-100 ₺"
+            android:text="-767.27 ₺"
             android:textSize="16dp"
+            android:textColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:text="3:30PM"
+            android:text="03:30"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -113,30 +103,15 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/profilfoto_foreground" /><![CDATA[
-
-        "
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView15"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-
-
-
-        ]]>
-
+            android:src="@drawable/img_2"/>
         <TextView
             android:id="@+id/textView228"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
-            android:text="Osman Kutay Çelik"
+            android:text="Büşra Ağdacı"
             android:textSize="20dp"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView18"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,7 +132,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="-100 ₺"
+            android:text="-317 ₺"
+            android:textColor="@color/red"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -168,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:text="3:30PM"
+            android:text="12:42"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -194,30 +170,14 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/profilfoto_foreground" /><![CDATA[
-
-
-"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView15"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-
-
-
-        ]]>
-
+            android:src="@drawable/img_4"/>
         <TextView
             android:id="@+id/textView2222"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="Osman Kutay Çelik"
-            android:textStyle="bold"
+            android:text="Doruk Ergün"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/imageView151"
             app:layout_constraintTop_toTopOf="parent" />
@@ -239,8 +199,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="-100 ₺"
+            android:text="+409 ₺"
             android:textSize="16dp"
+            android:textColor="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -250,7 +211,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:text="3:30PM"
+            android:text="14:53"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -497,8 +458,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="-100 ₺"
+            android:text="+175 ₺"
             android:textSize="16dp"
+            android:textColor="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -508,7 +470,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:text="3:30PM"
+            android:text="15:42"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -534,24 +496,14 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/profilfoto_foreground" /><![CDATA[
-
-        "
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView15"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-        ]]>
-
+            android:src="@drawable/img_3"/>
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="Osman Kutay Çelik"
+            android:text="Kerem Yolcu"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/imageView15"
             app:layout_constraintTop_toTopOf="parent" />
@@ -573,7 +525,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="-100 ₺"
+            android:text="-128 ₺"
+            android:textColor="@color/red"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -584,7 +537,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:text="3:30PM"
+            android:text="12:15"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
