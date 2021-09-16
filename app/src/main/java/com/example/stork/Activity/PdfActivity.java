@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Base64;
+import android.widget.TextView;
 
 import com.example.stork.API.GetReceiptData.Request.Parameters;
 import com.example.stork.API.GetReceiptData.Response.Response;
@@ -16,6 +17,7 @@ import retrofit2.Callback;
 
 public class PdfActivity extends AppCompatActivity {
     private PDFView pdfView;
+    ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

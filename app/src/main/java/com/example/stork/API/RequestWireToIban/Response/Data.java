@@ -2,7 +2,9 @@ package com.example.stork.API.RequestWireToIban.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Data {
+import java.io.Serializable;
+
+public class Data  {
     @SerializedName("TransactionCode")
     public String transactionCode;
 

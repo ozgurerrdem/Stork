@@ -32,6 +32,7 @@ import com.example.stork.MockAccount;
 import com.example.stork.R;
 import com.example.stork.Services;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -187,12 +188,15 @@ public class IBANTransferFragment extends Fragment {
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));
                                         }
                                         Bundle bundle = new Bundle();
+                                        ArrayList<String> a = new ArrayList<String>();
+                                        a.add(response.body().data.transactionDate);
+                                        a.add(response.body().data.expenseAmount.toString());
+                                        a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
+                                        a.add(MockAccount.accounts.get(indexAccount).getAccountName());
+                                        a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+
                                         bundle.putSerializable("pdf_key",
-                                                new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                        response.body().getData().transactionDate.substring(0, 10),
-                                                        Integer.valueOf(response.body().getData().accountingReference),
-                                                        Integer.valueOf(MockAccount.customerNo),
-                                                        true));
+                                                a ); // burayı değiştim
                                         Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                         intent.putExtras(bundle);
                                         getActivity().startActivity(intent);
@@ -239,15 +243,19 @@ public class IBANTransferFragment extends Fragment {
                                             MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance() - Float.parseFloat(amount.getText().toString())));
                                         }
                                         Bundle bundle = new Bundle();
+                                        ArrayList<String> a = new ArrayList<String>();
+                                        a.add(response.body().data.transactionDate);
+                                        a.add(response.body().data.expenseAmount.toString());
+                                        a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
+                                        a.add(MockAccount.accounts.get(indexAccount).getAccountName());
+                                        a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+
                                         bundle.putSerializable("pdf_key",
-                                                new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                        response.body().getData().transactionDate.substring(0, 10),
-                                                        Integer.valueOf(response.body().getData().accountingReference),
-                                                        Integer.valueOf(MockAccount.customerNo),
-                                                        true));
+                                                a ); // burayı değiştim
                                         Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                         intent.putExtras(bundle);
                                         getActivity().startActivity(intent);
+
 
                                     } else {
                                         bar.setVisibility(View.GONE);

@@ -36,7 +36,7 @@ public class Parameters {
         this.explanation = explanation;
         this.amount = amount;
         this.customerNo = Integer.valueOf(MockAccount.customerNo);
-        this.citizenshipNumber =Integer.valueOf(MockAccount.citizenshipNumber);
+        this.citizenshipNumber =0;
         this.taxNumber =0;
         this.iBANNumber = iBANNumber;
         this.sourceAccount = sourceAccount;

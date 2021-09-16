@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import com.example.stork.API.GetReceiptData.Request.Parameters;
 import com.example.stork.R;
 
+import java.util.ArrayList;
+
 public class SendDoneActivity extends AppCompatActivity {
 
     @Override
@@ -41,8 +43,8 @@ public class SendDoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("pdf_key",(Parameters) getIntent().getExtras().get("pdf_key"));
-                Intent intent = new Intent(getApplicationContext(), PdfActivity.class);
+                bundle.putSerializable("pdf_key",(ArrayList<String>) getIntent().getExtras().get("pdf_key"));
+                Intent intent = new Intent(getApplicationContext(), TransactionsDetailsActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
