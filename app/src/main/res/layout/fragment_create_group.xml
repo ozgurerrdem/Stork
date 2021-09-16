@@ -46,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:text="Grup Adı"
                 android:textSize="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.048"
@@ -79,7 +80,7 @@
             android:background="@drawable/btn_round_white"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
-            android:text="Ev Kirasıoı"
+            android:text="Ev Kirası"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +122,8 @@
                 android:layout_height="wrap_content"
                 android:text="Grup Açıklaması"
                 android:textSize="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.061"
@@ -148,7 +150,8 @@
                 android:layout_height="wrap_content"
                 android:text="Katılımcılar"
                 android:textSize="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.061"
@@ -160,11 +163,11 @@
 
         <ImageView
             android:id="@+id/imageView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
             android:src="@mipmap/profilfoto_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout18"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout1800" />
 
@@ -172,10 +175,10 @@
             android:id="@+id/imageView25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/add_36"
-            app:layout_constraintStart_toEndOf="@+id/imageView24"
+            app:layout_constraintStart_toEndOf="@+id/imageView63"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout1800" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -194,8 +197,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Katılımcılar"
+                android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.061"
@@ -214,6 +218,26 @@
             android:text="Kişi başı ödeme miktarı : 400₺"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/aliciad_edit4" />
+
+        <ImageView
+            android:id="@+id/imageView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/aleyna_tilki"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout18"
+            app:layout_constraintStart_toEndOf="@+id/imageView24"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1800" />
+
+        <ImageView
+            android:id="@+id/imageView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/didem"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout18"
+            app:layout_constraintStart_toEndOf="@+id/imageView53"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1800" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
