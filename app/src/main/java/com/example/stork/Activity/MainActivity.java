@@ -46,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPager);
         List<NewCardModel> cardModels = new ArrayList<>();
 
-        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString()+MockAccount.accounts.get(0).getCurrencyCode(),MockAccount.accounts.get(0).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.tokyotravel,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+MockAccount.accounts.get(1).getCurrencyCode(),MockAccount.accounts.get(1).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+MockAccount.accounts.get(2).getCurrencyCode(),MockAccount.accounts.get(2).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+MockAccount.accounts.get(3).getCurrencyCode(),MockAccount.accounts.get(3).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getCurrencyCode(),MockAccount.accounts.get(4).getIBANNo()));
+
+        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString()+birimChanger(0),MockAccount.accounts.get(0).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.tokyotravel,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+birimChanger(1),MockAccount.accounts.get(1).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+birimChanger(2),MockAccount.accounts.get(2).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+birimChanger(3),MockAccount.accounts.get(3).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+birimChanger(4),MockAccount.accounts.get(4).getIBANNo()));
+
 
 
 
@@ -76,6 +78,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private String birimChanger(int index) {
+        String birim =MockAccount.accounts.get(index).getCurrencyCode() ;
+        if (birim.equals("TRY"))
+            birim=" ₺";
+        else if (birim.equals("USD"))
+            birim=" $";
+        else if (birim.equals("EUR"))
+            birim=" €";
+        else
+            birim=" XAU";
 
+        return birim;
+    }
 }
 
