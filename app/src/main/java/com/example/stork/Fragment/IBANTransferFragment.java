@@ -204,7 +204,7 @@ public class IBANTransferFragment extends Fragment {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
                                     }
-                                    if (response.body() != null) {
+                                    if (response.body() != null && response.body().getData() != null) {
                                         System.out.println("RESPONSE: " + response.body().getData().transactionDate + " " + response.body().getData().expenseAmount);
                                     } else {
                                         System.out.println("NULLLLLLLLLL");
@@ -260,7 +260,7 @@ public class IBANTransferFragment extends Fragment {
                                     } else {
                                         bar.setVisibility(View.GONE);
                                         Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                        if (response.body() == null) {
+                                        if (response.body() == null || response.body().getData() == null) {
                                             System.out.println("Response boş");
                                         } else {
                                             System.out.println(response.body().getData().transactionDate);
