@@ -52,6 +52,7 @@
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/drawable/spotify_logo_background.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/drawable/stop_24.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/drawable/transactions_24.xml" value="0.1" />
+        <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_gifts.xml" value="0.32468879668049794" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_group_details.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_group_pay_done.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_group_payments.xml" value="0.20244565217391305" />
@@ -59,6 +60,7 @@
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_kampanya.xml" value="0.2128623188405797" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_main.xml" value="0.14907407407407408" />
+        <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_market.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_payments.xml" value="0.28532608695652173" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_send_animation.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_send_bank.xml" value="0.36666666666666664" />
@@ -69,7 +71,7 @@
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/activity_transactions_details.xml" value="0.2658514492753623" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_charts.xml" value="0.33" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_gelir.xml" value="0.1" />
-        <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_harcamalar.xml" value="0.31179775280898875" />
+        <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_harcamalar.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_iban_transfer.xml" value="0.28532608695652173" />
         <entry key="..\:/Users/yigit/Desktop/Para Transferleri/app/src/main/res/layout/fragment_tum_kampanya.xml" value="0.36666666666666664" />
@@ -85,11 +87,9 @@
         <entry key="app/src/main/res/drawable/btn_round_white.xml" value="0.2638888888888889" />
         <entry key="app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.19930555555555557" />
         <entry key="app/src/main/res/drawable/ic_baseline_description_24.xml" value="0.19930555555555557" />
-        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.25277777777777777" />
         <entry key="app/src/main/res/drawable/profilfoto_background.xml" value="0.2638888888888889" />
         <entry key="app/src/main/res/layout/activity_add_friend_popup.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_add_transaction_popup.xml" value="0.23333333333333334" />
-        <entry key="app/src/main/res/layout/activity_cashback.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_gifts.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_group_details.xml" value="0.24965277777777778" />
         <entry key="app/src/main/res/layout/activity_group_pay_done.xml" value="0.24965277777777778" />
@@ -105,11 +105,10 @@
         <entry key="app/src/main/res/layout/activity_receive_money.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_send_bank.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_send_done.xml" value="0.23333333333333334" />
-        <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_send_money_to_friends.xml" value="0.24965277777777778" />
-        <entry key="app/src/main/res/layout/activity_transactions.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_transactions.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_virman.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/card_item_container.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_card_transfer.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_create_group.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
