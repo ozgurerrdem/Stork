@@ -13,6 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.433"
@@ -45,6 +46,8 @@
             android:layout_marginTop="16dp"
             android:text="Netflix"
             android:textSize="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView19"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +59,7 @@
             android:layout_marginTop="52dp"
             android:text="Streaming Service"
             android:textSize="16dp"
+
             app:layout_constraintStart_toEndOf="@+id/imageView19"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -221,6 +225,8 @@
             android:layout_marginTop="16dp"
             android:text="Amazon Prime"
             android:textSize="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView20"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -232,6 +238,7 @@
             android:layout_marginTop="52dp"
             android:text="Streaming Service"
             android:textSize="16dp"
+
             app:layout_constraintStart_toEndOf="@+id/imageView20"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -300,6 +307,8 @@
             android:layout_marginTop="16dp"
             android:text="Kerem Alp Özecik"
             android:textSize="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView1534"
@@ -313,6 +322,7 @@
             android:layout_marginTop="52dp"
             android:text="Para Transferi"
             android:textSize="16dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView1534"
@@ -379,6 +389,8 @@
             android:layout_marginTop="16dp"
             android:text="PlayStation Plus"
             android:textSize="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView21"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -389,6 +401,7 @@
             android:layout_marginTop="52dp"
             android:text="Gaming Platform"
             android:textSize="16dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.116"
             app:layout_constraintStart_toEndOf="@+id/imageView21"
@@ -474,6 +487,8 @@ app:layout_constraintTop_toTopOf="parent" />
             android:layout_marginTop="16dp"
             android:text="Osman Kutay Çelik"
             android:textSize="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.143"
             app:layout_constraintStart_toEndOf="@+id/imageView22"
@@ -486,6 +501,7 @@ app:layout_constraintTop_toTopOf="parent" />
             android:layout_marginTop="52dp"
             android:text="Para Transferi"
             android:textSize="16dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.085"
             app:layout_constraintStart_toEndOf="@+id/imageView22"

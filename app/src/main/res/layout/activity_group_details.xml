@@ -176,6 +176,7 @@
             android:layout_marginTop="344dp"
             android:layout_marginLeft="344dp"
             app:srcCompat="@drawable/pp" />
+
         <TextView
             android:id="@+id/textView22345"
             android:layout_width="411dp"
@@ -187,6 +188,7 @@
             android:text="Toplam Ödeme Miktarı"
             android:textColor="@color/black"
             android:textSize="18dp" />
+
         <TextView
             android:id="@+id/textView223222"
             android:layout_width="411dp"
