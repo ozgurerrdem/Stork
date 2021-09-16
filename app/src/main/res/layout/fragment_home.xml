@@ -295,7 +295,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 app:elevation="3dp"
-                android:src="@drawable/bank_building"
+                android:src="@drawable/bank_icon"
                 app:fabCustomSize="80dp"
                 app:backgroundTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"

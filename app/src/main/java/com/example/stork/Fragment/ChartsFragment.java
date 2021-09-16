@@ -1,14 +1,22 @@
 package com.example.stork.Fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.stork.Adapter.ChartsAdapter;
+import com.example.stork.Adapter.PagAdapter;
 import com.example.stork.R;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,11 @@ import com.example.stork.R;
  * create an instance of this fragment.
  */
 public class ChartsFragment extends Fragment {
+    private TabLayout tablayout;
+    private ViewPager viewpager;
+    private TabItem harcamalar,gelir;
+    public ChartsAdapter pagerAdapter;
+    private FragmentActivity myContext;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,11 +69,53 @@ public class ChartsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    @Override
+    public void onAttach(Activity activity) {
+        myContext=(FragmentActivity) activity;
+        super.onAttach(activity);
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_charts, container, false);
+        View view = inflater.inflate(R.layout.fragment_charts, container, false);
+        tablayout = (TabLayout) view.findViewById(R.id.charts_tablayout);
+        harcamalar =(TabItem) view.findViewById(R.id.harcamalar);
+        gelir = (TabItem) view.findViewById(R.id.gelir);
+        viewpager = (ViewPager) view.findViewById(R.id.charts_viewpager);
+
+
+
+        pagerAdapter = new ChartsAdapter(getChildFragmentManager(),tablayout.getTabCount());
+        viewpager.setAdapter(pagerAdapter);
+
+        tablayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewpager.setCurrentItem(tab.getPosition());
+                if(tab.getPosition()==0){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+                else if(tab.getPosition()==1){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
+        return view;
     }
+
 }
