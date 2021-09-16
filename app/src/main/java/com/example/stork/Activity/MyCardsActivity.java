@@ -14,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.stork.Adapter.CardAdapter;
 import com.example.stork.Adapter.MyCardsAdapter;
+import com.example.stork.MockAccount;
 import com.example.stork.Model.CardModel;
 import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
@@ -27,6 +29,7 @@ public class MyCardsActivity extends AppCompatActivity {
     private ViewPager2 mycards_viewpager;
     private SeekBar seekBar;
     private TextView seekbar_Text;
+    private TextView seekbar_Text_max;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +40,14 @@ public class MyCardsActivity extends AppCompatActivity {
 
         List<NewCardModel>cardModels = new ArrayList<>();
 
-        cardModels.add(new NewCardModel(R.drawable.maincard,"Ana Hesap","3,444.30","TR32132132131"));
-        cardModels.add(new NewCardModel(R.drawable.tokyotravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.eutravel,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.usa,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
-        cardModels.add(new NewCardModel(R.drawable.plat,"Hesap Adı","Hesap Bakiye","Hesap numarası"));
+        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString()+birimChanger(0),MockAccount.accounts.get(0).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.tokyotravel,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+birimChanger(1),MockAccount.accounts.get(1).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+birimChanger(2),MockAccount.accounts.get(2).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+birimChanger(3),MockAccount.accounts.get(3).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+birimChanger(4),MockAccount.accounts.get(4).getIBANNo()));
 
-        mycards_viewpager.setAdapter(new MyCardsAdapter(cardModels , mycards_viewpager));
+
+        mycards_viewpager.setAdapter(new CardAdapter(cardModels , mycards_viewpager));
 
         mycards_viewpager.setClipToPadding(false);
         mycards_viewpager.setClipChildren(false);
@@ -75,18 +79,31 @@ public class MyCardsActivity extends AppCompatActivity {
         DotsIndicator dotsIndicator = (DotsIndicator) findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager2(mycards_viewpager);
 
-
+        seekbar_Text_max=findViewById(R.id.seek_bar_text_max);
         seekBar = (SeekBar) findViewById(R.id.seek_bar);
         seekbar_Text = findViewById(R.id.seek_bar_text_current);
-
+        System.out.println( mycards_viewpager.getCurrentItem());
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                seekbar_Text.setText(String.valueOf("₺ "+progress));
+               int k  =(int)(Math.round(MockAccount.accounts.get(mycards_viewpager.getCurrentItem()).getAmountOfBalance()));
+               seekBar.setMax(k);
+               String birim = MockAccount.accounts.get(mycards_viewpager.getCurrentItem()).getCurrencyCode();
+               if (birim.equals("TRY"))
+                   birim="₺";
+               else if (birim.equals("USD"))
+                   birim="$";
+               else if (birim.equals("EUR"))
+                   birim="€";
+               else
+                   birim="XAU";
+                seekbar_Text.setText(birim+" "+String.valueOf(progress));
+                seekbar_Text_max.setText(MockAccount.accounts.get(mycards_viewpager.getCurrentItem()).getAmountOfBalance().toString()+" "+MockAccount.accounts.get(mycards_viewpager.getCurrentItem()).getCurrencyCode());
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+
 
             }
 
@@ -98,5 +115,20 @@ public class MyCardsActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    private String birimChanger(int index) {
+        String birim =MockAccount.accounts.get(index).getCurrencyCode() ;
+        if (birim.equals("TRY"))
+            birim=" ₺";
+        else if (birim.equals("USD"))
+            birim=" $";
+        else if (birim.equals("EUR"))
+            birim=" €";
+        else
+            birim=" XAU";
+
+        return birim;
     }
 }
