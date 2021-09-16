@@ -36,14 +36,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/img_1"/>
+
         <TextView
             android:id="@+id/textView235"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:text="Özgür Erdem Dağdeviren"
             android:fontFamily="@font/poppins_regular"
+            android:text="Özgür Dağdeviren"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/imageView16"
