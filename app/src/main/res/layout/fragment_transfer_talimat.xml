@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="411dp"
         android:layout_height="613dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/btn_round_white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -97,8 +97,8 @@
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
-            android:fontFamily="@font/manrope_semibold"
             android:background="@drawable/gradient_cream"
+            android:fontFamily="@font/manrope_semibold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gonderim_miktar_text" />
 
@@ -119,12 +119,12 @@
             android:layout_width="230dp"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
+            android:background="@drawable/gradient_cream"
             android:clickable="false"
             android:cursorVisible="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:fontFamily="@font/manrope_semibold"
-            android:background="@drawable/gradient_cream"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tarih_text" />
 
@@ -134,8 +134,8 @@
             android:layout_height="48dp"
             android:background="@drawable/gradient_cream"
             android:fontFamily="@font/poppins_semibold"
-            android:textSize="22sp"
             android:gravity="center"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.181"
             app:layout_constraintStart_toEndOf="@+id/gonderim_edit"
