@@ -17,7 +17,7 @@ public class Account {
         this.customerNo = customerNo;
         this.IBANNo = IBANNo;
         this.amountOfBalance = amountOfBalance;
-        this.currencyCode = currencyCode;
+        this.currencyCode = birimChanger(currencyCode);
         this.accountName = accountName;
     }
 
@@ -75,5 +75,18 @@ public class Account {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+    private String birimChanger(String birim) {
+
+        if (birim.equals("TRY"))
+            birim=" ₺";
+        else if (birim.equals("USD"))
+            birim=" $";
+        else if (birim.equals("EUR"))
+            birim=" €";
+        else
+            birim=" XAU";
+
+        return birim;
     }
 }
