@@ -73,8 +73,8 @@ public class VirmanActivity extends AppCompatActivity {
         super.onResume();
         acNameList1.clear();
         for (Account a : MockAccount.accounts) {
-            acNameList1.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
-            acNameList2.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getCurrencyCode());
+            acNameList1.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getBirimCevirme());
+            acNameList2.add(a.getAccountName() + " \n" + a.getAmountOfBalance() +" "+ a.getBirimCevirme());
         }
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, acNameList1);
@@ -85,11 +85,9 @@ public class VirmanActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Showing selected spinner item
                 indexAccount = i;
-                if (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals("TRY")) {
-                    birim.setText("TL");
-                } else {
-                    birim.setText(MockAccount.accounts.get(indexAccount).getCurrencyCode());
-                }
+
+                    birim.setText(MockAccount.accounts.get(indexAccount).getBirimCevirme());
+
             }
 
             @Override
@@ -140,7 +138,7 @@ public class VirmanActivity extends AppCompatActivity {
                                     a.add("0");
                                     a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
                                     a.add(MockAccount.accounts.get(indexAccount).getAccountName());
-                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                                    a.add(MockAccount.accounts.get(indexAccount).getBirimCevirme());
 
                                     bundle.putSerializable("pdf_key",
                                             a ); // burayı değiştim

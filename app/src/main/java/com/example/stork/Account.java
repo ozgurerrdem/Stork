@@ -10,6 +10,7 @@ public class Account {
     private Float amountOfBalance;
     private String currencyCode;
     private String accountName;
+    private String birimCevirme;
 
     public Account(Integer accountSuffix, Integer branchCode, Integer customerNo, String IBANNo, Float amountOfBalance, String currencyCode,String accountName) {
         this.accountSuffix = accountSuffix;
@@ -17,8 +18,17 @@ public class Account {
         this.customerNo = customerNo;
         this.IBANNo = IBANNo;
         this.amountOfBalance = amountOfBalance;
-        this.currencyCode = birimChanger(currencyCode);
+        this.currencyCode = currencyCode;
         this.accountName = accountName;
+        this.birimCevirme=birimChanger(currencyCode);
+    }
+
+    public String getBirimCevirme() {
+        return birimCevirme;
+    }
+
+    public void setBirimCevirme(String birimCevirme) {
+        this.birimCevirme = birimCevirme;
     }
 
     public Integer getAccountSuffix() {

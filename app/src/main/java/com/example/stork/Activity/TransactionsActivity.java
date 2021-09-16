@@ -40,11 +40,11 @@ public class TransactionsActivity extends AppCompatActivity {
 
         List<NewCardModel> cardModels = new ArrayList<>();
 
-        cardModels.add(new NewCardModel(R.drawable.main_small, MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString()+MockAccount.accounts.get(0).getCurrencyCode(),MockAccount.accounts.get(0).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.tokyo_small,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+MockAccount.accounts.get(1).getCurrencyCode(),MockAccount.accounts.get(1).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.europe_small,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+MockAccount.accounts.get(2).getCurrencyCode(),MockAccount.accounts.get(2).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.usa_small,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+MockAccount.accounts.get(3).getCurrencyCode(),MockAccount.accounts.get(3).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.plat_small,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getCurrencyCode(),MockAccount.accounts.get(4).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.main_small, MockAccount.accounts.get(0).getAccountName(),MockAccount.accounts.get(0).getAmountOfBalance().toString()+MockAccount.accounts.get(0).getBirimCevirme(),MockAccount.accounts.get(0).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.tokyo_small,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+MockAccount.accounts.get(1).getBirimCevirme(),MockAccount.accounts.get(1).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.europe_small,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+MockAccount.accounts.get(2).getBirimCevirme(),MockAccount.accounts.get(2).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.usa_small,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+MockAccount.accounts.get(3).getBirimCevirme(),MockAccount.accounts.get(3).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat_small,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getBirimCevirme(),MockAccount.accounts.get(4).getIBANNo()));
 
         small_cards_viewpager.setAdapter(new SmallCardsAdapter(cardModels,small_cards_viewpager));
 

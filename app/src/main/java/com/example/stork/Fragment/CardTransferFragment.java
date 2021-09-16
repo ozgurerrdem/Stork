@@ -126,7 +126,7 @@ public class CardTransferFragment extends Fragment {
         super.onResume();
         acNameList.clear();
         for (Account a : MockAccount.accounts) {
-            acNameList.add(a.getAccountName() + " \n" + a.getAmountOfBalance() + " " + a.getCurrencyCode());
+            acNameList.add(a.getAccountName() + " \n" + a.getAmountOfBalance() + " " + a.getBirimCevirme());
         }
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, acNameList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -135,11 +135,9 @@ public class CardTransferFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 indexAccount = i;
-                if (MockAccount.accounts.get(indexAccount).getCurrencyCode().equals("TRY")) {
-                    birim.setText("TL");
-                } else {
-                    birim.setText(MockAccount.accounts.get(indexAccount).getCurrencyCode());
-                }
+
+                    birim.setText(MockAccount.accounts.get(indexAccount).getBirimCevirme());
+
             }
 
             @Override
@@ -204,7 +202,7 @@ public class CardTransferFragment extends Fragment {
                                     a.add(response.body().data.expenseAmount.toString());
                                     a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
                                     a.add(MockAccount.accounts.get(indexAccount).getAccountName());
-                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                                    a.add(MockAccount.accounts.get(indexAccount).getBirimCevirme());
 
                                     bundle.putSerializable("pdf_key",
                                             a ); // burayı değiştim
@@ -265,7 +263,7 @@ public class CardTransferFragment extends Fragment {
                                     a.add(response.body().data.getExpenseAmount().toString());
                                     a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
                                     a.add(MockAccount.accounts.get(indexAccount).getAccountName());
-                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+                                    a.add(MockAccount.accounts.get(indexAccount).getBirimCevirme());
 
                                     bundle.putSerializable("pdf_key",
                                             a ); // burayı değiştim
