@@ -67,4 +67,18 @@ public class TransactionsActivity extends AppCompatActivity {
 
         small_cards_viewpager.setPageTransformer(compositePageTransformer);
     }
+
+    private String birimChanger(int index) {
+        String birim =MockAccount.accounts.get(index).getCurrencyCode() ;
+        if (birim.equals("TRY"))
+            birim=" ₺";
+        else if (birim.equals("USD"))
+            birim=" $";
+        else if (birim.equals("EUR"))
+            birim=" €";
+        else
+            birim=" XAU";
+
+        return birim;
+    }
 }
