@@ -34,7 +34,7 @@ public class Parameters {
     public Parameters(String explanation, Integer amount, SourceAccount sourceAccount, DestinationAccount destinationAccount, String receiverName) {
         this.explanation = explanation;
         this.amount = amount;
-        this.citizenshipNumber = Integer.valueOf(MockAccount.citizenshipNumber);
+        this.citizenshipNumber =0;
         this.customerNo = Integer.valueOf(MockAccount.customerNo);
         this.sourceAccount = sourceAccount;
         this.destinationAccount = destinationAccount;

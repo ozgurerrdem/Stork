@@ -78,7 +78,6 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="116dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Kemal Kükrer"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -102,7 +101,6 @@
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="TR123212421421412"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -126,7 +124,6 @@
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="1000"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -141,6 +138,7 @@
             android:text="Transfer Sonrası Hesap Bakiyesi"
             android:textColor="@color/black"
             android:textSize="18dp" />
+
         <TextView
             android:id="@+id/kalan_bakiye"
             android:layout_width="411dp"
@@ -149,7 +147,6 @@
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="1000 ₺"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
@@ -158,13 +155,13 @@
             android:id="@+id/transactions_confirm"
             android:layout_width="311dp"
             android:layout_height="56dp"
+            android:layout_marginStart="50dp"
             android:layout_marginLeft="102dp"
             android:layout_marginTop="532dp"
             android:background="@drawable/gradient_green"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:layout_marginStart="50dp"
-            android:text="ONAYLA"
+            android:text="ANASAYFAYA GİT"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24dp" />
