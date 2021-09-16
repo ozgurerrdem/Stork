@@ -24,6 +24,7 @@ import com.example.stork.API.RequestWireToAccount.Request.SourceAccount;
 import com.example.stork.API.RequestWireToAccount.Response.Response;
 import com.example.stork.API.RequestWireToAccount.WireToAccount;
 import com.example.stork.Account;
+import com.example.stork.Activity.IbanSendAnimationActivity;
 import com.example.stork.Activity.SendDoneActivity;
 import com.example.stork.Database.Models.SavedCustomer;
 import com.example.stork.MockAccount;
@@ -198,13 +199,16 @@ public class CardTransferFragment extends Fragment {
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString()) - response.body().getData().getExpenseAmount()));
                                     Bundle bundle = new Bundle();
+                                    ArrayList<String> a = new ArrayList<String>();
+                                    a.add(response.body().data.transactionDate);
+                                    a.add(response.body().data.expenseAmount.toString());
+                                    a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
+                                    a.add(MockAccount.accounts.get(indexAccount).getAccountName());
+                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+
                                     bundle.putSerializable("pdf_key",
-                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                    response.body().getData().transactionDate.substring(0,10),
-                                                    Integer.valueOf(response.body().getData().accountingReference),
-                                                    Integer.valueOf(MockAccount.customerNo),
-                                                    true));
-                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                            a ); // burayı değiştim
+                                    Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                     intent.putExtras(bundle);
                                     getActivity().startActivity(intent);
                                     System.out.println(par.toString());
@@ -254,13 +258,16 @@ public class CardTransferFragment extends Fragment {
                                     Toast.makeText(getContext(), "Işlem Başarılı", Toast.LENGTH_LONG).show();
                                     MockAccount.accounts.get(indexAccount).setAmountOfBalance((float) (MockAccount.accounts.get(indexAccount).getAmountOfBalance()-Float.parseFloat(amount.getText().toString())+ response.body().getData().getExpenseAmount()));
                                     Bundle bundle = new Bundle();
+                                    ArrayList<String> a = new ArrayList<String>();
+                                    a.add(response.body().data.getTransactionDate());
+                                    a.add(response.body().data.getExpenseAmount().toString());
+                                    a.add(MockAccount.accounts.get(indexAccount).getAmountOfBalance().toString());
+                                    a.add(MockAccount.accounts.get(indexAccount).getAccountName());
+                                    a.add(MockAccount.accounts.get(indexAccount).getCurrencyCode());
+
                                     bundle.putSerializable("pdf_key",
-                                            new com.example.stork.API.GetReceiptData.Request.Parameters(MockAccount.accounts.get(indexAccount).getBranchCode(),
-                                                    response.body().getData().getTransactionDate().substring(0,10),
-                                                    Integer.valueOf(response.body().getData().getAccountingReference()),
-                                                    Integer.valueOf(MockAccount.customerNo),
-                                                    true));
-                                    Intent intent = new Intent(getActivity().getApplicationContext(), SendDoneActivity.class);
+                                            a ); // burayı değiştim
+                                    Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                     intent.putExtras(bundle);
                                     getActivity().startActivity(intent);
                                     System.out.println(par.toString());

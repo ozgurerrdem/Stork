@@ -89,7 +89,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="Alıcı Hesap"
+            android:text="Transfer Tarihi"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -112,7 +112,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="Gönderi Miktarı"
+            android:text="Transfer Ücreti"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
