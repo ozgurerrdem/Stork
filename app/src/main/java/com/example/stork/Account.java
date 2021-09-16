@@ -17,7 +17,7 @@ public class Account {
         this.customerNo = customerNo;
         this.IBANNo = IBANNo;
         this.amountOfBalance = amountOfBalance;
-        this.currencyCode = birimChanger(currencyCode);
+        this.currencyCode = currencyCode;
         this.accountName = accountName;
     }
 
