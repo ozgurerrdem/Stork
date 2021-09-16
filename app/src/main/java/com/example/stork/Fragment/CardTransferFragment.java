@@ -221,7 +221,7 @@ public class CardTransferFragment extends Fragment {
                                 } else {
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                    if (response.body().getData() == null) {
+                                    if (response.body() == null || response.body().getData() == null) {
                                         System.out.println("Response boş");
                                     } else {
                                         System.out.println(response.body().getData().transactionDate);
@@ -281,7 +281,7 @@ public class CardTransferFragment extends Fragment {
                                     System.out.println(response.code());
                                     bar.setVisibility(View.GONE);
                                     Toast.makeText(getContext(), "Işlem Gerçekleştirilemedi", Toast.LENGTH_LONG).show();
-                                    if (response.body() == null) {
+                                    if (response.body() == null || response.body().getData() == null) {
                                         System.out.println("Response boş");
                                     } else {
                                         System.out.println(response.body().getData().getTransactionDate());

@@ -11,17 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.stork.Model.CardModel;
+import com.example.stork.Model.NewCardModel;
 import com.example.stork.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.CardViewHolder> {
-    private List<CardModel> cardModelList;
+    private List<NewCardModel> cardModelList;
     private ViewPager2 small_cards_viewpager;
 
-    public SmallCardsAdapter(List<CardModel> cardModelList, ViewPager2 small_cards_viewpager) {
+    public SmallCardsAdapter(List<NewCardModel> cardModelList, ViewPager2 small_cards_viewpager) {
         this.cardModelList = cardModelList;
         this.small_cards_viewpager = small_cards_viewpager;
     }
@@ -31,7 +30,7 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Ca
     public SmallCardsAdapter.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new CardViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.card_item_container,
+                        R.layout.small_card_container,
                         parent,
                         false
                 )
@@ -57,12 +56,17 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Ca
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.card_image);
-            TextView v = itemView.findViewById(R.id.account_name);
-            v.setText("");
+            account_name = itemView.findViewById(R.id.small_account_name);
+            account_balance = itemView.findViewById(R.id.small_account_balance);
+            account_number = itemView.findViewById(R.id.small_account_number);
+
         }
 
-        void setImageView(CardModel cardModel) {
-            imageView.setImageResource(cardModel.getCard());
+        void setImageView(NewCardModel cardModel) {
+            imageView.setImageResource(cardModel.getImage());
+            account_name.setText(cardModel.getAccount_name());
+            account_balance.setText(cardModel.getAccount_balance());
+            account_number.setText(cardModel.getAccount_number());
 
 
         }

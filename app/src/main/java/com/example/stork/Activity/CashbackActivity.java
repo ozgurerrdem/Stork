@@ -24,16 +24,16 @@ public class CashbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cashback);
         small_cards_viewpager = findViewById(R.id.small_cards_viewpager);
-
-        List<CardModel> cardModels = new ArrayList<>();
-
-        cardModels.add(new CardModel(R.mipmap.spotify_logo_foreground));
-        cardModels.add(new CardModel(R.mipmap.airbnb_logo_foreground));
-        cardModels.add(new CardModel(R.drawable.primelogo));
-        cardModels.add(new CardModel(R.drawable.pslogo));
-
-
-        small_cards_viewpager.setAdapter(new SmallCardsAdapter(cardModels,small_cards_viewpager));
+//
+//        List<CardModel> cardModels = new ArrayList<>();
+//
+//        cardModels.add(new CardModel(R.mipmap.spotify_logo_foreground));
+//        cardModels.add(new CardModel(R.mipmap.airbnb_logo_foreground));
+//        cardModels.add(new CardModel(R.drawable.primelogo));
+//        cardModels.add(new CardModel(R.drawable.pslogo));
+//
+//
+//        small_cards_viewpager.setAdapter(new SmallCardsAdapter(cardModels,small_cards_viewpager));
 
         small_cards_viewpager.setClipToPadding(false);
         small_cards_viewpager.setClipChildren(false);

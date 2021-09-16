@@ -35,8 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:letterSpacing="0.05"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
         android:text="Banka Transferleri"
-        android:textColor="#000"
+
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/send_money_toolbar"
