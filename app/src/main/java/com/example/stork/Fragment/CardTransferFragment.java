@@ -163,7 +163,7 @@ public class CardTransferFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 bankValue = bankMap.getValue(bankList.get(i));
-                Toast.makeText(getContext(), bankValue, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), bankValue, Toast.LENGTH_LONG).show();
             }
 
             @Override
