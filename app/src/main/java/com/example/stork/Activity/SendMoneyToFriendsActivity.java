@@ -44,7 +44,7 @@ public class SendMoneyToFriendsActivity extends AppCompatActivity {
         cardModels.add(new NewCardModel(R.drawable.tokyo_small,MockAccount.accounts.get(1).getAccountName(),MockAccount.accounts.get(1).getAmountOfBalance().toString()+MockAccount.accounts.get(1).getCurrencyCode(),MockAccount.accounts.get(1).getIBANNo()));
         cardModels.add(new NewCardModel(R.drawable.europe_small,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+MockAccount.accounts.get(2).getCurrencyCode(),MockAccount.accounts.get(2).getIBANNo()));
         cardModels.add(new NewCardModel(R.drawable.usa_small,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+MockAccount.accounts.get(3).getCurrencyCode(),MockAccount.accounts.get(3).getIBANNo()));
-        cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getCurrencyCode(),MockAccount.accounts.get(4).getIBANNo()));
+        cardModels.add(new NewCardModel(R.drawable.plat_small,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getCurrencyCode(),MockAccount.accounts.get(4).getIBANNo()));
 
         small_cards_viewpager.setAdapter(new SmallCardsAdapter(cardModels,small_cards_viewpager));
 
