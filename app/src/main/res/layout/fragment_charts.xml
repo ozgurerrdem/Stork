@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".Activity.KampanyaActivity">
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/TabLayout"
+        android:id="@+id/charts_tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabBackground="@drawable/bank_transfer_tab"
@@ -16,7 +16,7 @@
         app:tabTextColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/TumKamp"
+            android:id="@+id/harcamalar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Harcamalar">
@@ -24,7 +24,7 @@
         </com.google.android.material.tabs.TabItem>
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/KatildigimKamp"
+            android:id="@+id/gelir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gelir">
@@ -32,7 +32,7 @@
         </com.google.android.material.tabs.TabItem>
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/Viewpager"
+        android:id="@+id/charts_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.viewpager.widget.ViewPager>
