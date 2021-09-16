@@ -238,18 +238,20 @@ public class CardTransferFragment extends Fragment {
                         //EFT
                         System.out.println("EFTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
                         EftToAccount eft = new EftToAccount();
-                        com.example.stork.API.ProcessEftRequestToAccount.Request.Parameters par = new com.example.stork.API.ProcessEftRequestToAccount.Request.Parameters(Integer.valueOf(MockAccount.customerNo),
+                        com.example.stork.API.ProcessEftRequestToAccount.Request.Parameters par = new com.example.stork.API.ProcessEftRequestToAccount.Request.Parameters(
+                                Integer.valueOf(MockAccount.customerNo),
                                 exp.getText().toString(),
-                                MockAccount.name,
+                                MockAccount.accounts.get(indexAccount).getAccountName(),
                                 "I",
                                 Integer.valueOf(bankValue),
                                 accountNum.getText().toString(),
                                 Integer.valueOf(branch.getText().toString()),
                                 "EFT_TYPE_TO_BRANCH",
                                 amount.getText().toString(),
-                                new com.example.stork.API.ProcessEftRequestToAccount.Request.SourceAccount(indexAccount),
-                                name.getText().toString().toUpperCase(),
+                                new com.example.stork.API.ProcessEftRequestToAccount.Request.SourceAccount(indexAccount,name.getText().toString().toUpperCase()),
+                                "test",
                                 true);
+                        System.out.println(par.toString());
                         eft.getResponse(par, new Callback<com.example.stork.API.ProcessEftRequestToAccount.Response.Response>() {
                             @Override
                             public void onResponse(Call<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> call, retrofit2.Response<com.example.stork.API.ProcessEftRequestToAccount.Response.Response> response) {
@@ -270,7 +272,7 @@ public class CardTransferFragment extends Fragment {
                                     Intent intent = new Intent(getActivity().getApplicationContext(), IbanSendAnimationActivity.class);
                                     intent.putExtras(bundle);
                                     getActivity().startActivity(intent);
-                                    System.out.println(par.toString());
+
                                     System.out.println(response.code());
                                     if (response.body().getData() != null) {
                                         System.out.println("RESPONSE: " + response.body().getData().getTransactionDate() + " " + response.body().getData().getExpenseAmount());

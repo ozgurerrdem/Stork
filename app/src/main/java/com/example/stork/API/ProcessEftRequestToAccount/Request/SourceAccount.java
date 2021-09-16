@@ -5,15 +5,16 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class SourceAccount {
+
+    @SerializedName("AccountName")
+    @Expose
+    public String accountName;
     @SerializedName("AccountSuffix")
     @Expose
     public Integer accountSuffix;
     @SerializedName("BranchCode")
     @Expose
     public Integer branchCode;
-    @SerializedName("CurrencyCode")
-    @Expose
-    public String currencyCode;
     @SerializedName("CustomerNo")
     @Expose
     public Integer customerNo;
@@ -24,12 +25,12 @@ public class SourceAccount {
     @Expose
     public String shortName;
 
-    public SourceAccount(int index) {
+    public SourceAccount(int index, String name) {
+        this.accountName = name;
         this.accountSuffix = MockAccount.accounts.get(index).getAccountSuffix();
         this.branchCode = MockAccount.accounts.get(index).getBranchCode();
         this.customerNo = MockAccount.accounts.get(index).getCustomerNo();
-        this.currencyCode = MockAccount.accounts.get(index).getCurrencyCode();
-        this.iBANNo = MockAccount.accounts.get(index).getIBANNo();
-        this.shortName ="";
+        this.iBANNo = "-";
+        this.shortName ="-";
     }
 }

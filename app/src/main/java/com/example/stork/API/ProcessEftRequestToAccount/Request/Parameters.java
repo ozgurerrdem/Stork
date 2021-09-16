@@ -56,4 +56,22 @@ public class Parameters {
         this.receiverName = receiverName;
         this.forceDuplicate = true;
     }
+
+    @Override
+    public String toString() {
+        return "Parameters{" +
+                "customerNo=" + customerNo +
+                ", explanation='" + explanation + '\'' +
+                ", senderName='" + senderName + '\'' +
+                ", transferReason='" + transferReason + '\'' +
+                ", destinationBankCode=" + destinationBankCode +
+                ", eFTDestinationAccount='" + eFTDestinationAccount + '\'' +
+                ", destinationBranchCode=" + destinationBranchCode +
+                ", eFTDestinationType='" + eFTDestinationType + '\'' +
+                ", amount='" + amount + '\'' +
+                ", sourceAccount=" + sourceAccount +
+                ", receiverName='" + receiverName + '\'' +
+                ", forceDuplicate=" + forceDuplicate +
+                '}';
+    }
 }
