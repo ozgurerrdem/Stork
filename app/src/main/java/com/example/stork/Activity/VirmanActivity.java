@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.ServiceState;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -115,6 +116,7 @@ public class VirmanActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                exp.onEditorAction(EditorInfo.IME_ACTION_DONE);
                 if (Float.parseFloat(amount.getText().toString()) > MockAccount.accounts.get(indexAccount).getAmountOfBalance()) {
                     Toast.makeText(getApplicationContext(), "Bakiyeniz yeterli değildir", Toast.LENGTH_SHORT).show();
                 } else {

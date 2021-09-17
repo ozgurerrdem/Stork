@@ -143,7 +143,7 @@ public class HomeFragment extends Fragment {
         cardModels.add(new NewCardModel(R.drawable.eutravel,MockAccount.accounts.get(2).getAccountName(),MockAccount.accounts.get(2).getAmountOfBalance().toString()+MockAccount.accounts.get(2).getCurrencyCode(),MockAccount.accounts.get(2).getIBANNo()));
         cardModels.add(new NewCardModel(R.drawable.usa,MockAccount.accounts.get(3).getAccountName(),MockAccount.accounts.get(3).getAmountOfBalance().toString()+MockAccount.accounts.get(3).getCurrencyCode(),MockAccount.accounts.get(3).getIBANNo()));
         cardModels.add(new NewCardModel(R.drawable.plat,MockAccount.accounts.get(4).getAccountName(),MockAccount.accounts.get(4).getAmountOfBalance().toString()+MockAccount.accounts.get(4).getCurrencyCode(),MockAccount.accounts.get(4).getIBANNo()));
-
+        cardModels.add(new NewCardModel(R.drawable.maincard,MockAccount.accounts.get(5).getAccountName(),MockAccount.accounts.get(5).getAmountOfBalance().toString()+MockAccount.accounts.get(5).getBirimCevirme(),MockAccount.accounts.get(5).getIBANNo()));
         viewPager2.setAdapter(new CardAdapter(cardModels , viewPager2));
 
         viewPager2.setClipToPadding(false);

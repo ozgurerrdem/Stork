@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -113,6 +114,7 @@ public class IBANTransferFragment extends Fragment {
         tum_bak = view.findViewById(R.id.tum_bak);
         birim = view.findViewById(R.id.birim);
 
+
         return view;
     }
 
@@ -158,6 +160,7 @@ public class IBANTransferFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                exp.onEditorAction(EditorInfo.IME_ACTION_DONE);
                 if (iban.getText().toString().isEmpty() || name.getText().toString().isEmpty() || amount.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Bütün alanların doldurulması zorunludur", Toast.LENGTH_LONG).show();
                 } else {

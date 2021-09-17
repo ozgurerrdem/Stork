@@ -2,9 +2,11 @@ package com.example.stork.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 
 import com.example.stork.R;
@@ -58,5 +60,6 @@ public class SendMoneyActivity extends AppCompatActivity {
                 startActivity(new Intent(SendMoneyActivity.this,VirmanActivity.class));
             }
         });
+
     }
 }

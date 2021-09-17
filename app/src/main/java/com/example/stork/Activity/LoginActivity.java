@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pass.onEditorAction(EditorInfo.IME_ACTION_DONE);
                 if (numba.getText().toString().isEmpty() || pass.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Bütün alanların doldurulması zorunludur!", Toast.LENGTH_LONG).show();
                 } else if ((numba.getText().toString().equals(MockAccount.citizenshipNumber) || numba.getText().toString().equals(MockAccount.customerNo)) && pass.getText().toString().equals(MockAccount.password)) {
