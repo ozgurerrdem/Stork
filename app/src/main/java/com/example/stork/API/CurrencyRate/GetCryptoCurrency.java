@@ -12,7 +12,7 @@ public interface GetCryptoCurrency {
 
 
         @Headers({
-                "authorization:apikey 6Sl11wyJMeXNsVslaXwF6f:3ciAPg6jZ1c9bCaY5RF7pB",
+                "authorization:apikey 6swZhsjdUQDjjVeLBIwrTm:5KqobMpvFl9wmkKeN0D6ir",
                 "Content-Type:application/json"
         })
         @GET("cripto")
