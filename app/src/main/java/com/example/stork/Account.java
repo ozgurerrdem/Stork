@@ -99,4 +99,18 @@ public class Account {
 
         return birim;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountSuffix=" + accountSuffix +
+                ", branchCode=" + branchCode +
+                ", customerNo=" + customerNo +
+                ", IBANNo='" + IBANNo + '\'' +
+                ", amountOfBalance=" + amountOfBalance +
+                ", currencyCode='" + currencyCode + '\'' +
+                ", accountName='" + accountName + '\'' +
+                ", birimCevirme='" + birimCevirme + '\'' +
+                '}';
+    }
 }
