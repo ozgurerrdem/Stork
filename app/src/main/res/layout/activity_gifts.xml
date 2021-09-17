@@ -54,6 +54,7 @@
             android:layout_height="wrap_content"
             android:text="Popüler Hediyeler"
             android:fontFamily="@font/poppins_semibold"
+            android:textSize="16dp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -172,23 +173,23 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311">
+        app:layout_constraintVertical_bias="0.321">
 
         <TextView
-            android:layout_marginLeft="10dp"
             android:id="@+id/textView745"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="700" />
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="700"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <ImageView
-            android:layout_marginLeft="35dp"
             android:id="@+id/imageView616"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginLeft="35dp"
             app:srcCompat="@drawable/stork" />
 
         <ImageView
@@ -205,9 +206,9 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="5dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
             android:paddingLeft="8dp"
             android:text="Airbnb İndirim Kodu"
+            android:textColor="@color/black"
             android:textSize="10.5dp" />
 
     </androidx.cardview.widget.CardView>
@@ -372,8 +373,10 @@
             android:id="@+id/textView4611"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yeni Hediyeler"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_semibold"
+            android:text="Yeni Hediyeler"
+            android:textSize="16dp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -394,23 +397,23 @@
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311">
+        app:layout_constraintVertical_bias="0.322">
 
         <TextView
-            android:layout_marginLeft="10dp"
             android:id="@+id/textView742"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="400" />
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="400"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <ImageView
-            android:layout_marginLeft="35dp"
             android:id="@+id/imageView613"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginLeft="35dp"
             app:srcCompat="@drawable/stork" />
 
         <ImageView
@@ -425,11 +428,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:paddingLeft="5dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:paddingLeft="5dp"
             android:text="Spotify Aylık Üyelik"
+            android:textColor="@color/black"
             android:textSize="12dp" />
 
     </androidx.cardview.widget.CardView>
@@ -450,7 +453,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kategoriler"
-            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
@@ -520,23 +525,23 @@
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/cardView5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311">
+        app:layout_constraintVertical_bias="0.321">
 
         <TextView
-            android:layout_marginLeft="10dp"
             android:id="@+id/textView747"
-            android:textSize="12dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="750" />
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="750"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
 
         <ImageView
-            android:layout_marginLeft="35dp"
             android:id="@+id/imageView618"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginLeft="35dp"
             app:srcCompat="@drawable/stork" />
 
         <ImageView
@@ -551,11 +556,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:paddingLeft="6dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
-            android:text="Akaryakıt İndirimi"
             android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingLeft="6dp"
+            android:text="Akaryakıt İndirimi"
+            android:textColor="@color/black"
             android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
 
@@ -628,7 +633,7 @@
         android:id="@+id/floatingActionButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
 
         android:clickable="true"
@@ -643,9 +648,9 @@
         android:id="@+id/floatingActionButton7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:clickable="true"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
+        android:clickable="true"
 
         app:fabCustomSize="75dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -658,9 +663,9 @@
         android:id="@+id/floatingActionButton8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:clickable="true"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
+        android:clickable="true"
 
         app:fabCustomSize="75dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -673,10 +678,10 @@
         android:id="@+id/floatingActionButton13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
         android:clickable="true"
         app:fabCustomSize="75dp"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"

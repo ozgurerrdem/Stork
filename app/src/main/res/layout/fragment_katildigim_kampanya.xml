@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Fragment.TumKampanyaFragment">
@@ -15,6 +14,8 @@
         android:layout_width="350dp"
         android:layout_height="200dp"
         app:cardElevation="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_gravity="center_horizontal"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
 
